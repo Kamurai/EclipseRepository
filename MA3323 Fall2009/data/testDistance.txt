@@ -1,0 +1,375 @@
+# created: Thu Jan 25 23:28:01 EST 2007
+V babbling
+V bandying
+V bantling
+V battling
+V bobbling
+V boggling
+V bottling
+V bubbling
+V buckling
+V bumbling
+V bundling
+V bungling
+V burbling
+V burgling
+V bustling
+V cackling
+V caddying
+V canaling
+V candling
+V candying
+V cobbling
+V coddling
+V cuddling
+V curdling
+V dabbling
+V dandling
+V dangling
+V dawdling
+V diddling
+V dimpling
+V duckling
+V dumpling
+V fiddling
+V fuddling
+V fumbling
+V gabbling
+V gambling
+V gangling
+V garbling
+V gargling
+V giggling
+V gobbling
+V goggling
+V guggling
+V gurgling
+V hackling
+V haggling
+V handline
+V handling
+V heckling
+V higgling
+V hobbling
+V huddling
+V humbling
+V hurdling
+V hurtling
+V hustling
+V jangling
+V jiggling
+V jingling
+V joggling
+V juggling
+V jumbling
+V kibbling
+V kindling
+V mackling
+V mangling
+V mantling
+V marbling
+V medaling
+V meddling
+V metaling
+V middling
+V mingling
+V mottling
+V muddling
+V muddying
+V mudsling
+V mumbling
+V nibbling
+V niggling
+V nobbling
+V paddling
+V pedaling
+V peddling
+V pickling
+V piddling
+V pindling
+V puddling
+V rabbling
+V raddling
+V rambling
+V rattling
+V riddling
+V ridgling
+V rubbling
+V ruddling
+V rumbling
+V rumpling
+V rustling
+V saddling
+V sandling
+V sickling
+V singeing
+V singling
+V suckling
+V tackling
+V tangling
+V tattling
+V tickling
+V tingeing
+V tingling
+V tinkling
+V toddling
+V toggling
+V tumbling
+V turtling
+V waddling
+V waddying
+V waggling
+V wambling
+V wangling
+V warbling
+V wattling
+V wiggling
+V wimbling
+V wimpling
+V winkling
+V wobbling
+E babbling bobbling
+E babbling bubbling
+E babbling dabbling
+E babbling gabbling
+E babbling rabbling
+E bandying candying
+E bantling battling
+E bantling mantling
+E battling bottling
+E battling rattling
+E battling tattling
+E battling wattling
+E bobbling bubbling
+E bobbling cobbling
+E bobbling gobbling
+E bobbling hobbling
+E bobbling nobbling
+E bobbling wobbling
+E boggling goggling
+E boggling joggling
+E boggling toggling
+E bottling mottling
+E bubbling bumbling
+E bubbling burbling
+E bubbling rubbling
+E buckling duckling
+E buckling suckling
+E bumbling burbling
+E bumbling fumbling
+E bumbling humbling
+E bumbling jumbling
+E bumbling mumbling
+E bumbling rumbling
+E bumbling tumbling
+E bundling bungling
+E bungling burgling
+E burbling burgling
+E burgling gurgling
+E bustling hustling
+E bustling rustling
+E cackling hackling
+E cackling mackling
+E cackling tackling
+E caddying candying
+E caddying waddying
+E canaling candling
+E candling candying
+E candling dandling
+E candling handling
+E candling sandling
+E cobbling gobbling
+E cobbling hobbling
+E cobbling nobbling
+E cobbling wobbling
+E coddling cuddling
+E coddling toddling
+E cuddling curdling
+E cuddling fuddling
+E cuddling huddling
+E cuddling muddling
+E cuddling puddling
+E cuddling ruddling
+E curdling hurdling
+E dabbling gabbling
+E dabbling rabbling
+E dandling dangling
+E dandling dawdling
+E dandling handling
+E dandling sandling
+E dangling gangling
+E dangling jangling
+E dangling mangling
+E dangling tangling
+E dangling wangling
+E diddling fiddling
+E diddling middling
+E diddling piddling
+E diddling riddling
+E dimpling dumpling
+E dimpling wimpling
+E duckling suckling
+E dumpling rumpling
+E fiddling fuddling
+E fiddling middling
+E fiddling piddling
+E fiddling riddling
+E fuddling huddling
+E fuddling muddling
+E fuddling puddling
+E fuddling ruddling
+E fumbling humbling
+E fumbling jumbling
+E fumbling mumbling
+E fumbling rumbling
+E fumbling tumbling
+E gabbling gambling
+E gabbling garbling
+E gabbling gobbling
+E gabbling rabbling
+E gambling garbling
+E gambling rambling
+E gambling wambling
+E gangling gargling
+E gangling jangling
+E gangling mangling
+E gangling tangling
+E gangling wangling
+E garbling gargling
+E garbling marbling
+E garbling warbling
+E gargling gurgling
+E giggling goggling
+E giggling guggling
+E giggling higgling
+E giggling jiggling
+E giggling niggling
+E giggling wiggling
+E gobbling hobbling
+E gobbling nobbling
+E gobbling wobbling
+E goggling guggling
+E goggling joggling
+E goggling toggling
+E guggling gurgling
+E guggling juggling
+E hackling heckling
+E hackling mackling
+E hackling tackling
+E haggling higgling
+E haggling waggling
+E handline handling
+E handling sandling
+E higgling jiggling
+E higgling niggling
+E higgling wiggling
+E hobbling nobbling
+E hobbling wobbling
+E huddling hurdling
+E huddling muddling
+E huddling puddling
+E huddling ruddling
+E humbling jumbling
+E humbling mumbling
+E humbling rumbling
+E humbling tumbling
+E hurdling hurtling
+E hurtling hustling
+E hurtling turtling
+E hustling rustling
+E jangling jingling
+E jangling mangling
+E jangling tangling
+E jangling wangling
+E jiggling jingling
+E jiggling joggling
+E jiggling juggling
+E jiggling niggling
+E jiggling wiggling
+E jingling mingling
+E jingling singling
+E jingling tingling
+E joggling juggling
+E joggling toggling
+E jumbling mumbling
+E jumbling rumbling
+E jumbling tumbling
+E kibbling nibbling
+E kindling pindling
+E mackling tackling
+E mangling mantling
+E mangling mingling
+E mangling tangling
+E mangling wangling
+E marbling warbling
+E medaling meddling
+E medaling metaling
+E medaling pedaling
+E meddling middling
+E meddling muddling
+E meddling peddling
+E middling muddling
+E middling piddling
+E middling riddling
+E mingling singling
+E mingling tingling
+E muddling muddying
+E muddling mudsling
+E muddling puddling
+E muddling ruddling
+E mumbling rumbling
+E mumbling tumbling
+E nibbling nobbling
+E niggling wiggling
+E nobbling wobbling
+E paddling peddling
+E paddling piddling
+E paddling puddling
+E paddling raddling
+E paddling saddling
+E paddling waddling
+E pedaling peddling
+E peddling piddling
+E peddling puddling
+E pickling sickling
+E pickling tickling
+E piddling pindling
+E piddling puddling
+E piddling riddling
+E puddling ruddling
+E rabbling rambling
+E rabbling rubbling
+E raddling riddling
+E raddling ruddling
+E raddling saddling
+E raddling waddling
+E rambling rumbling
+E rambling wambling
+E rattling tattling
+E rattling wattling
+E riddling ridgling
+E riddling ruddling
+E rubbling rumbling
+E rumbling rumpling
+E rumbling tumbling
+E saddling sandling
+E saddling waddling
+E sickling suckling
+E sickling tickling
+E singeing singling
+E singeing tingeing
+E singling tingling
+E tackling tickling
+E tangling tingling
+E tangling wangling
+E tattling wattling
+E tickling tinkling
+E tingeing tingling
+E tingling tinkling
+E tinkling winkling
+E waddling waddying
+E waggling wangling
+E waggling wiggling
+E wambling warbling
+E wambling wimbling
+E wimbling wimpling

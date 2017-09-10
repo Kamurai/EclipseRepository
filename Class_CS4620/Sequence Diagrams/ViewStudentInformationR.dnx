@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--xtools2_universal_type_manager-->
+<?com.ibm.xtools.emf.core.signature <signature id="com.ibm.xtools.mmi.ui.signatures.diagram" version="7.0.0"><feature description="" name="Rational Modeling Platform (com.ibm.xtools.rmp)" url="" version="7.0.0"/></signature>?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.0/notation" xmlns:uml="http://www.eclipse.org/uml2/2.0.0/UML" xmlns:umlnotation="http://www.ibm.com/xtools/1.5.2/Umlnotation">
+  <notation:Diagram xmi:id="_hUi-wMXUEd-dGJsl0ggqRw" type="Sequence" element="_hUhwosXUEd-dGJsl0ggqRw" name="ViewStudentInformation.dnx" measurementUnit="Himetric">
+    <children xmi:id="_hUi-wcXUEd-dGJsl0ggqRw" element="_hUhwosXUEd-dGJsl0ggqRw">
+      <children xmi:id="_hUi-wsXUEd-dGJsl0ggqRw" type="interaction_compartment">
+        <children xmi:id="_igSlwMdsEd-CKPt2pBog4g" type="Note">
+          <children xmi:id="_igVCAMdsEd-CKPt2pBog4g" type="DiagramName">
+            <element xsi:nil="true"/>
+          </children>
+          <children xmi:id="_igVCAcdsEd-CKPt2pBog4g" type="Description">
+            <element xsi:nil="true"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_igSlwcdsEd-CKPt2pBog4g" fontName="Sans" description="??" fillColor="13369343" lineColor="6737151"/>
+          <element xsi:nil="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_igSlwsdsEd-CKPt2pBog4g" x="11969" y="4598"/>
+        </children>
+        <styles xmi:type="umlnotation:UMLShapeCompartmentStyle" xmi:id="_hUi-w8XUEd-dGJsl0ggqRw"/>
+      </children>
+      <children xmi:id="_hUi-xMXUEd-dGJsl0ggqRw" type="Name"/>
+      <styles xmi:type="umlnotation:UMLShapeStyle" xmi:id="_hUi-xcXUEd-dGJsl0ggqRw" showStereotype="Label"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_hUi-xsXUEd-dGJsl0ggqRw" x="793" y="793"/>
+    </children>
+    <styles xmi:type="umlnotation:UMLDiagramStyle" xmi:id="_hUi-x8XUEd-dGJsl0ggqRw"/>
+  </notation:Diagram>
+  <uml:Package xmi:id="_hUhwoMXUEd-dGJsl0ggqRw">
+    <packagedElement xmi:type="uml:Collaboration" xmi:id="_hUhwocXUEd-dGJsl0ggqRw">
+      <ownedBehavior xmi:type="uml:Interaction" xmi:id="_hUhwosXUEd-dGJsl0ggqRw" name="Manage Student Information"/>
+    </packagedElement>
+  </uml:Package>
+</xmi:XMI>

@@ -1,0 +1,167 @@
+Blood Bowl Program
+
+Pseudocode
+
+Forms
+
+1	Start Menu
+2	Team Selection Menu
+3	Team Edit Menu
+4	Blood Bowl Field
+5	Custom Team Menu
+
+
+
+Objects:
+
+Teams
+Players
+Standards
+
+Start Menu:
+
+txtTitle-
+
+btnNewGame->Team Selection Menu (2 Active Teams)(Create form array Team Edit (2))
+btnSavedGame->Openfile:  gamename.bbg->Blood Bowl Field
+
+Team Selection Menu:  (one per team)
+
+(Active) Team 1: lstTeamSelection1	(Active) Team 2: lstTeamSelection2
+
+(selection on scroll list loads an active team)
+
+"Build New Team" is an option on lstTeamSelectionX (loads a "blank" team)
+
+btnEditTeamX->Team Edit Menu (one button per team, place to the right of the respective scroll list)
+
+*btnCustomTeam->Custom Team Menu
+
+btnTeamsSet->Blood Bowl Field
+
+
+
+Team Edit Menu:  (One Form per team, created from Array, based on teh # of Active Teams)
+
+dpyGOLD (amount thereof)<->dpyTeamX
+
+lstTeamRace (player options are determined by this selection)
+
+
+(16 OF THE FOLLOWING)
+POSTION | NAME | M | S | AG | AR | ABILITIES | COST |
+
+
+16xlstPlayerPositions (dpyGOLD is altered by selection here based on Player Cost))
+16xiptPlayerNames
+16xdpyPlayerStatisticsAbilities
+16xdpyPlayerCost (dpyGold is altered by Cost of Players selected)
+
+(default postion is alway none, cost 0)
+
+dpyCoachingStaff	dpyCoachStaffcostper	iptStaffnum		dpyTotalcoachstaff
+dpyCheerleaders		dpyCheerleadercostper	iptCheerleadernum	dpyTotalcheerleaders
+dpyWizard		dpyWizardcostper	iptWizardnum		dpyTotalwizards
+dpyApothecary		dpyApothecarycostper	iptApothecarynum	dpyTotalApothecary
+dpyReRolls		dpyReRollscostper	iptReRollnum		dpyTotalReRoll
+
+dpyTeamtotalcost
+
+(to begin game)
+
+btnTeamsSet->Team Selection Menu
+
+**League Play Expansion must have Teamtotalcost for StarPlayerPoints
+
+btnArrayBBField(26)(13):
+
+13 vertical buttons, 26 horizontal buttons w/spacing for Line of Scrimmage, Hashes & Tryzones
+Above the field:
+1	BLOODBOWL
+2	Name1 VS Name2
+3	Harvest
+4	Turns
+
+Left Side: Team 1
+(Descending)
+Reserve Bin
+Injured Bin
+Dead Bin
+
+Right Side: Team 2
+(Descending)
+Reserve Bin
+Injured Bin
+Dead Bin
+
+Below the Field:  Re-Rolls1, Re-Rolls2
+Coaches1, Cheerleaders1, Apothecaries1, Wizards1
+Coaches2, Cheerleaders2, Apothecaries2, Wizards2
+btnUndomove, btnRe-Roll, btnSaveGame, btnRestartGame, btnExittoMenu
+Roster1, Roster2
+
+Objects:
+TeamName.tm:			Player.pyr:
+(16)PlayerMatrix.pyr		Number.int
+TotalCost.int			Name.str
+(league)Treasury.int		Position.str
+Re-Rolls.int			Movement.int
+Coaches.int			Strength.int
+Cheerleaders.int		Agility.int
+Apothecaries.int		Armor.int
+Wizards.int			Abilities.str (*extended string)
+(league)GamesPlayed.int		Cost.int
+
+In League expansion ".pyr"s will have attributes for spp, etc & procedures for spp & aging
+
+
+Blood Bowl League Expansion:
+
+Expanded Forms:  Start Menu, League Play Menu, Team Selection Menu, Team Edit Menu, Blood Bowl Field
+
+Start Menu (Added to):
+
+iptTeamsinLeague btnNewLeague->Team Selection Menu (Active Teams from ipt Teams in League)
+		 btnSavedLeague->Openfile: leaguename.bbl->Team Selection Menu
+
+
+Team Selection Menu (Add to/Edit)
+dpyX  (X=Active #)  lstTeamSelectionX btnEditTeamX->Team Edit Menu
+iptLeagueName
+btnGotoLeague-> League Play Menu
+
+
+Team Edit Menu (Add to/Edit):
+16xdpyPlayer League Statistics (spp, etc.)
+lstFreebooters dpyInfo, stats, etc.
+
+Blood Bowl Field (Add to/Edit):
+Expand rosters based on add to for Team Edit Menu
+
+Above Field:  BLOOD BOWL, League Name, Game: Game#.int, dpy TeamName1 VS TeamName2, 1st Half: 
+TurnX, 2nd Half: TurnX
+dpyBlocking Dice:  tbeBlockDice 2x3 1Fall Down, 2Both Fall(Block is Exempt), 
+3Push Back, 4Push Back, 5Knock Down, 6Push Back Knock Down (Tacklee with Dodge is exempt)
+
+
+League Play Menu:
+
+dpyLeagueName
+
+dpyTeamsinLeague
+
+(n=loop iterations, starting at 0, then +1)
+loop:
+n+1
+cbx(n) Active Team(n)
+endloop: If n=x (num of teams in league
+
+cbx(n) dpyTeamNameX btnHire(n)->Team Edit Menu
+
+Limit:  Only two check boxes allowed (Active Team 1 & Active Team 2)
+
+checkbox Team Name Gamesplayed.int btnHire
+
+PlayNextGame-> Blood Bowl Field (requires two checked boxes for Active Team 1 & Active Team 2)
+
+dpy(GamesPlayedinLeague+1)

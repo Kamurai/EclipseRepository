@@ -1,0 +1,62 @@
+Create Table StudentInfo(
+	studentid INTEGER PRIMARY KEY,
+	studentname varchar(40) NOT NULL,
+	email varchar(50) NOT NULL
+	);
+
+Create Table CareerInterest(
+	ciid INTEGER PRIMARY KEY,
+	studentid INTEGER NOT NULL,
+	ci varchar(100) NOT NULL	
+);
+
+
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (1, 'Tony Stark', 'Tony.Stark@mymail.com');
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (2, 'Bruce Banner', 'Bruce.Banner@mymail.com');
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (3, 'Steve Rogers', 'Steve.Rogers@mymail.com');
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (4, 'Matt Murdock', 'Matt.Murdock@mymail.com');
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (5, 'Peter Parker', 'Peter.Parker@mymail.com');
+INSERT INTO StudentInfo (studentid, studentname, email) VALUES
+    (6, 'Caitlin Fairchild', 'Caitlin.Fairchild@mymail.com');
+
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(1, 1, 'Alcohol');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(2, 1, 'Women');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(3, 1, 'Technology');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(4, 2, 'Gamma Rays');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(5, 2, 'Anger Management');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(6, 2, 'The Color Green');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(7, 3, 'America');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(8, 3, 'Blue Tights');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(9, 3, 'Freedom');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(10, 4, 'Peace and Quiet');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(11, 4, 'Red Tights');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(12, 4, 'Justice');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(13, 5, 'Wrestling');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(14, 5, 'Symbiotes');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(15, 5, 'May Jane Watson');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(16, 6, 'Long dresses');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(17, 6, 'Physics');
+INSERT INTO CareerInterest(ciid, studentid, ci) VALUES
+	(18, 6, 'Good books');

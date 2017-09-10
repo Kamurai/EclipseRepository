@@ -1,0 +1,1009 @@
+Create Table Race(
+	Race		Char(12)	Not Null,
+	CONSTRAINT	RacePK		Primary Key(Race),
+	BigGuyLimit	Number(1)	Default 1
+	CONSTRAINT	CkBigGuyLimit	Check(BigGuyLimit > 0 and BigGuyLimit < 9)
+	);
+
+Create Table Position(
+	PositionId	Number(2)	Not Null,
+	Race		Char(12)	Not Null,
+	PositionName	Char(15)	Not Null,
+	Cost		Number(6)	Not Null,
+	Movement	Number(2)	Not Null,
+	Strength	Number(2)	Not Null,
+	Agility		Number(2)	Not Null,
+	Armorvalue	Number(2)	Not Null,
+	Limit		Number(2)	Default 16,
+	BigGuy		Number(1)	Default 0,
+	CONSTRAINT	PositionIdPK	Primary Key(PositionId),
+	CONSTRAINT	CkPositionId	Check(PositionId > 0 and PositionId < 100),
+	CONSTRAINT	PositionRaceFK	Foreign Key(Race)
+	REFERENCES	Race(Race),
+	CONSTRAINT	CkCost		Check(Cost > 9999),
+	CONSTRAINT	CkMovement	Check(Movement > 0 and Movement <= 10),
+	CONSTRAINT	CkStrength	Check(Strength > 0 and Strength <= 10),
+	CONSTRAINT	CkAgility	Check(Agility > 0 and Agility <= 10),
+	CONSTRAINT	CkArmorValue	Check(ArmorValue > 0 and ArmorValue <= 10),
+	CONSTRAINT	CkLimit		Check(Limit >= 1 and Limit <= 16),
+	CONSTRAINT	CkBigGuy	Check(BigGuy >= 0 and BigGuy <= 1)
+	);
+
+Create Table Manager(
+	ManagerId	Number(5)	Not Null,
+	ManagerName	Char(30)	Not Null,
+	ManagerEmail	Char(40)	Not Null,
+	ManagerAccount	Number(9)	default 1000000 Not Null,
+	CONSTRAINT	ManagerIdPK	Primary Key(ManagerId),
+	CONSTRAINT	ManagerNameU	Unique(ManagerName),
+	CONSTRAINT	ManagerEmailU	Unique(ManagerEmail),
+	CONSTRAINT	CkAccount	Check(ManagerAccount >= 0)
+	);
+
+Create Table Team(
+	TeamId		Number(2)	Not Null,
+	TeamName	Char(30)	Not Null,
+	Race		Char(12)	Not Null,
+	TeamColor1	Char(15)	Not Null,
+	TeamColor2	Char(15)	Not Null,
+	CONSTRAINT	TeamIdPK	Primary Key(TeamId),
+	CONSTRAINT	TeamRaceFK	Foreign Key(Race)
+	REFERENCES	Race(Race),
+	CONSTRAINT	CkTeamId	Check(TeamId > 0 and TeamId < 100),
+	CONSTRAINT	TeamNameU	Unique(TeamName)
+	);
+
+Create Table Player(
+	PlayerId	Number(5)	Not Null,
+	PlayerName	Char(15)	Not Null,
+	PositionId	Number(2)	Not Null,
+	TeamId		Number(5)	Not Null,
+	ManagerId	Number(5)	Not Null,
+	CONSTRAINT	PlayerIdPK	Primary Key(PlayerId),
+	CONSTRAINT	PlayerNameU	Unique(PlayerName),
+	CONSTRAINT	PositionIdFK	Foreign Key(PositionId)
+	REFERENCES	Position(PositionId),
+	CONSTRAINT	ManagerIdFK	Foreign Key(ManagerId)
+	REFERENCES	Manager(ManagerId),
+	CONSTRAINT	TeamIdFK	Foreign Key(TeamId)
+	REFERENCES	Team(TeamId)
+	);
+
+
+
+
+	Insert into Race(Race) Values('Human');
+	Insert into Race(Race) Values('Amazon');
+	Insert into Race(Race) Values('Norse');
+	Insert into Race(Race) Values('High Elf');
+	Insert into Race(Race) Values('Wood Elf');
+	Insert into Race(Race) Values('Dark Elf');
+	Insert into Race(Race) Values('Chaos');
+	Insert into Race(Race) Values('Nurgle');
+	Insert into Race(Race) Values('Dwarf');
+	Insert into Race(Race) Values('Chaos Dwarf');
+	Insert into Race(Race) Values('Orc');
+	Insert into Race(Race, BigGuyLimit) Values('Goblin', 2);
+	Insert into Race(Race, BigGuyLimit) Values('Ogre', 8);
+	Insert into Race(Race) Values('Vampire');
+	Insert into Race(Race) Values('Khemri');
+	Insert into Race(Race) Values('Necromantic');
+	Insert into Race(Race) Values('Undead');
+	Insert into Race(Race) Values('Skaven');
+	Insert into Race(Race) Values('Lizardmen');
+	Insert into Race(Race, BigGuyLimit) Values('Halfling', 2);
+
+
+
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(01, 'Human', 'Ogre', 120000, 5, 5, 2, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(02, 'Human', 'Lineman', 50000, 6, 3, 3, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(03, 'Human', 'Blitzer', 90000, 7, 3, 3, 8, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(04, 'Human', 'Thrower', 70000, 6, 3, 3, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(05, 'Human', 'Catcher', 70000, 8, 2, 3, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(06, 'Amazon', 'Linewoman', 50000, 6, 3, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(07, 'Amazon', 'Blitzer', 90000, 6, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(08, 'Amazon', 'Thrower', 70000, 6, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(09, 'Amazon', 'Catcher', 70000, 6, 3, 3, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(10, 'Norse', 'Ogre', 120000, 5, 5, 2, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(11, 'Norse', 'Minotaur', 110000, 5, 5, 2, 8, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(12, 'Norse', 'Lineman', 50000, 6, 3, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(13, 'Norse', 'Blitzer', 90000, 6, 3, 3, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(14, 'Norse', 'Thrower', 70000, 6, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(15, 'Norse', 'Catcher', 70000, 6, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(16, 'High Elf', 'Lineman', 70000, 6, 3, 4, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(17, 'High Elf', 'Dragon Warrior', 100000, 7, 3, 4, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(18, 'High Elf', 'Phoenix Warrior', 80000, 6, 3, 4, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(19, 'High Elf', 'Lion Warrior', 90000, 8, 3, 4, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(20, 'Wood Elf', 'Treeman', 110000, 2, 6, 1, 10, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(21, 'Wood Elf', 'Lineman', 70000, 7, 3, 4, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(22, 'Wood Elf', 'Wardancer', 120000, 8, 3, 4, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(23, 'Wood Elf', 'Thrower', 90000, 7, 3, 4, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(24, 'Wood Elf', 'Catcher', 90000, 9, 2, 4, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(25, 'Dark Elf', 'Lineman', 70000, 6, 3, 4, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(26, 'Dark Elf', 'Blitzer', 100000, 7, 3, 4, 8, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(27, 'Dark Elf', 'Thrower', 90000, 7, 3, 4, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(28, 'Dark Elf', 'Wych', 110000, 6, 3, 4, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(29, 'Chaos', 'Ogre', 120000, 5, 5, 2, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(30, 'Chaos', 'Minotaur', 110000, 5, 5, 2, 8, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(31, 'Chaos', 'Troll', 100000, 4, 5, 1, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(32, 'Chaos', 'Warrior', 100000, 5, 4, 3, 9, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(33, 'Chaos', 'Beastman', 60000, 6, 3, 3, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(34, 'Nurgle', 'Beast', 110000, 4, 6, 1, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(35, 'Nurgle', 'Rotter', 100000, 4, 4, 2, 9, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(36, 'Nurgle', 'Beastman', 60000, 6, 3, 3, 8, 16, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(37, 'Dwarf', 'Ogre', 120000, 5, 5, 2, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(38, 'Dwarf', 'Longbeard', 70000, 4, 3, 2, 9, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(39, 'Dwarf', 'Slayer', 90000, 5, 3, 2, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(40, 'Dwarf', 'Blitzer', 80000, 5, 3, 3, 9, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(41, 'Dwarf', 'Runner', 80000, 6, 3, 3, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(42, 'Chaos Dwarf', 'Troll', 100000, 4, 5, 1, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(43, 'Chaos Dwarf', 'Minotaur', 110000, 5, 5, 2, 8, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(44, 'Chaos Dwarf', 'Bull Centaur', 130000, 6, 4, 2, 9, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(45, 'Chaos Dwarf', 'Blocker', 70000, 4, 3, 2, 9, 6, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(46, 'Chaos Dwarf', 'Hobgoblin', 40000, 6, 3, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(47, 'Orc', 'Ogre', 120000, 5, 5, 2, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(48, 'Orc', 'Troll', 100000, 4, 5, 1, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(49, 'Orc', 'Lineman', 50000, 5, 3, 3, 9, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(50, 'Orc', 'Black Orc', 80000, 4, 4, 3, 9, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(51, 'Orc', 'Blitzer', 80000, 6, 3, 3, 9, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(52, 'Orc', 'Thrower', 70000, 5, 3, 3, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(53, 'Orc', 'Goblin', 40000, 6, 2, 3, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(54, 'Goblin', 'Ogre', 120000, 5, 5, 2, 9, 2, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(55, 'Goblin', 'Troll', 100000, 4, 5, 1, 9, 2, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(56, 'Goblin', 'Goblin', 40000, 6, 2, 3, 7, 16, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(57, 'Ogre', 'Goblin', 40000, 6, 2, 3, 7, 8, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(58, 'Ogre', 'Ogre', 120000, 5, 5, 2, 9, 8, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(59, 'Vampire', 'Thrall', 40000, 6, 3, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(60, 'Vampire', 'Lord', 180000, 6, 5, 4, 9, 1, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(61, 'Vampire', 'Vampire', 110000, 6, 4, 4, 8, 6, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(62, 'Khemri', 'Skeleton', 30000, 5, 3, 2, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(63, 'Khemri', 'Tomb King', 110000, 3, 5, 1, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(64, 'Khemri', 'Blitz-Ra', 80000, 6, 3, 2, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(65, 'Khemri', 'Thro-Ra', 70000, 5, 3, 2, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(66, 'Necromantic', 'Zombie', 30000, 4, 3, 2, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(67, 'Necromantic', 'Flesh Golem', 120000, 4, 4, 2, 9, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(68, 'Necromantic', 'Werewolf', 120000, 8, 3, 3, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(69, 'Necromantic', 'Wight', 90000, 6, 3, 3, 8, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(70, 'Necromantic', 'Ghoul', 70000, 7, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(71, 'Undead', 'Skeleton', 30000, 5, 3, 2, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(72, 'Undead', 'Zombie', 30000, 4, 3, 2, 8, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(73, 'Undead', 'Wight', 90000, 6, 3, 3, 8, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(74, 'Undead', 'Ghoul', 70000, 7, 3, 3, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(75, 'Undead', 'Mummy', 100000, 3, 5, 1, 9, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(76, 'Skaven', 'Rat Ogre', 130000, 6, 5, 3, 8, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(77, 'Skaven', 'Lineman', 50000, 7, 3, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(78, 'Skaven', 'Storm Vermin', 90000, 7, 3, 3, 8, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(79, 'Skaven', 'Thrower', 70000, 7, 3, 3, 7, 2, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(80, 'Skaven', 'Gutter Runner', 80000, 9, 2, 4, 7, 4, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(81, 'Lizardmen', 'Kroxigor', 130000, 6, 5, 1, 9, 1, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(82, 'Lizardmen', 'Skink', 60000, 8, 2, 3, 7, 12, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(83, 'Lizardmen', 'Saurus', 80000, 6, 4, 1, 9, 6, 0);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(84, 'Halfling', 'Treeman', 110000, 2, 6, 1, 10, 2, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(85, 'Halfling', 'Ogre', 120000, 5, 5, 2, 9, 2, 1);
+	Insert Into Position(PositionId, Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue, Limit, BigGuy)
+	Values(86, 'Halfling', 'Halfling', 30000, 5, 2, 3, 6, 16, 0);
+	
+
+
+
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00001, 'Meredith Gentry', 'MeredithGentry@mymail.com', 580000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00002, 'Anita Blake', 'AnitaBlake@mymail.com', 430000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00003, 'Al Simmons', 'AlSimmons@mymail.com', 420000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00004, 'Edmond Dantes', 'EdmondDantes@mymail.com', 450000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00005, 'Bruce Banner', 'BruceBanner@mymail.com', 450000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00006, 'Peter Parker', 'Peter Parker@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00007, 'Matt Murdock', 'MattMurdock@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00008, 'Tony Stark', 'TonyStark@mymail.com', 500000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00009, 'Scott Summers', 'ScottSummers@mymail.com', 490000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00010, 'Jean Grey', 'JeanGrey@mymail.com', 490000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00011, 'Bruce Wayne', 'BruceWayne@mymail.com', 520000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00012, 'Barbara Gordon', 'BarbaraGordon@mymail.com', 470000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00013, 'Dick Grayson', 'DickGrayson@mymail.com', 470000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00014, 'Reed Richard', 'ReedRichard@mymail.com', 440000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00015, 'Susan Storm', 'SusanStorm@mymail.com', 460000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00016, 'Johnny Storm', 'JohnnyStorm@mymail.com', 460000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00017, 'Frank Castle', 'FrankCastle@mymail.com', 420000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00018, 'Ben Grimm', 'BenGrimm@mymail.com', 570000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00019, 'Harleen Quinzel', 'HarleenQuinzel@mymail.com', 550000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00020, 'Johnny Blaze', 'JohnnyBlaze@mymail.com', 480000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00021, 'Samus Arens', 'SamusArens@mymail.com', 500000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00022, 'Nick Fury', 'NickFury@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00023, 'Elektra Nachios', 'ElektraNachios@mymail.com', 430000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00024, 'Kitty Pride', 'KittyPride@mymail.com', 490000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00025, 'Piotr Rasputin', 'PiotrRasputin@mymail.com', 430000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00026, 'Selena Kyle', 'SelenaKyle@mymail.com', 440000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00027, 'Clark Kent', 'ClarkKent@mymail.com', 390000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00028, 'Lex Luthor', 'LexLuthor@mymail.com', 400000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00029, 'Charles Xavier', 'CharlesXavier@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00030, 'Eric Magnus', 'EricMagnus@mymail.com', 460000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00031, 'Eddie Brock', 'EddieBrock@mymail.com', 450000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00032, 'Cletus Kasady', 'CletusKasady@mymail.com', 530000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00033, 'Robert Reynolds', 'RobertReynolds@mymail.com', 450000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00034, 'Steve Rogers', 'SteveRogers@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00035, 'Caitlin Fairchild', 'CaitlinFairchild@mymail.com', 510000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00036, 'Cole Cash', 'ColeCash@mymail.com', 440000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00037, 'Dinah Lance', 'Dinah Lance@mymail.com', 480000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00038, 'Rachel Goldman', 'RachelGoldman@mymail.com', 540000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00039, 'Gemma Antonelli', 'GemmaAntonelli@mymail.com', 420000);
+	Insert into Manager(ManagerId, ManagerName, ManagerEmail, ManagerAccount)
+	Values(00040, 'Cassandra Cain', 'CassandraCain@mymail.com', 420000);
+
+
+
+
+
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(1, 'Dragons', 'Human', 'Silver', 'Black');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(2, 'Wild Cats', 'Amazon', 'Grey', 'Blue');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(3, 'War Dogs', 'Norse', 'Dark Grey', 'Red');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(4, 'Avatars', 'High Elf', 'Gold', 'White');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(5, 'Dancers', 'Wood Elf', 'Dark Brown', 'Green');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(6, 'Wyches', 'Dark Elf', 'Violet', 'Pink');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(7, 'Blood Thirsters', 'Chaos', 'Dark Red', 'Gold');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(8, 'Zits', 'Nurgle', 'Dark Green', 'Brown');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(9, 'Keggars', 'Dwarf', 'Brown', 'Silver');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(10, 'Masters', 'Chaos Dwarf', 'Dark Violet', 'Gold');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(11, 'Scars', 'Orc', 'Blue', 'Red');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(12, 'Demons', 'Goblin', 'Green', 'Red');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(13, 'Brutes', 'Ogre', 'Black', 'White');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(14, 'Queens', 'Vampire', 'White', 'Black');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(15, 'Bones', 'Khemri', 'Yellow', 'Orange');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(16, 'Maniacs', 'Necromantic', 'Red', 'Black');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(17, 'Furies', 'Undead', 'Orange', 'Blue');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(18, 'Snowrats', 'Skaven', 'Cyan', 'Black');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(19, 'Scales', 'Lizardmen', 'Orange', 'White');
+	Insert into team(TeamId, TeamName, Race, TeamColor1, TeamColor2)
+	Values(20, 'Tots', 'Halfling', 'Pink', 'Brown');
+
+
+
+	
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00001, 'Morg', 01, 00001, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00002, 'Simmons', 03, 00001, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00003, 'Edwards', 03, 00001, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00004, 'Mariott', 03, 00001, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00005, 'Allen', 03, 00001, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00006, 'Smith', 04, 00001, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00007, 'Picard', 04, 00001, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00008, 'Riker', 05, 00001, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00009, 'Chamblee', 05, 00001, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00010, 'Rex', 05, 00001, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00011, 'Hyatt', 05, 00001, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00012, 'Dickson', 02, 00001, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00013, 'Albert', 02, 00001, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00014, 'Alkyone', 07, 00002, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00015, 'Anymone', 07, 00002, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00016, 'Anaxilea', 07, 00002, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00017, 'Androdameia', 07, 00002, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00018, 'Celaeno', 08, 00002, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00019, 'Cyrene', 08, 00002, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00020, 'Marpesia', 09, 00002, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00021, 'Hippothoe', 09, 00002, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00022, 'Kleodaeis', 06, 00002, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00023, 'Klito', 06, 00002, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00024, 'Klymene', 06, 00002, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00025, 'Molpadia', 06, 00002, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00026, 'Myrene', 06, 00002, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00027, 'Orithia', 06, 00002, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00028, 'Penthesilea', 06, 00002, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00029, 'Borg', 10, 00003, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00030, 'Loki', 13, 00003, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00031, 'Thor', 13, 00003, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00032, 'Odin', 13, 00003, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00033, 'Freyr', 13, 00003, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00034, 'Eir', 14, 00003, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00035, 'Balder', 14, 00003, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00036, 'Grid', 15, 00003, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00037, 'Skuld', 15, 00003, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00038, 'Skadi', 12, 00003, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00039, 'Vidar', 12, 00003, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00040, 'Verdandi', 12, 00003, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00041, 'Saga', 12, 00003, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00042, 'Rist', 17, 00004, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00043, 'Karst', 17, 00004, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00044, 'Reis', 18, 00004, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00045, 'Yelt', 18, 00004, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00046, 'Julien', 19, 00004, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00047, 'Holis', 19, 00004, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00048, 'Weln', 19, 00004, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00049, 'Ters', 19, 00004, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00050, 'Istan', 16, 00004, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00051, 'Lolis', 16, 00004, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00052, 'Solis', 16, 00004, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00053, 'Palin', 16, 00004, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00054, 'Fern', 22, 00005, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00055, 'Flower', 22, 00005, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00056, 'Maple', 23, 00005, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00057, 'Oak', 23, 00005, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00058, 'Tulip', 24, 00005, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00059, 'Rose', 24, 00005, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00060, 'Lily', 24, 00005, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00061, 'Violet', 24, 00005, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00062, 'Sunshine', 21, 00005, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00063, 'Raindrop', 21, 00005, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00064, 'Moonbeam', 21, 00005, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00065, 'Reek', 26, 00006, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00066, 'Tarn', 26, 00006, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00067, 'Yolin', 26, 00006, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00068, 'Ralst', 26, 00006, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00069, 'Sarn', 27, 00006, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00070, 'Lirn', 27, 00006, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00071, 'Joln', 28, 00006, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00072, 'Ulth', 28, 00006, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00073, 'Hist', 25, 00006, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00074, 'Pern', 25, 00006, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00075, 'Dreg', 29, 00007, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00076, 'Lorgan', 32, 00007, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00077, 'Tarik', 32, 00007, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00078, 'Kist', 32, 00007, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00079, 'Norn', 32, 00007, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00080, 'Roth', 33, 00007, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00081, 'Torth', 33, 00007, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00082, 'Gerth', 33, 00007, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00083, 'Urth', 33, 00007, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00084, 'Throt', 33, 00007, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00085, 'Panth', 33, 00007, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00086, 'Merth', 33, 00007, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00087, 'Stroth', 33, 00007, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00088, 'The Unclean', 34, 00008, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00089, 'Vad', 35, 00008, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00090, 'Wersk', 35, 00008, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00091, 'Tulpis', 35, 00008, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00092, 'Cypher', 35, 00008, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00093, 'Lort', 36, 00008, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00094, 'Rith', 36, 00008, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00095, 'Brot', 36, 00008, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00096, 'Proth', 36, 00008, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00097, 'Wort', 36, 00008, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00098, 'Hirth', 36, 00008, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00099, 'Froth', 36, 00008, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00100, 'Herth', 36, 00008, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00101, 'Haggar', 39, 00009, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00102, 'Travask', 39, 00009, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00103, 'Lenin', 40, 00009, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00104, 'Hobar', 40, 00009, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00105, 'Angoth', 41, 00009, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00106, 'Weren', 41, 00009, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00107, 'Elioth', 38, 00009, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00108, 'Faren', 38, 00009, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00109, 'Sorens', 38, 00009, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00110, 'Alvion', 38, 00009, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00111, 'Dedris', 38, 00009, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00112, 'Macinosh', 38, 00009, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00113, 'Pervarn', 38, 00009, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00114, 'Taz', 43, 00010, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00115, 'Drayeth', 44, 00010, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00116, 'Ulienth', 44, 00010, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00117, 'Bolth', 45, 00010, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00118, 'Meren', 45, 00010, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00119, 'Golis', 45, 00010, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00120, 'Travesk', 45, 00010, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00121, 'Lilt', 45, 00010, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00122, 'Judas', 45, 00010, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00123, 'Ikor', 46, 00010, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00124, 'Ostar', 46, 00010, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00125, 'Enyor', 46, 00010, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00126, 'Ilger', 46, 00010, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00127, 'Ulgler', 46, 00010, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00128, 'Gork', 47, 00011, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00129, 'Vlad', 50, 00011, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00130, 'Yorg', 50, 00011, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00131, 'Ghaz', 50, 00011, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00132, 'Gat', 50, 00011, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00133, 'Thrak', 51, 00011, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00134, 'Dred', 51, 00011, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00135, 'Nont', 51, 00011, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00136, 'Zord', 51, 00011, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00137, 'Brag', 52, 00011, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00138, 'Pax', 52, 00011, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00139, 'Brak', 49, 00011, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00140, 'Doom', 49, 00011, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00141, 'Ulg', 55, 00012, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00142, 'Olth', 55, 00012, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00143, 'Zig', 56, 00012, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00144, 'Zag', 56, 00012, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00145, 'Zog', 56, 00012, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00146, 'Grog', 56, 00012, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00147, 'Mush', 56, 00012, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00148, 'Put', 56, 00012, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00149, 'Rust', 56, 00012, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00150, 'Xot', 56, 00012, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00151, 'Meh', 56, 00012, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00152, 'Tiddle', 56, 00012, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00153, 'Werst', 56, 00012, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00154, 'Dod', 56, 00012, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00155, 'Kap', 56, 00012, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00156, 'Red', 56, 00012, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00157, 'Horg', 58, 00013, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00158, 'Worg', 58, 00013, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00159, 'Lorv', 58, 00013, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00160, 'Parn', 58, 00013, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00161, 'Marv', 58, 00013, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00162, 'Surv', 58, 00013, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00163, 'Card', 58, 00013, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00164, 'Barm', 58, 00013, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00165, 'Hurt', 57, 00013, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00166, 'Lord Vincent', 60, 00014, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00167, 'Siegfried', 61, 00014, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00168, 'Royston', 61, 00014, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00169, 'Druthers', 61, 00014, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00170, 'Claude', 61, 00014, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00171, 'Warren', 61, 00014, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00172, 'Estibald', 61, 00014, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00173, 'Wade', 59, 00014, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00174, 'Starling', 59, 00014, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00175, 'Pitt', 59, 00014, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00176, 'Erent', 59, 00014, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00177, 'Almathu', 63, 00015, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00178, 'Ilianthalu', 63, 00015, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00179, 'Mahamudu', 63, 00015, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00180, 'Tatahamu', 63, 00015, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00181, 'Almai', 64, 00015, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00182, 'Judaea', 64, 00015, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00183, 'Rumai', 65, 00015, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00184, 'Nanai', 65, 00015, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00185, 'Samiel', 62, 00015, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00186, 'Omnial', 62, 00015, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00187, 'Palaum', 62, 00015, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00188, 'Narai', 62, 00015, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00189, 'Maliun', 62, 00015, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00190, 'Loliuth', 62, 00015, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00191, 'Hethran', 62, 00015, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00192, 'Nexia', 62, 00015, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00193, 'Stein', 67, 00016, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00194, 'Burg', 67, 00016, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00195, 'Farmer', 69, 00016, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00196, 'Samson', 69, 00016, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00197, 'Thomas', 69, 00016, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00198, 'Maxim', 69, 00016, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00199, 'Johnston', 68, 00016, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00200, 'Thompson', 68, 00016, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00201, 'Ickil', 70, 00016, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00202, 'Butal', 70, 00016, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00203, 'Raelouth', 75, 00017, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00204, 'Menoalu', 75, 00017, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00205, 'White', 73, 00017, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00206, 'Black', 73, 00017, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00207, 'Brown', 73, 00017, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00208, 'Green', 73, 00017, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00209, 'Sukol', 74, 00017, 00029);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00210, 'Pluthil', 74, 00017, 00030);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00211, 'Fikael', 74, 00017, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00212, 'Mumuth', 74, 00017, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00213, 'Stevens', 72, 00017, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00214, 'Frank', 72, 00017, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00215, 'Lane', 72, 00017, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00216, 'Cox', 71, 00017, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00217, 'Murray', 71, 00017, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00218, 'Rresst', 76, 00018, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00219, 'Krriss', 78, 00018, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00220, 'Trrarr', 78, 00018, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00221, 'Nrriss', 79, 00018, 00031);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00222, 'Ssrrarra', 79, 00018, 00002);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00223, 'Prrass', 80, 00018, 00013);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00224, 'Rran', 80, 00018, 00024);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00225, 'Brrat', 80, 00018, 00035);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00226, 'Arrass', 80, 00018, 00006);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00227, 'Erriss', 77, 00018, 00017);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00228, 'Frren', 77, 00018, 00028);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00229, 'Drrek', 77, 00018, 00039);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00230, 'Trrek', 77, 00018, 00040);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00231, 'Ragnarok', 81, 00019, 00011);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00232, 'Ronrok', 83, 00019, 00022);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00233, 'Manoth', 83, 00019, 00033);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00234, 'Dredik', 83, 00019, 00004);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00235, 'Fartok', 83, 00019, 00015);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00236, 'Ventok', 83, 00019, 00026);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00237, 'Zarnok', 83, 00019, 00037);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00238, 'Eek', 82, 00019, 00008);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00239, 'Yipe', 82, 00019, 00019);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00240, 'Aggy', 82, 00019, 00020);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00241, 'Zip', 82, 00019, 00001);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00242, 'Squeek', 82, 00019, 00012);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00243, 'Miff', 82, 00019, 00023);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00244, 'Treetop', 84, 00020, 00034);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00245, 'Trunk', 84, 00020, 00005);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00246, 'Glub', 86, 00020, 00016);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00247, 'Hoho', 86, 00020, 00027);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00248, 'Nan', 86, 00020, 00038);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00249, 'Kolo', 86, 00020, 00009);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00250, 'Ipan', 86, 00020, 00010);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00251, 'Yumyum', 86, 00020, 00021);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00252, 'Cookie', 86, 00020, 00032);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00253, 'Biscuit', 86, 00020, 00003);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00254, 'Boyo', 86, 00020, 00014);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00255, 'Pansie', 86, 00020, 00025);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00256, 'Kip', 86, 00020, 00036);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00257, 'Ugs', 86, 00020, 00007);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00258, 'Vic', 86, 00020, 00018);
+	Insert into Player(PlayerId, PlayerName, PositionId, TeamId, ManagerId)
+	Values(00259, 'Lon', 86, 00020, 00029);
+
+
+
+
+create view PlayerView As
+	select PlayerName, Position.Race, PositionName, TeamName, ManagerName from player, position, team, manager where player.teamid = team.teamid and player.managerid = manager.managerid and player.positionid = position.positionid order by player.playerid;
+
+create view TeamView As
+	select TeamName, Race, TeamColor1, TeamColor2 from Team order by TeamId;
+
+create view PositionView As
+	select Race, PositionName, Cost, Movement, Strength, Agility, ArmorValue from Position order by PositionId;
+
+create view Managerview As
+	select ManagerName, ManagerEmail, ManagerAccount from Manager order by ManagerId;
+
+
+
+
+
+Create or replace procedure deleteplayer(
+	targetplayer in number
+	) IS
+	BEGIN
+		delete from player where playerid = targetplayer;
+	END;
+	/
+
+Create or replace procedure changemanager(
+	targetplayer in number,
+	newmanager in number
+	) IS
+	BEGIN
+		update player set managerid = newmanager where playerid = targetplayer;
+	END;
+	/
+
+
+Create or replace procedure swapmanagers(
+	player1 in number,
+	player2 in number
+	) AS
+	manager1 int(5);
+	manager2 int(5);
+	cursor cursor1 is
+		select managerid from player where playerid = player1;
+	cursor cursor2 is
+		select managerid from player where playerid = player2;
+		
+	BEGIN
+		manager1 := 5;
+		manager2 := 5;
+		update player set managerid = manager2 where playerid = player1;
+		update player set managerid = manager1 where playerid = player2;
+	END;
+	/
+
+	
+
+
+Create or replace procedure changeteam(
+	targetplayer in number,
+	newteam in number
+	) IS
+	BEGIN
+		update player set teamid = newteam where playerid = targetplayer;
+	END;
+	/
+
+Create or replace procedure swapteams(
+	player1 in number,
+	player2 in number
+	) AS
+	team1 int(5);
+	team2 int(5);
+	cursor cursor1 is
+		select teamid from player where playerid = player1;
+	cursor cursor2 is
+		select teamid from player where playerid = player2;
+		
+	BEGIN
+		team1 := 5;
+		team2 := 5;
+		update player set teamid = team2 where playerid = player1;
+		update player set teamid = team1 where playerid = player2;
+	END;
+	/
+
+

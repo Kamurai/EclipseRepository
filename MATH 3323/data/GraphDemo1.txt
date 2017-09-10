@@ -1,0 +1,7 @@
+([AA, AB, AC, AD, AE, BA, BB, BC, BD, BE, CA, CB, CC, CD, CE], [(AA : AB)={AA,AB}, (AB : AC)={AB,AC}, (AC : AD)={AC,AD}, (AD : AE)={AD,AE}, (BA : BB)={BA,BB}, (BA : BC)={BA,BC}, (BA : BD)={BA,BD}, (BD : BE)={BD,BE}, (CA : CB)={CA,CB}, (CB : CC)={CB,CC}, (CB : CD)={CB,CD}, (CA : CE)={CA,CE}])
+The following is the connected component containing vertex AA
+[AC, AD, AA, AB, AE]
+The following is a list of all the connected components of this graph
+[AC, AD, AA, AB, AE]
+[BB, BC, BD, BE, BA]
+[CE, CC, CD, CB, CA]
