@@ -1,0 +1,25 @@
+package com.fdmgroup;
+
+//Concrete Command
+public class LightOffCommand implements Command
+{
+	//reference to the light
+	Light light;
+	public LightOffCommand(Light light)
+	{
+		this.light = light;
+	}
+
+	public void execute()
+	{
+		light.switchOff();
+	}
+
+	public void executeNumeric(int NumericInput) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+}

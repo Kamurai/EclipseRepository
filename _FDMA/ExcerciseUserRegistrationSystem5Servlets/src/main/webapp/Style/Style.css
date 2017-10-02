@@ -1,0 +1,35 @@
+@CHARSET "ISO-8859-1";
+
+
+body
+{
+	text-align: center;
+	vertical-align: center;
+	
+	background-image: url("../pictures/FDMGroup.jpg");
+	
+}
+
+#RegistrationForm
+{
+	margin: auto;
+	padding: auto;
+}
+
+#SuccessDisplay
+{
+	text-align: left;
+	display: inline-block;
+	
+	margin: auto;
+	padding: auto;
+}
+
+#ErrorDisplay
+{
+	text-align: left;
+	display: inline-block;
+	
+	margin: auto;
+	padding: auto;
+}

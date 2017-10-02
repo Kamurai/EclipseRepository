@@ -6,13 +6,6 @@ import java.util.Random;
 
 public class bracketgenerator 
 {
-
-	
-	
-	
-	
-	
-	
 	public static void main(String[] args) 
 	{
 		Random generator = new Random();

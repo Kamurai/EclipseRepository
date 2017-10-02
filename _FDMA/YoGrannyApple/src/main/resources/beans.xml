@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.1.xsd
+	http://www.springframework.org/schema/util
+	http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+
+	<!-- Bean declarations go here -->
+	
+	<bean id="mainCart" class="com.fdmgroup.appleGram.Cart">
+	
+	</bean>
+	
+	<bean id="iBean" class="com.fdmgroup.appleGram.InventoryBean">
+	</bean>
+	
+	<bean id="apple" class="com.fdmgroup.appleGram.Apple">
+		<constructor-arg index="0" name="productId" value="0"/>
+		<constructor-arg index="1" name="productName" value="Granny Smith"/>
+		<constructor-arg index="2" name="productPrice" value="1.25"/>
+		<constructor-arg index="3" name="productImgURL" value="www.test.com"/>
+	</bean>
+	
+	<bean id="granny" class="com.fdmgroup.appleGram.Apple">
+		<constructor-arg index="0" name="productId" value="1"/>
+		<constructor-arg index="1" name="productName" value="Golden Delicious"/>
+		<constructor-arg index="2" name="productPrice" value="1.25"/>
+		<constructor-arg index="3" name="productImgURL" value="www.test.com"/>
+	</bean>
+	
+
+</beans>

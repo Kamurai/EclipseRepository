@@ -1,0 +1,339 @@
+body {
+	min-height: 100%;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#inventory_table{
+	display: inline;
+	list-style-type: none;
+}
+
+/* #inventory_table li { */
+/* 	display: inline; */
+/* } */
+
+#inventory_table a {
+	text-decoration:none;
+	color: black;
+}
+
+#inventory_table a:hover {
+	text-decoration:none;
+}
+
+#inventory_table a:link {
+	text-decoration:none;
+}
+
+#inventory_table a:visited {
+	text-decoration:none;
+}
+
+#inventory_table img {
+	width: 150px;
+	height:100px;
+}
+#inventory_table li {
+	margin-left: auto;
+	margin-right: auto;
+	width: 60px;
+	border-color: teal;
+	padding: 30px;
+}
+
+.product_page {
+	
+}
+
+.product_page img{
+	float: left;
+	width: 300px;
+	height: 200px;
+}
+
+.banner {
+	border-bottom: YellowGreen;
+	width: 100%;
+	margin-top: 30px;
+	height: 30px;
+	padding: 10px;
+}
+
+#shoppingCart {
+	float: right;
+	color: black;
+}
+
+#shoppingCart:link {
+	color: black;
+}
+
+#shoppingCart:visited {
+	color: black;
+}
+
+#grannyLogo {
+	width: 100px;
+	height: 90px;
+	float: left;
+}
+
+#companyName {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 60px;
+	margin: 10px;
+	padding-left: 150;
+}
+
+.footer {
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	font-size: 18px;
+	color: YellowGreen;
+	margin: 10px;
+	height: 80px;
+	padding-top: 30px;
+	clear: both;
+}
+
+#footerR {
+	font-color: YellowGreen;
+	float: right;
+	margin-top: -30px;
+}
+
+#footerR a {
+	margin: 1px;
+	padding: 5px;
+}
+
+#footerR a:link {
+	color: YellowGreen;
+}
+
+#footerR a:visited {
+	color: YellowGreen;
+}
+
+/*-----------------Checkout.jsp----------------------*/
+
+#checkoutFormBorder{
+	
+	margin: auto;
+    height: 1000px;
+    width: 450px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+#enterText{
+	width: auto;
+    height: 50px;
+    font-family: "Comic Sans MS";
+    color: #000000;
+    font-size: 31px;
+}
+
+#checkOutForm{
+	border: 1px solid #666666;
+    border-radius: 12px;
+    height: 950px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+input[type=email], select {
+    width: 80%;
+    padding: 17px 55px;
+    margin: 10px 43px;
+    display: inline-block;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 23px;
+    margin-bottom: 0px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 17px;
+}
+
+input[type=text], select {
+    width: 80%;
+    padding: 17px 55px;
+    margin: 10px 43px;
+    display: inline-block;
+    border: 1px solid #666666;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 23px;
+    margin-bottom: 0px;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    font-size: 17px;
+}
+
+#shippingaddress{
+	width: auto;
+    height: 40px;
+    font-family: "Comic Sans MS";
+    color: #000000;
+    font-size: 25px;
+    padding-left:15px;
+    padding-top:15px;
+}
+
+#buttonregister{
+	background-color: #D2D4D8; 
+	font-family: "Comic Sans MS";
+    border: none;
+    border-radius: 12px;
+    color: #666666;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-flex;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#buttonDiv{
+	padding-left:282px;
+	padding-top:30px;
+}
+
+/*--------------------------Receipt.jsp----------------------*/
+
+#receiptBody{
+	min-height: 100%;
+	width: auto;
+	margin-left: 300px;
+	margin-right: 300px;
+}
+
+
+#receiptBorder{
+	border: 1px solid #666666;
+    border-radius: 20px;
+	margin: auto;
+    height: 400px;
+    width: 1000px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+#successText{
+	width: auto;
+    height: 50px;
+    font-family: "Comic Sans MS";
+    color: #000000;
+    font-size: 30px;
+    padding-left:180px;
+    padding-top:10px;
+}
+
+#orderDetails{
+	height: 350px;
+	width:auto;
+	font-family: "Comic Sans MS";
+	display: flex;
+	flex-direction:row;
+}
+
+#productDetails{
+	width: 50%;
+	height:auto;
+	display: flex;
+    flex-direction: column;
+}
+
+#product{
+	width:auto;
+	height:140px;
+	padding-left:70px;
+	padding-top:55px;
+}
+
+#cost{
+	padding-left:50px;
+	width:auto;
+	height:140px;
+}
+
+
+#copy{
+	width:auto;
+	height:60px;
+	padding-left:70px;
+}
+
+#address{
+	width: 50%;
+	height:auto;
+	display: flex;
+    flex-direction: column;
+}
+
+#shipText{
+	font-size: 20px;
+	height:30px;
+	width:auto;
+	padding-top:60px;
+	padding-left:60px;
+}
+
+#textColor{
+	color:#d60c0c;
+}
+
+#cusName{
+	width:auto;
+	height:25px;
+	padding-top:20px;
+	padding-left:150px;
+}
+
+#street{
+	width:auto;
+	height:25px;
+	padding-left:150px;
+}
+
+#city{
+	width:auto;
+	height:25px;
+	padding-left:150px;
+}
+
+#state{
+	width:auto;
+	height:25px;
+	padding-left:150px;
+}
+
+#country{
+	width:auto;
+	height:25px;
+	padding-left:150px;
+}
+
+#zip{
+	width:auto;
+	height:25px;
+	padding-left:150px;
+}
+
+#delivery{
+	width:auto;
+	height:30px;
+	padding-left:100px;
+	padding-top:15px;
+}
