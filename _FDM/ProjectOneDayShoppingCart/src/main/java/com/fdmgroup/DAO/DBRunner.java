@@ -1,13 +1,13 @@
 package com.fdmgroup.DAO;
 
-public class DBRunnerForDemo 
+public class DBRunner 
 {
 
 	public static void main(String[] args) 
 	{
 		DBSetup dBSetup = new DBSetup();
 		
-		boolean forDemo = true;
+		boolean forDemo = false;
 		
 		System.out.println("Tearing down that DB.");
 		dBSetup.tearDownDB();
@@ -18,7 +18,7 @@ public class DBRunnerForDemo
 		System.out.println("DB is set up.\n");
 		
 		System.out.println("Stubbing DB.");
-		dBSetup.stubDBwithDemo();
+		dBSetup.stubDB();
 		System.out.println("DB is stubbed.\n");
 		
 	}

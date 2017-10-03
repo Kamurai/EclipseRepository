@@ -1,0 +1,5 @@
+Run DBRunner as a Java Application before attempting any tests.
+
+For the DAO tests, you will need to run each test individually.
+
+For the CartRecordTest, you will need to test Add records first before running the other tests.
