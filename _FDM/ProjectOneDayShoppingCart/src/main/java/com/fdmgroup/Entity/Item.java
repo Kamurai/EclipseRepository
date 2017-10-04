@@ -2,6 +2,8 @@ package com.fdmgroup.Entity;
 
 import java.math.BigDecimal;
 
+import com.fdmgroup.Utility.Constant;
+
 public class Item 
 {
 	int id;
@@ -13,7 +15,7 @@ public class Item
 	//bean constructor
 	public Item() 
 	{
-		this.id = -1;
+		this.id = Constant.invalidId();
 		this.name = null;
 		this.quantityAvailable = -1;
 		this.price = new BigDecimal("0.00");
