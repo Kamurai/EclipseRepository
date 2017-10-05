@@ -10,79 +10,69 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fdmgroup.Entity.Item;
+import com.fdmgroup.Utility.Constant;
 
 import oracle.jdbc.OracleTypes;
 
-public class ItemDAO 
+public class ItemDAO extends DAO
 {
-	private DBInfo dBInfo;
-	private Connection connection ;
-	private CallableStatement callableStatement;
-	
 	public ItemDAO()
 	{
-		dBInfo = new DBInfo();
-		
-		try
-		{
-			DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
+		super();
 	}
 
-	public void addItem(Item item, int quantityAvailable) 
+	public void addItem(Item newItem, int quantityAvailable) 
 	{
-		int id = item.getId();
-		String name = item.getName();
-		BigDecimal price = item.getPrice();
-		String description = item.getDescription();
-		
-		String query = "{call ADD_ITEM(?,?,?,?)}";
-		
-		try
+		//restrict the parameter based on database requirements
+		if(newItem != Constant.emptyItem())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-
-			callableStatement.setString(1, name);
-			callableStatement.setInt(2, quantityAvailable);
-			callableStatement.setBigDecimal(3, price);
-			callableStatement.setString(4, description);
-
-			callableStatement.executeUpdate();
-
-			connection.close();
-
+			//restrict the parameter based on database requirements
+			if(quantityAvailable < Constant.minimumAmount())
+			{
+				quantityAvailable = Constant.minimumAmount();
+			}
+			String name = newItem.getName();
+			BigDecimal price = newItem.getPrice();
+			String description = newItem.getDescription();
+			
+			String query = "{call ADD_ITEM(?,?,?,?)}";
+			
+			try
+			{
+				dAOHelper.OpenConnection();
+			    
+				callableStatement = dAOHelper.getConnection().prepareCall(query);
+	
+				callableStatement.setString(1, name);
+				callableStatement.setInt(2, quantityAvailable);
+				callableStatement.setBigDecimal(3, price);
+				callableStatement.setString(4, description);
+	
+				callableStatement.executeUpdate();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
+			dAOHelper.CloseConnection();
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-
 	}
 	
 	public Item getItemByName(String targetName) 
 	{
+		//restrict the parameter based on database requirements
+		if(targetName == null)
+		{
+			return Constant.emptyItem();
+		}
 		Item result = null;
 		String query = "{call GET_ITEM_BY_NAME( ?,?,?,?,?,? )}";
 
 		try
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
+			dAOHelper.OpenConnection();
 		    
-	        callableStatement = connection.prepareCall(query);
+	        callableStatement = dAOHelper.getConnection().prepareCall(query);
 			
 	        callableStatement.setString(1, targetName);
 	        callableStatement.registerOutParameter(2, java.sql.Types.NUMERIC); //id number
@@ -90,7 +80,6 @@ public class ItemDAO
 	        callableStatement.registerOutParameter(4, java.sql.Types.NUMERIC); //QuantityAvailable number
 	        callableStatement.registerOutParameter(5, java.sql.Types.NUMERIC); //Price number
 	        callableStatement.registerOutParameter(6, java.sql.Types.VARCHAR); //Description varchar
-	        
 	        
 	        callableStatement.execute();
 	        
@@ -103,7 +92,7 @@ public class ItemDAO
 	        id = callableStatement.getInt(2);
 	        if( callableStatement.wasNull() )
 			{
-	        	id = -1;
+	        	id = Constant.invalidId();
 			}
 			name = callableStatement.getString(3);
 			quantityAvailable = callableStatement.getInt(4);
@@ -111,7 +100,7 @@ public class ItemDAO
 			description = callableStatement.getString(6);
 	        
 	        result = new Item(id, name, quantityAvailable, price, description);
-	        connection.close();
+	        dAOHelper.CloseConnection();
 		}  
 		catch(SQLException e)
 		{
@@ -123,17 +112,19 @@ public class ItemDAO
 	
 	public Item getItemById(int targetId) 
 	{
+		//restrict the parameter based on database requirements
+		if(targetId != Constant.invalidId())
+		{
+			return Constant.emptyItem();
+		}
 		Item result = null;
 		String query = "{call GET_ITEM_BY_ID( ?,?,?,?,?,? )}";
 
 		try
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
+			dAOHelper.OpenConnection();
 		    
-	        callableStatement = connection.prepareCall(query);
+	        callableStatement = dAOHelper.getConnection().prepareCall(query);
 			
 	        callableStatement.setInt(1, targetId);
 	        callableStatement.registerOutParameter(2, java.sql.Types.NUMERIC); //id number
@@ -153,7 +144,7 @@ public class ItemDAO
 	        id = callableStatement.getInt(2);
 	        if( callableStatement.wasNull() )
 			{
-	        	id = -1;
+	        	id = Constant.invalidId();
 			}
 			name = callableStatement.getString(3);
 			quantityAvailable = callableStatement.getInt(4);
@@ -161,7 +152,7 @@ public class ItemDAO
 			description = callableStatement.getString(6);
 	        
 	        result = new Item(id, name, quantityAvailable, price, description);
-	        connection.close();
+	        dAOHelper.CloseConnection();
 		}  
 		catch(SQLException e)
 		{
@@ -185,12 +176,9 @@ public class ItemDAO
         
         try
 	    {
-        	String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
+        	dAOHelper.OpenConnection();
 		    
-	        callableStatement = connection.prepareCall(query); //createStatement();
+	        callableStatement = dAOHelper.getConnection().prepareCall(query); //createStatement();
 	        
 	        callableStatement.registerOutParameter(1, OracleTypes.CURSOR);
 	        
@@ -203,7 +191,7 @@ public class ItemDAO
 	        	id = resultSet.getInt(1);
 	        	if( resultSet.wasNull() )
 				{
-	        		id = -1;
+	        		id = Constant.invalidId();
 				}
 	        	name = resultSet.getString(2);
 				quantityAvailable = resultSet.getInt(3);
@@ -213,7 +201,7 @@ public class ItemDAO
 		        result.add( new Item(id, name, quantityAvailable, price, description) );
 	        }
 	        
-            connection.close();
+            dAOHelper.CloseConnection();
 	    }
 	    catch(SQLException e)
 	    {
@@ -225,69 +213,64 @@ public class ItemDAO
 	
 	public void updateItem(Item newItem) 
 	{
-		int id = newItem.getId();
-        String name = newItem.getName();
-		int quantityAvailable = newItem.getQuantityAvailable();
-        BigDecimal price = newItem.getPrice();
-		String description = newItem.getDescription();
-		
-		String query = "{call UPDATE_ITEM ( ?, ?, ?, ?, ? )}";
-
-		try
+		//restrict the parameter based on database requirements
+		if(newItem != Constant.emptyItem())
 		{
+			int id = newItem.getId();
+	        String name = newItem.getName();
+			int quantityAvailable = newItem.getQuantityAvailable();
+	        BigDecimal price = newItem.getPrice();
+			String description = newItem.getDescription();
+			
+			String query = "{call UPDATE_ITEM ( ?, ?, ?, ?, ? )}";
 
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
+			try
+			{
+				dAOHelper.OpenConnection();
+			    
+				callableStatement = dAOHelper.getConnection().prepareCall(query);
 
-			if( id == -1)
-				callableStatement.setNull(1, java.sql.Types.NUMERIC);
-			else
-				callableStatement.setInt(1, id);
-			callableStatement.setString(2, name);
-			callableStatement.setInt(3, quantityAvailable);
-			callableStatement.setBigDecimal(4, price);
-			callableStatement.setString(5, description);
+				if( id == Constant.invalidId())
+					callableStatement.setNull(1, java.sql.Types.NUMERIC);
+				else
+					callableStatement.setInt(1, id);
+				callableStatement.setString(2, name);
+				callableStatement.setInt(3, quantityAvailable);
+				callableStatement.setBigDecimal(4, price);
+				callableStatement.setString(5, description);
 
-			callableStatement.executeUpdate();
+				callableStatement.executeUpdate();
 
-			connection.close();
+				dAOHelper.CloseConnection();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-
 	}
 	
 	public void removeItem(int targetId) 
 	{
-		String query = "{call REMOVE_ITEM( ? )}";
-
-		try
+		//restrict the parameter based on database requirements
+		if(targetId != Constant.invalidId())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-			
-			callableStatement.setInt(1, targetId);
-
-			callableStatement.execute();
-
-			connection.close();
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
+			String query = "{call REMOVE_ITEM( ? )}";
+	
+			try
+			{
+				callableStatement = dAOHelper.getConnection().prepareCall(query);
+				
+				callableStatement.setInt(1, targetId);
+	
+				callableStatement.execute();
+	
+				dAOHelper.CloseConnection();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
 	}
-
 }

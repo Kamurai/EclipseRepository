@@ -11,11 +11,6 @@ public class DBInfo
 		url = "jdbc:oracle:thin:@localhost:1521:XE";
 		username = "trainee1";
 		password = "!QAZSE4";
-		
-		
-		
-		//username = "kamurai";
-		//password = "yellow23";
 	}
 
 	public String getUrl() {

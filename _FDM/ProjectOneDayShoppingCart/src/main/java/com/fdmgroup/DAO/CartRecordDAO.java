@@ -11,84 +11,88 @@ import java.util.List;
 
 import com.fdmgroup.Entity.CartRecord;
 import com.fdmgroup.Entity.Item;
+import com.fdmgroup.Utility.Constant;
 
 import oracle.jdbc.OracleTypes;
 
-public class CartRecordDAO 
+public class CartRecordDAO extends DAO
 {
-	private DBInfo dBInfo;
-	private Connection connection ;
-	private CallableStatement callableStatement;
 	
 	public CartRecordDAO()
 	{
-		dBInfo = new DBInfo();
-		
-		try
-		{
-			DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
+		super();
 	}
 	
-	public void addRecord(CartRecord record) 
+	public boolean addRecord(CartRecord newRecord) 
 	{
-		int cartId = record.getCartId();
-		int itemId = record.getItem().getId();
-		int quantityRequested = record.getQuantityRequested();
-		
-		String query = "{call ADD_RECORD(?,?,?)}";
-		
-		try
+		boolean result = false;
+		//restrict the parameter based on database requirements
+		if(newRecord != Constant.emptyRecord())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-
-			callableStatement.setInt(1, cartId);
-			callableStatement.setInt(2, itemId);
-			callableStatement.setInt(3, quantityRequested);
+			int cartId = newRecord.getCartId();
+			int itemId = newRecord.getItem().getId();
+			int quantityRequested = newRecord.getQuantityRequested();
 			
-			callableStatement.executeUpdate();
-
-			connection.close();
-
+			String query = "{call ADD_RECORD(?,?,?)}";
+			
+			try
+			{
+				dAOHelper.OpenConnection();
+			    callableStatement = dAOHelper.getConnection().prepareCall(query);
+	
+				callableStatement.setInt(1, cartId);
+				callableStatement.setInt(2, itemId);
+				callableStatement.setInt(3, quantityRequested);
+				
+				callableStatement.executeUpdate();
+	
+				dAOHelper.CloseConnection();
+				
+				result = true; //Adding record was successful
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+				result = false; //Adding record was unsuccessful
+			}
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-
+		
+		return result;
 	}
 	
-	public void addRecords(List<CartRecord> recordList)
+	public boolean addRecords(List<CartRecord> recordList)
 	{
+		boolean result = true;
+		
 		for(int x = 0; x < recordList.size(); x++)
 		{
-			addRecord(recordList.get(x));
+			if(result)
+			{
+				result = addRecord(recordList.get(x));
+			}
+			else
+			{
+				addRecord(recordList.get(x));
+			}
 		}
+		
+		return result;
 	}
 	
 	public CartRecord getRecordById(int targetId) 
 	{
+		//restrict the parameter based on database requirements
+		if(targetId < Constant.invalidId())
+		{
+			return Constant.emptyRecord();
+		}
 		CartRecord result = null;
 		String query = "{call GET_RECORD_BY_ID( ?,?,?,?,?,?,?,?,? )}";
 
 		try
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-	        callableStatement = connection.prepareCall(query);
+			dAOHelper.OpenConnection();
+		    callableStatement = dAOHelper.getConnection().prepareCall(query);
 			
 	        callableStatement.setInt(1, targetId);
 	        callableStatement.registerOutParameter(2, java.sql.Types.NUMERIC); //id number
@@ -135,7 +139,7 @@ public class CartRecordDAO
 			Item item = new Item(itemId, itemName, quantityAvailable, price, description);
 			
 	        result = new CartRecord(id, cartId, item, quantityRequested);
-	        connection.close();
+	        dAOHelper.CloseConnection();
 		}  
 		catch(SQLException e)
 		{
@@ -164,12 +168,8 @@ public class CartRecordDAO
 	    
         try
 	    {
-        	String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-	        callableStatement = connection.prepareCall(query); //createStatement();
+        	dAOHelper.OpenConnection();
+		    callableStatement = dAOHelper.getConnection().prepareCall(query); //createStatement();
 	        
 	        callableStatement.registerOutParameter(1, OracleTypes.CURSOR);
 	        
@@ -206,7 +206,7 @@ public class CartRecordDAO
 		        result.add( new CartRecord(id, cartId, item, quantityRequested) );
 	        }
 	        
-            connection.close();
+            dAOHelper.CloseConnection();
 	    }
 	    catch(SQLException e)
 	    {
@@ -219,7 +219,12 @@ public class CartRecordDAO
 	public List<CartRecord> getRecordsByCartId(int targetId) 
 	{
 		List<CartRecord> result = new ArrayList<CartRecord>();
-	    ResultSet resultSet;
+	    //restrict the parameter based on database requirements
+		if(targetId < Constant.invalidId())
+		{
+			return result;
+		}
+		ResultSet resultSet;
 	    
 	    String query = "{call GET_RECORDS_BY_CARTID( ?,? )}";
 	    int id;
@@ -235,12 +240,8 @@ public class CartRecordDAO
 	    
         try
 	    {
-        	String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-	        callableStatement = connection.prepareCall(query); //createStatement();
+        	dAOHelper.OpenConnection();
+		    callableStatement = dAOHelper.getConnection().prepareCall(query); //createStatement();
 	        
 	        callableStatement.setInt(1, targetId);
 	        callableStatement.registerOutParameter(2, OracleTypes.CURSOR);
@@ -278,7 +279,7 @@ public class CartRecordDAO
 		        result.add( new CartRecord(id, cartId, item, quantityRequested) );
 	        }
 	        
-            connection.close();
+            dAOHelper.CloseConnection();
 	    }
 	    catch(SQLException e)
 	    {
@@ -290,98 +291,110 @@ public class CartRecordDAO
 	
 	public void updateRecord(CartRecord newRecord) 
 	{
-		int id = newRecord.getId();
-		int cartId = newRecord.getCartId();
-		int itemId = newRecord.getItem().getId();
-        int quantityRequested = newRecord.getQuantityRequested();
-		
-		String query = "{call UPDATE_RECORD ( ?,?,?,? )}";
-
-		try
+		//restrict the parameter based on database requirements
+		if(newRecord != Constant.emptyRecord())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-
-			if( id == -1)
-				callableStatement.setNull(1, java.sql.Types.NUMERIC);
-			else
-				callableStatement.setInt(1, id);
-			if( id == -1)
-				callableStatement.setNull(2, java.sql.Types.NUMERIC);
-			else
-				callableStatement.setInt(2, cartId);
-			if( id == -1)
-				callableStatement.setNull(3, java.sql.Types.NUMERIC);
-			else
-				callableStatement.setInt(3, itemId);
-				callableStatement.setInt(4, quantityRequested);
+			int id = newRecord.getId();
+			int cartId = newRecord.getCartId();
+			int itemId = newRecord.getItem().getId();
+	        int quantityRequested = newRecord.getQuantityRequested();
 			
-			callableStatement.executeUpdate();
-
-			connection.close();
+			String query = "{call UPDATE_RECORD ( ?,?,?,? )}";
+	
+			try
+			{
+				dAOHelper.OpenConnection();
+			    callableStatement = dAOHelper.getConnection().prepareCall(query);
+	
+				if( id == -1)
+					callableStatement.setNull(1, java.sql.Types.NUMERIC);
+				else
+					callableStatement.setInt(1, id);
+				if( id == -1)
+					callableStatement.setNull(2, java.sql.Types.NUMERIC);
+				else
+					callableStatement.setInt(2, cartId);
+				if( id == -1)
+					callableStatement.setNull(3, java.sql.Types.NUMERIC);
+				else
+					callableStatement.setInt(3, itemId);
+					callableStatement.setInt(4, quantityRequested);
+				
+				callableStatement.executeUpdate();
+	
+				dAOHelper.CloseConnection();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-
+		
 	}
 	
 	public void removeRecord(int targetId) 
 	{
-		String query = "{call REMOVE_RECORD( ? )}";
-
-		try
+		//restrict the parameter based on database requirements
+		if(targetId != Constant.invalidId())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-			
-			callableStatement.setInt(1, targetId);
+			String query = "{call REMOVE_RECORD( ? )}";
 
-			callableStatement.execute();
+			try
+			{
+				dAOHelper.OpenConnection();
+			    callableStatement = dAOHelper.getConnection().prepareCall(query);
+				
+				callableStatement.setInt(1, targetId);
 
-			connection.close();
+				callableStatement.execute();
+
+				dAOHelper.CloseConnection();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
+		
 	}
 	
 	public void removeRecordsByCartId(int targetId) 
 	{
-		String query = "{call REMOVE_RECORDS_BY_CARTID( ? )}";
-
-		try
+		//restrict the parameter based on database requirements
+		if(targetId != Constant.invalidId())
 		{
-			String dBurl = dBInfo.getUrl();
-	        String dBusername = dBInfo.getUsername();
-	        String dBpassword = dBInfo.getPassword();
-	        
-	        connection = DriverManager.getConnection(dBurl, dBusername, dBpassword);
-		    
-			callableStatement = connection.prepareCall(query);
-			
-			callableStatement.setInt(1, targetId);
+			String query = "{call REMOVE_RECORDS_BY_CARTID( ? )}";
 
-			callableStatement.execute();
-
-			connection.close();
+			try
+			{
+				dAOHelper.OpenConnection();
+			    callableStatement = dAOHelper.getConnection().prepareCall(query);
+				
+				callableStatement.setInt(1, targetId);
+	
+				callableStatement.execute();
+	
+				dAOHelper.CloseConnection();
+			}
+			catch(SQLException e)
+			{
+				e.printStackTrace();
+			}
 		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
+	}
+	
+	public int determineLowestAvailableCartId()
+	{
+		/*
+		 * to do: 
+		 * this should make a call to the database
+		 * which returns a list of distinct cartIds
+		 * from CartRecords
+		 * 
+		 * from that list, the lowest non used index
+		 * can be determine and returned
+		 */
+		return 0;
 	}
 	
 }

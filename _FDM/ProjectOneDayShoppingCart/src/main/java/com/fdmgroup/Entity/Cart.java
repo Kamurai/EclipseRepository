@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.fdmgroup.DAO.CartRecordDAO;
+import com.fdmgroup.Utility.Constant;
 
 public class Cart 
 {
@@ -14,7 +15,7 @@ public class Cart
 	//bean constructor
 	public Cart()
 	{
-		this.id = -1;
+		this.id = Constant.invalidId();
 		this.recordList = new ArrayList<CartRecord>();
 		this.cartRecordDAO = new CartRecordDAO();
 	}
@@ -22,12 +23,12 @@ public class Cart
 	//new constructor
 	public Cart(List<CartRecord> recordList)
 	{
-		this.id = -1;
+		this.id = Constant.invalidId();
 		this.recordList = recordList;
 		this.cartRecordDAO = new CartRecordDAO();
 	}
 	
-	//new constructor, empty List
+	//existing constructor, empty List
 	public Cart(int id)
 	{
 		this.id = restrictId(id);
@@ -47,8 +48,8 @@ public class Cart
 	{
 		int result = id;
 		
-		if(result < -1)
-			result = -1;
+		if(result < Constant.invalidId())
+			result = Constant.invalidId();
 		
 		return result;
 	}
@@ -74,6 +75,24 @@ public class Cart
 		recordList.add(record);
 	}
 	
-	
+	public CartRecord getRecordById(int targetId)
+	{
+		CartRecord result = Constant.emptyRecord();
+		//restrict parameter by database requirements
+		if(targetId <= Constant.invalidId())
+		{
+			return result;
+		}
+		
+		for(int x = 0; x < recordList.size(); x++)
+		{
+			if(recordList.get(x).getItem().getId() == targetId)
+			{
+				result = recordList.get(x);
+			}
+		}
+		
+		return result;
+	}
 	
 }

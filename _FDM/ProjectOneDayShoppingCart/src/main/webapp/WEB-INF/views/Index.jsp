@@ -7,29 +7,33 @@
 <title>Cart Page</title>
 </head>
 <body>
-	<table>
-		<c:forEach var=x begin="0" end="${ il.getSize()-1 }" varStatus="il">
-		    <tr>
-		    	<td>
-		    		${x+1}
-		    	</td>
-		    	<td>
-		    		${il.get(x).name}
-		    	</td>
-		    	<td>
-		    		${cart.getQuantityRequestedByItemId(il.get(x).id)}
-		    	</td>
-		    	<td>
-		    		${il.get(x).quantityAvailable}
-		    	</td>
-		    	<td>
-		    		$${il.get(x).price}
-		    	</td>
-		    	<td>
-		    		${il.get(x).description}
-		    	</td>
-		    </tr>
-		</c:forEach>
-	</table>
+	<form action="updateCart" method="POST">
+		<table>
+			<c:forEach var="x" begin="0" end="${ il.size()-1 }" varStatus="item">
+			    <tr>
+			    	<td>
+			    		<c:out value="${x+1}" />
+			    	</td>
+			    	<td>
+			    		<c:out value="${il[x].name}" />
+			    	</td>
+			    	<td>
+			    		<input name="${il[x].name}" type="number" min="0" max="${il[x].quantityAvailable}" value="${cart.getRecordById(il[x].id).quantityRequested}"/>
+			    	</td>
+			    	<td>
+			    		<c:out value="${il[x].quantityAvailable}" />
+			    	</td>
+			    	<td>
+			    		$<c:out value="${il[x].price}" />
+			    	</td>
+			    	<td>
+			    		<c:out value="${il[x].description}" />
+			    	</td>
+			    </tr>
+			</c:forEach>
+		</table>
+		
+		<input type="submit" value="Update Cart" />
+	</form>
 </body>
 </html>

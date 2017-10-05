@@ -7,7 +7,7 @@
 <title>Success!</title>
 </head>
 <body>
-	${ errorBean.getErrorMessage() }
-	<a href="/Index">Click here to return to cart.</a>
+	${ messageBean.getMessage() }
+	<a href="Index">Click here to return to cart.</a>
 </body>
 </html>

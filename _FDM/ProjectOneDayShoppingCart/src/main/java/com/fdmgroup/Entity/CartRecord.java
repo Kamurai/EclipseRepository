@@ -2,6 +2,8 @@ package com.fdmgroup.Entity;
 
 import java.math.BigDecimal;
 
+import com.fdmgroup.Utility.Constant;
+
 public class CartRecord 
 {
 	int id;
@@ -13,16 +15,16 @@ public class CartRecord
 	//bean constructor
 	public CartRecord() 
 	{
-		this.id = -1;
-		this.cartId = -1;
+		this.id = Constant.invalidId();
+		this.cartId = Constant.invalidId();
 		this.item = new Item();
-		this.quantityRequested = -1;
+		this.quantityRequested = Constant.minimumAmount();
 	}
 	
 	//new constructor
 	public CartRecord(int cartId, Item item, int quantityRequested) 
 	{
-		this.id = -1;
+		this.id = Constant.invalidId();
 		this.cartId = restrictCartId(cartId);
 		this.item = item;
 		this.quantityRequested = restrictQuantityRequested(quantityRequested);
@@ -41,8 +43,8 @@ public class CartRecord
 	{
 		int result = id;
 		
-		if(result < -1)
-			result = -1;
+		if(result < Constant.invalidId())
+			result = Constant.invalidId();
 		
 		return result;
 	}
@@ -51,8 +53,8 @@ public class CartRecord
 	{
 		int result = cartId;
 		
-		if(result < -1)
-			result = -1;
+		if(result < Constant.invalidId())
+			result = Constant.invalidId();
 		
 		return result;
 	}
@@ -61,8 +63,8 @@ public class CartRecord
 	{
 		int result = quantityRequested;
 		
-		if(result < 0)
-			result = 0;
+		if(result < Constant.minimumAmount())
+			result = Constant.minimumAmount();
 		
 		return result;
 	}

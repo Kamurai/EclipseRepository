@@ -17,15 +17,15 @@ public class Item
 	{
 		this.id = Constant.invalidId();
 		this.name = null;
-		this.quantityAvailable = -1;
-		this.price = new BigDecimal("0.00");
+		this.quantityAvailable = Constant.invalidId();
+		this.price = Constant.minimumDollar();
 		this.description = null;
 	}
 	
 	//new constructor
 	public Item(String name, int quantityAvailable, BigDecimal price, String description) 
 	{
-		this.id = -1;
+		this.id = Constant.invalidId();
 		this.name = restrictName(name);
 		this.quantityAvailable = restrictQuantityAvailable(quantityAvailable);
 		this.price = restrictPrice(price);;
@@ -46,8 +46,8 @@ public class Item
 	{
 		int result = id;
 		
-		if(result < -1)
-			result = -1;
+		if(result < Constant.invalidId())
+			result = Constant.invalidId();
 		
 		return result;
 	}
@@ -56,8 +56,8 @@ public class Item
 	{
 		String result = name;
 		
-		if(result.length() > 30)
-			result = result.substring(0, 30);
+		if(result.length() > Constant.maximumShortString())
+			result = result.substring(0, Constant.maximumShortString());
 		
 		return result;
 	}
@@ -66,8 +66,8 @@ public class Item
 	{
 		int result = quantityAvailable;
 		
-		if(result < 0)
-			result = 0;
+		if(result < Constant.minimumAmount())
+			result = Constant.minimumAmount();
 		
 		return result;
 	}
@@ -76,8 +76,8 @@ public class Item
 	{
 		BigDecimal result = price;
 		
-		if(result.doubleValue() < 0)
-			result = new BigDecimal("0.00");
+		if(result.doubleValue() < Constant.minimumDollar().doubleValue())
+			result = Constant.minimumDollar();
 		
 		return result;
 	}
@@ -86,8 +86,8 @@ public class Item
 	{
 		String result = description;
 		
-		if(result.length() > 300)
-			result = result.substring(0, 300);
+		if(result.length() > Constant.maximumDescription())
+			result = result.substring(0, Constant.maximumDescription());
 		
 		return result;
 	}
