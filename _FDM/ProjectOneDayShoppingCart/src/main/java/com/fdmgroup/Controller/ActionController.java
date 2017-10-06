@@ -30,7 +30,7 @@ import com.fdmgroup.Utility.SessionUtility;
 public class ActionController 
 {
 	@RequestMapping(value="/updateCart") //to do: make Post
-	public String navigateToRoot(HttpServletRequest request, HttpSession session, Model model, @RequestParam Map<String, Integer> allRequestParams)
+	public String navigateToRoot(HttpServletRequest request, HttpSession session, Model model, @RequestParam Map<String, String> allRequestParams)
 	{
 		Cart cart = SessionUtility.getSessionCart(session);
 		CartRecordDAO cartRecordDAO = new CartRecordDAO();
@@ -53,10 +53,11 @@ public class ActionController
 		for(int x = 0; x < itemList.size(); x++)
 		{
 			//if requestQuantity isn't 0
+			System.out.println("Item by Name " + itemList.get(x).getName());
 			System.out.println("Quantity by Name " + allRequestParams.get(itemList.get(x).getName()));
-			if(allRequestParams.get(itemList.get(x).getName()) != 0)
+			if( Integer.parseInt(allRequestParams.get(itemList.get(x).getName())) != 0)
 			{
-				//cart.addRecord(  new CartRecord( cart.getId(), itemList.get(x), allRequestParams.get(itemList.get(x).getName()) ) );
+				cart.addRecord(  new CartRecord( cart.getId(), itemList.get(x), Integer.parseInt(allRequestParams.get(itemList.get(x).getName())) ) );
 			}
 			
 		}
