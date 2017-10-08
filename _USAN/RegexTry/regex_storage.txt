@@ -1,2 +1,0 @@
-PLR_E_Application_Goodyear
-PLR_[ESF]_.*_.*
