@@ -1,23 +1,23 @@
 package section2.section5.section4;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
-    main.Universal universal;
+    main.Universal vUniversal;
 
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Elvia";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Nine Card";
             }
@@ -26,15 +26,15 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Elvia";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "Nine Card";
         }
@@ -43,17 +43,17 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Here are projects based in the Elvia Empire:</br>";
                 Result += "</br>";
                 Result += "Nine Card: a Tactical card game played through the Elvia Empire.</br>";
            }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Nine Card is a Tactical card game played through the Elvia Empire.</br>";
             }
@@ -62,10 +62,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section4/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section4/Index.php\">PHP</a><br/>";
@@ -85,7 +85,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section2/Section5/Section4/Index\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section2/Section5/Section4/Index\">Ruby on Rails</a><br/>";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section4/Project1.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section4/Project1.php\">PHP</a><br/>";

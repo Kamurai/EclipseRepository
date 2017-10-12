@@ -3,7 +3,7 @@ package section1.section6;
 import main.*;
 import dataMethods.*;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
     DerbyMethod dMethod;
     MySQLMethod mMethod;
@@ -24,31 +24,31 @@ public class Custom extends master.Custom
         sMethod = new SQLServerMethod();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Database Programming";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Oracle Programming";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "Derby Programming";
             }
-            else if(input == 3)
+            else if(vPage == 3)
             {
                 Result += "MySQL Programming";
             }
-            else if(input == 4)
+            else if(vPage == 4)
             {
                 Result += "SQL Server Programming";
             }
-            else if(input == 5)
+            else if(vPage == 5)
             {
                 Result += "Postgres Programming";
             }
@@ -57,31 +57,31 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Database Programming";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "Oracle Programming";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "Derby Programming";
         }
-        else if(input == 3)
+        else if(vPage == 3)
         {
             Result += "MySQL Programming";
         }
-        else if(input == 4)
+        else if(vPage == 4)
         {
             Result += "SQL Server Programming";
         }
-        else if(input == 5)
+        else if(vPage == 5)
         {
             Result += "Postgres Programming";
         }
@@ -90,15 +90,15 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "This section is dedicated to database based programming.";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "This section is dedicated to Oracle based programming.";
                 Result += "<table>";
@@ -176,7 +176,7 @@ public class Custom extends master.Custom
                     Result += "</tr>";
                 Result += "</table>";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "This section is dedicated to Derby based programming.";
                 Result += "<table>";
@@ -255,7 +255,7 @@ public class Custom extends master.Custom
                     
                 Result += "</table>";
             }
-            else if(input == 3)
+            else if(vPage == 3)
             {
                 Result += "This section is dedicated to MySQL based programming.";
                 Result += "<table>";
@@ -333,7 +333,7 @@ public class Custom extends master.Custom
                     
                 Result += "</table>";
             }
-            else if(input == 4)
+            else if(vPage == 4)
             {
                 Result += "This section is dedicated to SQL Server based programming.";
                 Result += "<table>";
@@ -501,7 +501,7 @@ public class Custom extends master.Custom
                     
                 Result += "</table>";
             }
-            else if(input == 5)
+            else if(vPage == 5)
             {
                 Result += "This section is dedicated to Postgres based programming.";
                 Result += "<table>";
@@ -585,10 +585,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Index.php\">PHP</a><br/>";
@@ -608,7 +608,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section6/Index\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section6/Index\">Ruby on Rails</a><br/>";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project1.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project1.php\">PHP</a><br/>";
@@ -628,7 +628,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section6/Project1\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section6/Project1\">Ruby on Rails</a><br/>";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project2.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project2.php\">PHP</a><br/>";
@@ -648,7 +648,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section6/Project2\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section6/Project2\">Ruby on Rails</a><br/>";
         }
-        else if(input == 3)
+        else if(vPage == 3)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project3.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project3.php\">PHP</a><br/>";
@@ -668,7 +668,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section6/Project3\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section6/Project3\">Ruby on Rails</a><br/>";
         }
-        else if(input == 4)
+        else if(vPage == 4)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project4.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project4.php\">PHP</a><br/>";
@@ -688,7 +688,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section6/Project4\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section6/Project4\">Ruby on Rails</a><br/>";
         }
-        else if(input == 5)
+        else if(vPage == 5)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project5.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section6/Project5.php\">PHP</a><br/>";

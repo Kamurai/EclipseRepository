@@ -1,26 +1,26 @@
 package section2.section5.section2;
 
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Grendol";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Land of the Orcish Empire: Age of Magic";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "Coliseum: Arena";
             }
@@ -29,19 +29,19 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Grendol";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "Land of the Orcish Empire: Age of Magic";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "Coliseum: Arena";
         }
@@ -50,11 +50,11 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Here are projects based in the Grendol Empire:</br>";
                 Result += "</br>";
@@ -62,12 +62,12 @@ public class Custom extends master.Custom
                 Result += "comprise the Grendol Empire.</br>";
                 Result += "Coliseum: Arena: a CCG representing the gladitorial arenas of Grendol.</br>";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Land of the Orcish Empire: Age of Magic: is a CCG based on the different factions that ";
                 Result += "comprise the Grendol Empire.";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "Coliseum: Arena is a CCG representing the gladitorial arenas of Grendol.";
             }
@@ -76,10 +76,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Index.php\">PHP</a><br/>";
@@ -99,7 +99,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section2/Section5/Section2/Index\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section2/Section5/Section2/Index\">Ruby on Rails</a><br/>";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Project1.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Project1.php\">PHP</a><br/>";
@@ -119,7 +119,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section2/Section5/Section2/Project1\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section2/Section5/Section2/Project1\">Ruby on Rails</a><br/>";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Project2.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section2/Project2.php\">PHP</a><br/>";

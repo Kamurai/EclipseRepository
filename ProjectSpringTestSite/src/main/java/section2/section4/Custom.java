@@ -2,28 +2,28 @@ package section2.section4;
 
 import section2.*;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
-    main.Universal universal;
+    main.Universal vUniversal;
 
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Renley";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Warring Nations";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "Psychodom: The One Empire";
             }
@@ -31,19 +31,19 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Renley";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "Warring Nations";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "Psychodom: The One Empire";
         }
@@ -52,20 +52,20 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "This section is dedicated to projects centered in the Renley universe.";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Warring Nations is a Tactical RPG involving squad based battles.";
                 Result += "Characters advance classes based on their weapon proficiencies and/or currently equipped weapons.";
             }
-            else if(input == 2)
+            else if(vPage == 2)
             {
                 Result += "Psychodom: The One Empire is a 3rd person perspective Adventure / RPG.";
                 Result += "The protagonist is tasked with investigating various situations leading ";
@@ -76,10 +76,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Index.php\">PHP</a><br/>";
@@ -99,7 +99,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section2/Section4/Index\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section2/Section4/Index\">Ruby on Rails</a><br/>";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Project1.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Project1.php\">PHP</a><br/>";
@@ -119,7 +119,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section2/Section4/Project1\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section2/Section4/Project1\">Ruby on Rails</a><br/>";
         }
-        else if(input == 2)
+        else if(vPage == 2)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Project2.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section4/Project2.php\">PHP</a><br/>";

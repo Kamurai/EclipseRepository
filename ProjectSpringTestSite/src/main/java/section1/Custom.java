@@ -1,17 +1,17 @@
 package section1;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Web Programming";
             }
@@ -19,11 +19,11 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Web Programming";
         }
@@ -31,11 +31,11 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "This section is dedicated to web-based programming.";
             }
@@ -43,10 +43,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Index.php\">PHP</a><br/>";

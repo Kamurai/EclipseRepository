@@ -1,36 +1,36 @@
 package section3;
 
-public class Layout extends master.Layout
+public class Layout extends main.Layout
 {
-    public Layout(Custom custom)
+    public Layout(Custom vCustom)
     {
-        super(custom);
+        super(vCustom);
     }
 
-    public String Navigation(int level, int extension)
+    public String Navigation(int vLevel)
     {
         String Result = "";
-        Result += "<a class=\"navlinkA\" href='"+universal.GetPath(level)+"Section3/Project1'>Online Experience Downloads</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+universal.GetPath(level)+"Section3/Project2'>Game Maker Downloads</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+universal.GetPath(level)+"Section3/Project3'>Java Downloads</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+universal.GetPath(level)+"Section3/Project4'>C# Downloads</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+universal.GetPath(level)+"Section3/Project5'>C++ Downloads</a><br/><br/>";
+        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Section3/Project1'>Online Experience Downloads</a><br/><br/>";
+        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Section3/Project2'>Game Maker Downloads</a><br/><br/>";
+        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Section3/Project3'>Java Downloads</a><br/><br/>";
+        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Section3/Project4'>C# Downloads</a><br/><br/>";
+        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Section3/Project5'>C++ Downloads</a><br/><br/>";
         return Result;
     }
 
-    public String WriteWebpage(int input, int level, int extension)
+    public String WriteWebpage(int vPage, int vLevel)
     {
         String Result = "";
         Result += "<body id=\"idBody\">";
             Result += "<table id=\"idTableMain\">";
                 Result += "<tr id=\"idHeaderRow\">";
                     Result += "<td id=\"idHeaderRowCenter\" colspan=\"3\">";
-                        Result += universal.TitlePicture(level);
+                        Result += vUniversal.TitlePicture(vLevel);
                     Result += "</td>";
                 Result += "</tr>";
                 Result += "<tr id=\"idNavigationRow\">";
                     Result += "<td id=\"idNavigationBar\" colspan=\"3\">";
-                        Result += universal.NavBar(level, extension);
+                        Result += vUniversal.NavBar(vLevel);
                     Result += "</td>";
                 Result += "</tr>";
                 Result += "<tr id=\"idCenterRow\">";
@@ -38,28 +38,28 @@ public class Layout extends master.Layout
                         Result += "<h4>";
                             Result += "Navigation";
                         Result += "</h4>";
-                        Result += Navigation(level, extension);
+                        Result += Navigation(vLevel);
                     Result += "</td>";
                     Result += "<td id=\"idCenterRowMain\">";
-                        Result += custom.Title(input);
-                        Result += custom.Header(input);
-                        Result += custom.Content(input);
+                        Result += vCustom.Title(vPage);
+                        Result += vCustom.Header(vPage);
+                        Result += vCustom.Content(vPage);
                     Result += "</td>";
                     Result += "<td id=\"idCenterRowRight\">";
                         Result += "<h4>";
                             Result += "Information";
                         Result += "</h4>";
-                        Result += universal.Information();
-                        Result += custom.Versions(input);
+                        Result += vUniversal.Information();
+                        Result += vCustom.Versions(vPage);
                     Result += "</td>";
                 Result += "</tr>";
                 Result += "<tr id=\"idFooterRow\">";
                     Result += "<td id=\"idFooterMain\" colspan=\"3\">";
                             Result += "<p id=\"idFooterContent\">";
-                                Result += universal.Footer();
+                                Result += vUniversal.Footer();
                             Result += "</p>";
                             Result += "<p id=\"idFooterContent\">";
-                                    Result += universal.WebMaster();
+                                    Result += vUniversal.WebMaster();
                             Result += "</p>";
                     Result += "</td>";
                 Result += "</tr>";

@@ -1,21 +1,21 @@
 package section2.section5.section3;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Utopia";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Elemental Angels";
             }
@@ -24,15 +24,15 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Utopia";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "Elemental Angels";
         }
@@ -41,17 +41,17 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Here are projects based in the Utopia Nation:</br>";
                 Result += "</br>";
                 Result += "Elemental Angels: An adventure game with RPG elements based in the Avia Nation.</br>";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "Elemental Angels: Adventure game with RPG elements based in the Avia Nation.</br>";
             }
@@ -60,10 +60,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section3/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Section3/Index.php\">PHP</a><br/>";

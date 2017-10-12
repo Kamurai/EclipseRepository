@@ -341,6 +341,20 @@ public class NavigationController
 		return "Section3/Project5";
 	}
 	
+	@RequestMapping(value="")
+	public String navigateToMainByEmpty(HttpServletRequest request , HttpSession session)
+	{
+		
+		return "Index";
+	}
+	
+	@RequestMapping(value="/*")
+	public String navigateToMainByDefault(HttpServletRequest request , HttpSession session)
+	{
+		
+		return "Index";
+	}
+	
 	
 	
 }

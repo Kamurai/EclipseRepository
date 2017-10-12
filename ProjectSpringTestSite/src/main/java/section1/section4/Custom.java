@@ -1,21 +1,21 @@
 package section1.section4;
 
-public class Custom extends master.Custom
+public class Custom extends main.Custom
 {
     public Custom()
     {
         super();
     }
 
-    public String Title(int input)
+    public String Title(int vPage)
     {
         String Result = "";
         Result += "<title>";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "Java Programming";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "JSP Programming";
             }
@@ -23,15 +23,15 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Header(int input)
+    public String Header(int vPage)
     {
         String Result = "";
         Result += "<h2>";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "Java Programming";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "JSP Programming";
         }
@@ -40,15 +40,15 @@ public class Custom extends master.Custom
         return Result;
     }
 
-    public String Content(int input)
+    public String Content(int vPage)
     {
         String Result = "";
         Result += "<p id=\"idCenterContent\">";
-            if(input == 0)
+            if(vPage == 0)
             {
                 Result += "This section is dedicated to Java based programming.";
             }
-            else if(input == 1)
+            else if(vPage == 1)
             {
                 Result += "This section is dedicated to JSP based programming.";
             }
@@ -56,10 +56,10 @@ public class Custom extends master.Custom
         return Result;
     }
     
-    public String Versions(int input)
+    public String Versions(int vPage)
     {
         String Result = "";
-        if(input == 0)
+        if(vPage == 0)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section4/Index.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section4/Index.php\">PHP</a><br/>";
@@ -79,7 +79,7 @@ public class Custom extends master.Custom
             Result += "<a href=\"http://htkb.dyndns.org:82/Section1/Section4/Index\">Python Web.py</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org:83/Section1/Section4/Index\">Ruby on Rails</a><br/>";
         }
-        else if(input == 1)
+        else if(vPage == 1)
         {
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section4/Project1.html\">HTML</a><br/>";
             Result += "<a href=\"http://htkb.dyndns.org/Section1/Section4/Project1.php\">PHP</a><br/>";
