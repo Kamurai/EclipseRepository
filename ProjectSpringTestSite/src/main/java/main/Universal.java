@@ -9,83 +9,115 @@ public class Universal
 
     public String WriteHeader(int vLevel, int vDivision)
     {
-        String Result = "";
-        Result += "<link rel='shortcut icon' href='./resources/pictures/favicon.ico' type='image/x-icon' />";
-        Result += "<link rel='icon' href='./resources/pictures/favicon.ico' type='image/x-icon' />";
-        if(vDivision == 1)
+    	String vResult = "";
+    	String vDefault = "";
+    	
+    	vResult += "<link rel='shortcut icon' href='./Pictures/favicon.ico' type='image/x-icon' />";
+        vResult += "<link rel='icon' href='./Pictures/favicon.ico' type='image/x-icon' />";
+        
+        vDefault = "Main.css";
+        
+        vResult += "<link href='"+GetPath(vLevel)+"Styles/";
+        if(vDivision == 0)
         {
-            Result += "<link href='"+GetPath(vLevel)+"resources/styles/Section1.css' rel='stylesheet' type='text/css'>";
+            vResult += vDefault;
+        }
+        else if(vDivision == 1)
+        {
+            vResult += "Division1.css";
         }
         else if(vDivision == 2)
         {
-            Result += "<link href='"+GetPath(vLevel)+"resources/styles/Section2.css' rel='stylesheet' type='text/css'>";
+            vResult += "Division2.css";
         }
         else if(vDivision == 3)
         {
-            Result += "<link href='"+GetPath(vLevel)+"resources/styles/Section3.css' rel='stylesheet' type='text/css'>";
+            vResult += "Division3.css";
         }
         else
         {
-            Result += "<link href='"+GetPath(vLevel)+"resources/styles/Main.css' rel='stylesheet' type='text/css'>";
+            vResult += vDefault;
         }
-        return Result;
+        vResult += "' rel='stylesheet' type='text/css'>";
+        
+        
+        return vResult;
     }
 
     public String TitlePicture(int vLevel)
     {
-        String Result = "";
-        Result += "<img  id=\"idLogo\" src='"+GetPath(vLevel)+"resources/pictures/logo_HouseThatKamuraiBuilt_blueonblack.jpg'><br>";
+        String vResult = "";
+        vResult += "<img  id=\"idLogo\" src='"+GetPath(vLevel)+"Pictures/logoHTKB.jpg'><br>";
 
-        return Result;
-    }
-
-    public String WebMaster()
-    {
-        String Result = "";
-            Result += "Website managed by Kamurai.";
-        return Result;
+        return vResult;
     }
 
     public String NavBar(int vLevel)
     {
-        String Result = "";
-        Result += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Index'>Home</a>";
-        Result += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Section1/Index'>Web Programming</a>";
-        Result += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Section2/Index'>Private Projects</a>";
-        Result += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Section3/Index'>Downloadable Projects</a>";
-        return Result;
+        String vResult = "";
+        vResult += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Index'>Home</a>";
+        vResult += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Division1/Index'>Web Programming</a>";
+        vResult += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Division2/Index'>Private Projects</a>";
+        vResult += "<a class=\"navBar\" href='"+GetPath(vLevel)+"Division3/Index'>Downloadable Projects</a>";
+        return vResult;
+    }
+    
+    public String NavigationHeader()
+    {
+    	String vResult = "";
+    	
+    	vResult += "<h4>";
+    	vResult += "Navigation";
+    	vResult += "</h4>";
+    	return vResult;
+    }
+    
+    public String InformationHeader()
+    {
+    	String vResult = "";
+    	
+    	vResult += "<h4>";
+    	vResult += "Information";
+    	vResult += "</h4>";
+    	return vResult;
+    }
+    
+    public String Information()
+    {
+        String vResult = "";
+        vResult += "This is written using JSP.<br><br>";
+        vResult += "Other versions of this page are here:<br>";
+        return vResult;
     }
 
     public String GDR()
     {
-        String Result = "";
-        Result += "<a href='http://htkb.dyndns.org/Section3/downloads/GDR.zip'>You can download my Games Development Report here.</a></br>";
-        return Result;
+        String vResult = "";
+        vResult += "<a href='http://htkb.dyndns.org/Section3/downloads/GDR.zip'>You can download my Games Development Report here.</a></br>";
+        return vResult;
     }
 
     public String WinRAR()
     {
-        String Result = "";
-        Result += "<a href='http://htkb.dyndns.org/Section3/downloads/wrar371.exe'>You may need WinRar to open zip files from this site.</a></br>";
-        return Result;
+        String vResult = "";
+        vResult += "<a href='http://htkb.dyndns.org/Section3/downloads/wrar371.exe'>You may need WinRar to open zip files from this site.</a></br>";
+        return vResult;
     }
 
     public String Footer()
     {
-        String Result = "";
-        Result += "© Copyright 2012 All rights reserved<br>";
-        Result += "House That Kamurai Built<br>";
-        return Result;
+        String vResult = "";
+        vResult += "© Copyright 2012 All rights reserved<br>";
+        vResult += "House That Kamurai Built<br>";
+        return vResult;
     }
 
-    public String Information()
+    public String WebMaster()
     {
-        String Result = "";
-        Result += "This is written using JSP.<br><br>";
-        Result += "Other versions of this page are here:<br>";
-        return Result;
+        String vResult = "";
+            vResult += "Website managed by Kamurai.";
+        return vResult;
     }
-
 
     public String GetPath(int vLevel)
     {

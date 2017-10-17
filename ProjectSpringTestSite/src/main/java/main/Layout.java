@@ -15,61 +15,57 @@ public class Layout
     
     public String Navigation(int vLevel)
     {
-        String Result = "";
-        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"AboutUs'>About Us</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Media'>Media</a><br/><br/>";
-        Result += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Minecraft'>Minecraft!</a><br/><br/>";
-        return Result;
+        String vResult = "";
+        vResult += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"AboutUs'>About Us</a><br/><br/>";
+        vResult += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Media'>Media</a><br/><br/>";
+        vResult += "<a class=\"navlinkA\" href='"+vUniversal.GetPath(vLevel)+"Minecraft'>Minecraft!</a><br/><br/>";
+        return vResult;
     }
     
 	public String WriteWebpage(int vPage, int vLevel)
     {
-        String Result = "";
-        Result += "<body id=\"idBody\">";
-            Result += "<table id=\"idTableMain\">";
-                Result += "<tr id=\"idHeaderRow\">";
-                    Result += "<td id=\"idHeaderRowCenter\" colspan=\"3\">";
-                        Result += vUniversal.TitlePicture(vLevel);
-                    Result += "</td>";
-                Result += "</tr>";
-                Result += "<tr id=\"idNavigationRow\">";
-                    Result += "<td id=\"idNavigationBar\" colspan=\"3\">";
-                        Result += vUniversal.NavBar(vLevel);
-                    Result += "</td>";
-                Result += "</tr>";
-                Result += "<tr id=\"idCenterRow\">";
-                    Result += "<td id=\"idCenterRowLeft\">";
-                        Result += "<h4>";
-                            Result += "Navigation";
-                        Result += "</h4>";
-                        Result += Navigation(vLevel);
-                    Result += "</td>";
-                    Result += "<td id=\"idCenterRowMain\">";
-                        Result += vCustom.Title(vPage);
-                        Result += vCustom.Header(vPage);
-                        Result += vCustom.Content(vPage);
-                    Result += "</td>";
-                    Result += "<td id=\"idCenterRowRight\">";
-                        Result += "<h4>";
-                            Result += "Information";
-                        Result += "</h4>";
-                        Result += vUniversal.Information();
-                        Result += vCustom.Versions(vPage);
-                    Result += "</td>";
-                Result += "</tr>";
-                Result += "<tr id=\"idFooterRow\">";
-                    Result += "<td id=\"idFooterMain\" colspan=\"3\">";
-                            Result += "<p id=\"idFooterContent\">";
-                                Result += vUniversal.Footer();
-                            Result += "</p>";
-                            Result += "<p id=\"idFooterContent\">";
-                                    Result += vUniversal.WebMaster();
-                            Result += "</p>";
-                    Result += "</td>";
-                Result += "</tr>";
-            Result += "</table>";
-        Result += "</body>";
-        return Result;
+        String vResult = "";
+        vResult += "<body id=\"idBody\">";
+            vResult += "<table id=\"idTableMain\">";
+                vResult += "<tr id=\"idHeaderRow\">";
+                    vResult += "<td id=\"idHeaderRowCenter\" colspan=\"3\">";
+                        vResult += vUniversal.TitlePicture(vLevel);
+                    vResult += "</td>";
+                vResult += "</tr>";
+                vResult += "<tr id=\"idNavigationRow\">";
+                    vResult += "<td id=\"idNavigationBar\" colspan=\"3\">";
+                        vResult += vUniversal.NavBar(vLevel);
+                    vResult += "</td>";
+                vResult += "</tr>";
+                vResult += "<tr id=\"idCenterRow\">";
+                    vResult += "<td id=\"idCenterRowLeft\">";
+                        vResult += vUniversal.NavigationHeader();
+                        vResult += Navigation(vLevel);
+                    vResult += "</td>";
+                    vResult += "<td id=\"idCenterRowMain\">";
+                        vResult += vCustom.Title(vPage);
+                        vResult += vCustom.Header(vPage);
+                        vResult += vCustom.Content(vPage);
+                    vResult += "</td>";
+                    vResult += "<td id=\"idCenterRowRight\">";
+                    vResult += vUniversal.InformationHeader();
+                    vResult += vUniversal.Information();
+                        vResult += vCustom.Versions(vPage);
+                    vResult += "</td>";
+                vResult += "</tr>";
+                vResult += "<tr id=\"idFooterRow\">";
+                    vResult += "<td id=\"idFooterMain\" colspan=\"3\">";
+                            vResult += "<p id=\"idFooterContent\">";
+                                vResult += vUniversal.Footer();
+                            vResult += "</p>";
+                            vResult += "<p id=\"idFooterContent\">";
+                                    vResult += vUniversal.WebMaster();
+                            vResult += "</p>";
+                    vResult += "</td>";
+                vResult += "</tr>";
+            vResult += "</table>";
+        vResult += "</body>";
+        return vResult;
     }
 }
 
