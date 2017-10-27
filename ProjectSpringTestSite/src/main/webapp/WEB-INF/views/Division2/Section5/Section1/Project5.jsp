@@ -9,15 +9,16 @@
             Universal vUniversal = new Universal();
             Custom vCustom = new Custom();
             Layout vLayout = new Layout(vCustom);
-            int vLevel = 3;
             int vPage = 5;
+            int vLevel = 3;
+            int vDivision = 2;
             
-            out.println(vUniversal.WriteHeader(vLevel, 2));
+            out.println(vUniversal.getHead(vLevel, vDivision));
         %>
     </head>
     <body>
         <%
-            out.println(vLayout.WriteWebpage(vPage,vLevel));
+            out.println(vLayout.getBody(vPage, vLevel));
         %>
     </body>
 </html>
