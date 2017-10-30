@@ -66,12 +66,8 @@ public class Layout extends main.Layout
                 vResult += "</tr>";
                 vResult += "<tr id=\"idFooterRow\">";
                     vResult += "<td id=\"idFooterMain\" colspan=\"3\">";
-                            vResult += "<p id=\"idFooterContent\">";
-                                vResult += vUniversal.getFooter();
-                            vResult += "</p>";
-                            vResult += "<p id=\"idFooterContent\">";
-                                    vResult += vUniversal.getWebMaster();
-                            vResult += "</p>";
+		                vResult += vUniversal.getFooter();
+		                vResult += vUniversal.getWebMaster();
                     vResult += "</td>";
                 vResult += "</tr>";
             vResult += "</table>";

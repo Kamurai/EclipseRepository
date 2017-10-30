@@ -25,6 +25,7 @@ public class Layout
 	public String getBody(int vPage, int vLevel)
     {
         String vResult = "";
+        
         vResult += "<body id=\"idBody\">";
             vResult += "<table id=\"idTableMain\">";
                 vResult += "<tr id=\"idHeaderRow\">";
@@ -48,23 +49,20 @@ public class Layout
                         vResult += vCustom.getContent(vPage);
                     vResult += "</td>";
                     vResult += "<td id=\"idCenterRowRight\">";
-                    vResult += vUniversal.getInformationHeader();
-                    vResult += vUniversal.getInformation();
+	                    vResult += vUniversal.getInformationHeader();
+	                    vResult += vUniversal.getInformation();
                         vResult += vCustom.getVersions(vPage);
                     vResult += "</td>";
                 vResult += "</tr>";
                 vResult += "<tr id=\"idFooterRow\">";
                     vResult += "<td id=\"idFooterMain\" colspan=\"3\">";
-                            vResult += "<p id=\"idFooterContent\">";
-                                vResult += vUniversal.getFooter();
-                            vResult += "</p>";
-                            vResult += "<p id=\"idFooterContent\">";
-                                    vResult += vUniversal.getWebMaster();
-                            vResult += "</p>";
+                    	vResult += vUniversal.getFooter();
+                        vResult += vUniversal.getWebMaster();
                     vResult += "</td>";
                 vResult += "</tr>";
             vResult += "</table>";
         vResult += "</body>";
+        
         return vResult;
     }
 }

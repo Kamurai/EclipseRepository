@@ -10,17 +10,20 @@ public class Layout extends main.Layout
     private String getNavigation(int vLevel)
     {
         String vResult = "";
+        
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division3/Project1'>Online Experience Downloads</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division3/Project2'>Game Maker Downloads</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division3/Project3'>Java Downloads</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division3/Project4'>C# Downloads</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division3/Project5'>C++ Downloads</a><br/><br/>";
+        
         return vResult;
     }
 
     public String getBody(int vPage, int vLevel)
     {
         String vResult = "";
+        
         vResult += "<body id=\"idBody\">";
             vResult += "<table id=\"idTableMain\">";
                 vResult += "<tr id=\"idHeaderRow\">";
@@ -51,16 +54,13 @@ public class Layout extends main.Layout
                 vResult += "</tr>";
                 vResult += "<tr id=\"idFooterRow\">";
                     vResult += "<td id=\"idFooterMain\" colspan=\"3\">";
-                            vResult += "<p id=\"idFooterContent\">";
-                                vResult += vUniversal.getFooter();
-                            vResult += "</p>";
-                            vResult += "<p id=\"idFooterContent\">";
-                                    vResult += vUniversal.getWebMaster();
-                            vResult += "</p>";
+	                    vResult += vUniversal.getFooter();
+		                vResult += vUniversal.getWebMaster();
                     vResult += "</td>";
                 vResult += "</tr>";
             vResult += "</table>";
         vResult += "</body>";
+        
         return vResult;
     }
 }

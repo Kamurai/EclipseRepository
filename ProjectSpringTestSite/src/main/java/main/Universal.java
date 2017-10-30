@@ -22,22 +22,22 @@ public class Universal
         return vResult;
     }
 	
-	private getStyle(vDivision)
+	private String getStyle(int vLevel, int vDivision)
 	{
-		var vResult = "";
+		String vResult = "";
 		
 		vResult += "<link href='";
-		vResult += getPath(vLevel)"'Styles/'";
+		vResult += getPath(vLevel)+"Styles/";
 		vResult += getStyleFile(vDivision);
 		vResult += "' rel='stylesheet' type='text/CSS'>";
 
 		return vResult;
 	}
 
-	private getStyleFile(vDivision)
+	private String getStyleFile(int vDivision)
 	{
-		var vResult = "";
-		var vDefault = "";
+		String vResult = "";
+		String vDefault = "";
 		
 		vDefault = "Main.css";
 		
@@ -86,7 +86,7 @@ public class Universal
 		return vResult;
     }
     
-    private String getNavigationHeader()
+    public String getNavigationHeader()
     {
     	String vResult = "";
     	
@@ -139,18 +139,22 @@ public class Universal
     public String getFooter()
     {
         String vResult = "";
-		
-        vResult += "Â© Copyright 2012 All rights reserved<br>";
-        vResult += "House That Kamurai Built<br>";
-		
+        
+        vResult += "<p id=\"idFooterContent\">";
+            vResult += "© Copyright 2012 All rights reserved<br>";
+            vResult += "House That Kamurai Built<br>";
+		vResult += "</p>";
+    
         return vResult;
     }
 
     public String getWebMaster()
     {
         String vResult = "";
-		
-        vResult += "Website managed by Kamurai.";
+       
+	    vResult += "<p id=\"idFooterManagement\">";
+	    	vResult += "Website managed by Kamurai.";
+	    vResult += "</p>";        
 			
         return vResult;
     }

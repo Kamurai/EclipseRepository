@@ -10,6 +10,7 @@ public class Layout extends main.Layout
     private String getNavigation(int vLevel)
     {
         String vResult = "";
+        
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Section1/Index'>Gynowars</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Project2'>Assault</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Project3'>Mars</a><br/><br/>";
@@ -34,12 +35,14 @@ public class Layout extends main.Layout
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Project12'>The Way</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Project13'>Conspiratorium</a><br/><br/>";
         vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Division2/Project14'>Conversion</a><br/><br/>";
+        
         return vResult;
     }
 
     public String getBody(int vPage, int vLevel)
     {
         String vResult = "";
+        
         vResult += "<body id=\"idBody\">";
             vResult += "<table id=\"idTableMain\">";
                 vResult += "<tr id=\"idHeaderRow\">";
@@ -70,16 +73,13 @@ public class Layout extends main.Layout
                 vResult += "</tr>";
                 vResult += "<tr id=\"idFooterRow\">";
                     vResult += "<td id=\"idFooterMain\" colspan=\"3\">";
-                            vResult += "<p id=\"idFooterContent\">";
-                                vResult += vUniversal.getFooter();
-                            vResult += "</p>";
-                            vResult += "<p id=\"idFooterContent\">";
-                                    vResult += vUniversal.getWebMaster();
-                            vResult += "</p>";
+	                    vResult += vUniversal.getFooter();
+		                vResult += vUniversal.getWebMaster();
                     vResult += "</td>";
                 vResult += "</tr>";
             vResult += "</table>";
         vResult += "</body>";
+        
         return vResult;
     }
 }

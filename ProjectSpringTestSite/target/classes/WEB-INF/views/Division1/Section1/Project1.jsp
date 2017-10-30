@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@page import="main.Universal" %>
-<%@page import="division1.section4.*" %>
+<%@page import="division1.section1.*" %>
 <!DOCTYPE HTML>
 
 <html>
@@ -9,15 +9,16 @@
             Universal vUniversal = new Universal();
             Custom vCustom = new Custom();
             Layout vLayout = new Layout(vCustom);
+            int vPage = 1;
             int vLevel = 2;
-            int vPage = 0;
-            
-            out.println(vUniversal.WriteHeader(vLevel, 1));
+            int vDivision = 1;
+			
+            out.println(vUniversal.getHead(vLevel, vDivision));
         %>
     </head>
     <body>
         <%
-            out.println(vLayout.WriteWebpage(vPage,vLevel));
+            out.println(vLayout.getBody(vPage, vLevel));
         %>
     </body>
 </html>
