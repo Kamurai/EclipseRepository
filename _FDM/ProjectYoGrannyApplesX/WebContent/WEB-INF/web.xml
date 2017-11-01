@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>SampleMavenWebApp</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<description>Our very first servlet</description>
+		<display-name>FirstServlet</display-name>
+		<servlet-name>FirstServlet</servlet-name>
+		<servlet-class>com.fdmgroup.demo1.FirstServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FirstServlet</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>FormServlet</display-name>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>com.fdmgroup.demo1.FormServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/FormServlet</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>RandomSearchEngineServlet</display-name>
+		<servlet-name>RandomSearchEngineServlet</servlet-name>
+		<servlet-class>com.fdmgroup.demo1.RandomSearchEngineServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>RandomSearchEngineServlet</servlet-name>
+		<url-pattern>/search</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ListGenerator</display-name>
+		<servlet-name>ListGenerator</servlet-name>
+		<servlet-class>com.fdmgroup.demo1.ListGenerator</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListGenerator</servlet-name>
+		<url-pattern>/listGenerator</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<description></description>
+		<display-name>ListPrinterServlet</display-name>
+		<servlet-name>ListPrinterServlet</servlet-name>
+		<servlet-class>com.fdmgroup.demo1.ListPrinterServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListPrinterServlet</servlet-name>
+		<url-pattern>/ListPrinterServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
