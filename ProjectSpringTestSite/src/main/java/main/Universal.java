@@ -26,8 +26,7 @@ public class Universal
 	{
 		String vResult = "";
 		
-		vResult += "<link href='";
-		vResult += getPath(vLevel)+"Styles/";
+		vResult += "<link href='http://htkb.dyndns.org/Styles/";
 		vResult += getStyleFile(vDivision);
 		vResult += "' rel='stylesheet' type='text/CSS'>";
 
@@ -69,7 +68,7 @@ public class Universal
     {
         String vResult = "";
 		
-		vResult += "<img  id=\"idLogo\" src='"+getPath(vLevel)+"Pictures/logoHTKB.jpg'><br>";
+		vResult += "<img  id=\"idLogo\" src='http://htkb.dyndns.org/Pictures/logoHTKB.jpg'><br>";
 
         return vResult;
     }
