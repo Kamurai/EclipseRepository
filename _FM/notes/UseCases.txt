@@ -1,0 +1,36 @@
+File Selection
+
+Export file name
+
+Export file
+
+Select product:
+	UCD							Current
+	DU							Future
+	CDDS						Future
+	ULDD						Future
+
+Select test case:
+	NonSeller_ARM
+	NonSeller_ARM_IO
+	NonSeller_Fixed
+	Purchase_ARM
+	Purchase_Fixed_NO_MISMO
+	Purchase_Fixed
+	SplitDiscl
+
+Format:
+	Indentions					Current
+	Add mismo					Current
+	Remove mismo				Future
+	Globalize References		Inactive
+	
+Error Detection:
+	Mandated fields				Future
+	Conditional fields			Future
+	Dependent values			Future
+	Field relationships			Future
+	String determination		Future
+	Numeric restriction			Future
+	Negative Positive values	Future
+	
