@@ -10,7 +10,6 @@ public class Universal
     public String getHead(int vLevel, int vDivision)
     {
     	String vResult = "";
-    	String vDefault = "";
     	
 		vResult += "<head>";
 			vResult += "<meta http-equiv='Content-Type' content='text/html; charset=ISO-8859-1'>";

@@ -1,6 +1,6 @@
 package division2.section5.section3;
 
-public class Layout extends main.Layout
+public class Layout extends division2.section5.Layout
 {
     public Layout(Custom vCustom)
     {

@@ -1,6 +1,6 @@
 package division2.section5;
 
-public class Custom extends main.Custom
+public class Custom extends division2.Custom
 {
     public Custom()
     {
@@ -108,18 +108,24 @@ public class Custom extends main.Custom
         String vResult = "";
 		String vDefault = "";
 		
-		vDefault += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Index.html\">HTML</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Index.php\">PHP</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org/Javascript/Section2/Section5/Index.html\">HTML Javascript</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:81/ASP/Section2/Section5/Index.asp\">ASP Javascript</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:81/ASPNET/Section2/Section5/Index.aspx\">ASP.NET Javascript</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org/Section2/Section5/Index.shtml\">Perl</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:8080/JSPApplication/Section2/Section5/Index.jsp\">JSP</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:8080/JSFApplication/Section2/Section5/Index.xhtml\">JSF</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:81/WebApplication/Section2/Section5/Index.cshtml\">ASP.NET Web App</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:81/WebForm/Section2/Section5/Index.aspx\">ASP.NET Webform</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org:81/MVC/Section2/Section5/Index\">ASP.NET MVC App</a><br/>";
-		vDefault += "<a href=\"http://htkb.dyndns.org/SSI/Section2/Section5/Index.html\">Apache SSI</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/Division2/Section5/Index.html\">HTML</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/Division2/Section5/Index.php\">PHP</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/Division2/Section5/Index.shtml\">Perl</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/SSI/Division2/Section5/Index.html\">Apache SSI</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/Javascript/Division2/Section5/Index.html\">HTML Javascript</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/JQuery/Division2/Section5/Index.html\">JQuery</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org/AngularJS/Division2/Section5/Index.html\">Angular JS</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:8080/JSFApplication/Division2/Section5/Index.xhtml\">JSF</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:8080/JSPApplication/Division2/Section5/Index.jsp\">JSP</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:8080/ProjectSpringTestSite/Division2/Section5/Index\">JSP Spring MVC</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:81/ASP/Division2/Section5/Index.asp\">ASP Javascript</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:81/ASPNET/Division2/Section5/Index.aspx\">ASP.NET Javascript</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:81/WebApplication/Division2/Section5/Index.cshtml\">ASP.NET Web App</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:81/WebForm/Division2/Section5/Index.aspx\">ASP.NET Webform</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:81/MVC/Division2/Section5/Index\">ASP.NET MVC App</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:82/Division2/Section5/Index\">Python Web.py</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:83/Division2/Section5/Index\">Ruby on Rails</a><br/>";
+		vDefault += "<a href=\"http://htkb.dyndns.org:84/Division2/Section5/Index\">Node JS</a><br/>";
 			
         if(vPage == 0)
         {
