@@ -12,17 +12,17 @@ public class Custom extends division2.Custom {
 		vDefault += "Gynowars";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Gynowars RPG";
-		} else if (vPage == 2) {
-			vResult += "Gynowars: Battle Arena CCG";
-		} else if (vPage == 3) {
-			vResult += "Gynowars: Crash Ball";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Gynowars RPG";
+			} else if (vPage == 2) {
+				vResult += "Gynowars: Battle Arena CCG";
+			} else if (vPage == 3) {
+				vResult += "Gynowars: Crash Ball";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -35,17 +35,17 @@ public class Custom extends division2.Custom {
 		vDefault += "Gynowars";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Gynowars RPG";
-		} else if (vPage == 2) {
-			vResult += "Gynowars: Battle Arena CCG";
-		} else if (vPage == 3) {
-			vResult += "Gynowars: Crash Ball";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Gynowars RPG";
+			} else if (vPage == 2) {
+				vResult += "Gynowars: Battle Arena CCG";
+			} else if (vPage == 3) {
+				vResult += "Gynowars: Crash Ball";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -57,23 +57,23 @@ public class Custom extends division2.Custom {
 
 		vDefault += "This section is dedicated to projects centered in the Gynowars universe.";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "The Gynowars RPG is a 'pokemon-like' tactical RPG.";
-			vResult += "The protagonist uses creatures to fight battles against other creatures to progress through the storyline.";
-		} else if (vPage == 2) {
-			vResult += "Gynowars: Battle Arena is a CCG that pits teams of creatures against each other ";
-			vResult += "in an arena-like environment.  There are several scenarios to run, to include:";
-			vResult += "</br>";
-			vResult += "'Death Match', 'Ring the Bell', and 'Head Hunt'.";
-		} else if (vPage == 3) {
-			vResult += "Gynowars: Crash Ball is a turn based strategy board game.  Basically it's gridiron with Gynos.";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "The Gynowars RPG is a 'pokemon-like' tactical RPG.";
+				vResult += "The protagonist uses creatures to fight battles against other creatures to progress through the storyline.";
+			} else if (vPage == 2) {
+				vResult += "Gynowars: Battle Arena is a CCG that pits teams of creatures against each other ";
+				vResult += "in an arena-like environment.  There are several scenarios to run, to include:";
+				vResult += "</br>";
+				vResult += "'Death Match', 'Ring the Bell', and 'Head Hunt'.";
+			} else if (vPage == 3) {
+				vResult += "Gynowars: Crash Ball is a turn based strategy board game.  Basically it's gridiron with Gynos.";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

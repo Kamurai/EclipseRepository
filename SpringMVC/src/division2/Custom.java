@@ -12,33 +12,33 @@ public class Custom extends main.Custom {
 		vDefault += "Private Projects";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 2) {
-			vResult += "Assault CCG";
-		} else if (vPage == 3) {
-			vResult += "Mars Projects";
-		} else if (vPage == 6) {
-			vResult += "Truth";
-		} else if (vPage == 7) {
-			vResult += "Kingdoms";
-		} else if (vPage == 8) {
-			vResult += "Terminal World";
-		} else if (vPage == 9) {
-			vResult += "Monster Office Workplace";
-		} else if (vPage == 10) {
-			vResult += "Battle Princesses";
-		} else if (vPage == 11) {
-			vResult += "Sacred Offerings";
-		} else if (vPage == 12) {
-			vResult += "The Way";
-		} else if (vPage == 13) {
-			vResult += "Conspiratorium";
-		} else if (vPage == 14) {
-			vResult += "Conversion";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 2) {
+				vResult += "Assault CCG";
+			} else if (vPage == 3) {
+				vResult += "Mars Projects";
+			} else if (vPage == 6) {
+				vResult += "Truth";
+			} else if (vPage == 7) {
+				vResult += "Kingdoms";
+			} else if (vPage == 8) {
+				vResult += "Terminal World";
+			} else if (vPage == 9) {
+				vResult += "Monster Office Workplace";
+			} else if (vPage == 10) {
+				vResult += "Battle Princesses";
+			} else if (vPage == 11) {
+				vResult += "Sacred Offerings";
+			} else if (vPage == 12) {
+				vResult += "The Way";
+			} else if (vPage == 13) {
+				vResult += "Conspiratorium";
+			} else if (vPage == 14) {
+				vResult += "Conversion";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -51,33 +51,33 @@ public class Custom extends main.Custom {
 		vDefault += "Private Projects";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 2) {
-			vResult += "Assault CCG";
-		} else if (vPage == 3) {
-			vResult += "Mars Projects";
-		} else if (vPage == 6) {
-			vResult += "Truth";
-		} else if (vPage == 7) {
-			vResult += "Kingdoms";
-		} else if (vPage == 8) {
-			vResult += "Terminal World";
-		} else if (vPage == 9) {
-			vResult += "Monster Office Workplace";
-		} else if (vPage == 10) {
-			vResult += "Battle Princesses";
-		} else if (vPage == 11) {
-			vResult += "Sacred Offerings";
-		} else if (vPage == 12) {
-			vResult += "The Way";
-		} else if (vPage == 13) {
-			vResult += "Conspiratorium";
-		} else if (vPage == 14) {
-			vResult += "Conversion";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 2) {
+				vResult += "Assault CCG";
+			} else if (vPage == 3) {
+				vResult += "Mars Projects";
+			} else if (vPage == 6) {
+				vResult += "Truth";
+			} else if (vPage == 7) {
+				vResult += "Kingdoms";
+			} else if (vPage == 8) {
+				vResult += "Terminal World";
+			} else if (vPage == 9) {
+				vResult += "Monster Office Workplace";
+			} else if (vPage == 10) {
+				vResult += "Battle Princesses";
+			} else if (vPage == 11) {
+				vResult += "Sacred Offerings";
+			} else if (vPage == 12) {
+				vResult += "The Way";
+			} else if (vPage == 13) {
+				vResult += "Conspiratorium";
+			} else if (vPage == 14) {
+				vResult += "Conversion";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -89,43 +89,43 @@ public class Custom extends main.Custom {
 
 		vDefault += "This section is dedicated to HTKB projects.";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 2) {
-			vResult += "This section is dedicated CCG project \"Assault\".";
-		} else if (vPage == 3) {
-			vResult += "This section is dedicated to the Mars centered project \"Opposition\".";
-		} else if (vPage == 6) {
-			vResult += "This section is dedicated to the MMO RTS project \"Truth\".  Explore the galaxy, smuggle goods, steal from your friends and battle your adversaries.";
-		} else if (vPage == 7) {
-			vResult += "This section is dedicated to the digital board game project \"Kingdoms\".  Explore the world's Kingdoms, get rich, get strong and conquer.";
-		} else if (vPage == 8) {
-			vResult += "This section is dedicated to the simulation MMO centered project \"Terminal World\".  This is a virtual environment where a zombie outbreak is about to happen.  Can you beat";
-			vResult += "the zombies?  Can you survive?";
-		} else if (vPage == 9) {
-			vResult += "This section is dedicated to the card and board game project \"Monster Office Workplace\".  These monsters mean serious business.";
-			vResult += "Can you earn the most credit and smooze your way into a promotion?";
-		} else if (vPage == 10) {
-			vResult += "This section is dedicated to the card game project \"Battle Princesses\".  Ever wanted to see your favorite princess battle for the kingdom?";
-			vResult += "These princess aren't your helpless maidens, but valiant warriors themselves.";
-		} else if (vPage == 11) {
-			vResult += "This section is dedicated to the board game project \"Sacred Offerings\".";
-			vResult += "Being a god is hard, you have to eat, but don't want to fall out favor with the people more than the other deities.";
-			vResult += "Draw people to worship you, but be discerning about who is sacrificed.";
-		} else if (vPage == 12) {
-			vResult += "This section is dedicated to the card game project \"The Way\".  You seek to find enlightment by contemplating the elements.";
-			vResult += "Escape the binds of the world and the board to reach enlightment and win.";
-		} else if (vPage == 13) {
-			vResult += "This section is dedicated to the board game project \"Conspiratorium\".";
-			vResult += "A game of assassins and CIA, you must remember who is friend and who is not.";
-		} else if (vPage == 14) {
-			vResult += "This section is dedicated to the board game project \"Conversion\".";
-			vResult += "Compete on the elemental market by processing elements and becoming the elemental kingpin.";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 2) {
+				vResult += "This section is dedicated CCG project \"Assault\".";
+			} else if (vPage == 3) {
+				vResult += "This section is dedicated to the Mars centered project \"Opposition\".";
+			} else if (vPage == 6) {
+				vResult += "This section is dedicated to the MMO RTS project \"Truth\".  Explore the galaxy, smuggle goods, steal from your friends and battle your adversaries.";
+			} else if (vPage == 7) {
+				vResult += "This section is dedicated to the digital board game project \"Kingdoms\".  Explore the world's Kingdoms, get rich, get strong and conquer.";
+			} else if (vPage == 8) {
+				vResult += "This section is dedicated to the simulation MMO centered project \"Terminal World\".  This is a virtual environment where a zombie outbreak is about to happen.  Can you beat";
+				vResult += "the zombies?  Can you survive?";
+			} else if (vPage == 9) {
+				vResult += "This section is dedicated to the card and board game project \"Monster Office Workplace\".  These monsters mean serious business.";
+				vResult += "Can you earn the most credit and smooze your way into a promotion?";
+			} else if (vPage == 10) {
+				vResult += "This section is dedicated to the card game project \"Battle Princesses\".  Ever wanted to see your favorite princess battle for the kingdom?";
+				vResult += "These princess aren't your helpless maidens, but valiant warriors themselves.";
+			} else if (vPage == 11) {
+				vResult += "This section is dedicated to the board game project \"Sacred Offerings\".";
+				vResult += "Being a god is hard, you have to eat, but don't want to fall out favor with the people more than the other deities.";
+				vResult += "Draw people to worship you, but be discerning about who is sacrificed.";
+			} else if (vPage == 12) {
+				vResult += "This section is dedicated to the card game project \"The Way\".  You seek to find enlightment by contemplating the elements.";
+				vResult += "Escape the binds of the world and the board to reach enlightment and win.";
+			} else if (vPage == 13) {
+				vResult += "This section is dedicated to the board game project \"Conspiratorium\".";
+				vResult += "A game of assassins and CIA, you must remember who is friend and who is not.";
+			} else if (vPage == 14) {
+				vResult += "This section is dedicated to the board game project \"Conversion\".";
+				vResult += "Compete on the elemental market by processing elements and becoming the elemental kingpin.";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

@@ -14,15 +14,15 @@ public class Custom extends division2.Custom {
 		vDefault += "Renley";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Warring Nations";
-		} else if (vPage == 2) {
-			vResult += "Psychodom: The One Empire";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Warring Nations";
+			} else if (vPage == 2) {
+				vResult += "Psychodom: The One Empire";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -35,15 +35,15 @@ public class Custom extends division2.Custom {
 		vDefault += "Renley";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Warring Nations";
-		} else if (vPage == 2) {
-			vResult += "Psychodom: The One Empire";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Warring Nations";
+			} else if (vPage == 2) {
+				vResult += "Psychodom: The One Empire";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -55,20 +55,20 @@ public class Custom extends division2.Custom {
 
 		vDefault += "This section is dedicated to projects centered in the Renley universe.";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Warring Nations is a Tactical RPG involving squad based battles.";
-			vResult += "Characters advance classes based on their weapon proficiencies and/or currently equipped weapons.";
-		} else if (vPage == 2) {
-			vResult += "Psychodom: The One Empire is a 3rd person perspective Adventure / RPG.";
-			vResult += "The protagonist is tasked with investigating various situations leading ";
-			vResult += "to a conspiracy about who is really ruling the continent.";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Warring Nations is a Tactical RPG involving squad based battles.";
+				vResult += "Characters advance classes based on their weapon proficiencies and/or currently equipped weapons.";
+			} else if (vPage == 2) {
+				vResult += "Psychodom: The One Empire is a 3rd person perspective Adventure / RPG.";
+				vResult += "The protagonist is tasked with investigating various situations leading ";
+				vResult += "to a conspiracy about who is really ruling the continent.";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

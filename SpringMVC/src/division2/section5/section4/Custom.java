@@ -14,13 +14,13 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Elvia";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Nine Card";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Nine Card";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -33,13 +33,13 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Elvia";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Nine Card";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Nine Card";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -53,15 +53,15 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "</br>";
 		vDefault += "Nine Card: a Tactical card game played through the Elvia Empire.</br>";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Nine Card is a Tactical card game played through the Elvia Empire.</br>";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Nine Card is a Tactical card game played through the Elvia Empire.</br>";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

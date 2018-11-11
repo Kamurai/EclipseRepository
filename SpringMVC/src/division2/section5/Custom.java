@@ -11,13 +11,14 @@ public class Custom extends division2.Custom {
 
 		vDefault += "";
 
-		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else {
-			vResult += vDefault;
-		}
+			vResult += "<title>";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
+		
 		return vResult;
 	}
 
@@ -28,11 +29,11 @@ public class Custom extends division2.Custom {
 		vDefault += "Antarrea Projects";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -79,13 +80,13 @@ public class Custom extends division2.Custom {
 		vDefault += "</br>";
 		vDefault += "Nine Card: Tactical card game.</br>";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 		return vResult;
 	}
 

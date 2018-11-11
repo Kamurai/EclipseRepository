@@ -12,13 +12,13 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Utopia";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Elemental Angels";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Elemental Angels";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -31,13 +31,13 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Utopia";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Elemental Angels";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Elemental Angels";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -51,15 +51,15 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "</br>";
 		vDefault += "Elemental Angels: An adventure game with RPG elements based in the Avia Nation.</br>";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Elemental Angels: Adventure game with RPG elements based in the Avia Nation.</br>";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Elemental Angels: Adventure game with RPG elements based in the Avia Nation.</br>";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

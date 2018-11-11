@@ -85,7 +85,7 @@ public class Custom
 		vDefault += "game design.<br>";
 		vDefault += "Increase the Awesome with us!<br>";
 		
-        vResult += "<p id=\"idCenterContent\">";
+        vResult += "<div id=\"idCenterContent\">";
             if(vPage == 0)
             {
                 vResult += vDefault;
@@ -187,7 +187,7 @@ public class Custom
 			{
 				vResult += vDefault;
 			}
-        vResult += "</p>";
+        vResult += "</div>";
 		
         return vResult;
     }

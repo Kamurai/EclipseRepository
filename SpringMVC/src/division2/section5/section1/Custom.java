@@ -12,23 +12,23 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Global Antarrea";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Team Tactical: Crash Ball";
-		} else if (vPage == 2) {
-			vResult += "Wars of Antarrea";
-		} else if (vPage == 3) {
-			vResult += "Revolutions: Invading Nations";
-		} else if (vPage == 4) {
-			vResult += "Revolutions: Rebellion Against the Fist";
-		} else if (vPage == 5) {
-			vResult += "Revolutions: Return to Arms";
-		} else if (vPage == 6) {
-			vResult += "Revolutions: Post Wars";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Team Tactical: Crash Ball";
+			} else if (vPage == 2) {
+				vResult += "Wars of Antarrea";
+			} else if (vPage == 3) {
+				vResult += "Revolutions: Invading Nations";
+			} else if (vPage == 4) {
+				vResult += "Revolutions: Rebellion Against the Fist";
+			} else if (vPage == 5) {
+				vResult += "Revolutions: Return to Arms";
+			} else if (vPage == 6) {
+				vResult += "Revolutions: Post Wars";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 		return vResult;
 	}
@@ -40,23 +40,23 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Global Antarrea";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Team Tactical: Crash Ball";
-		} else if (vPage == 2) {
-			vResult += "Wars of Antarrea";
-		} else if (vPage == 3) {
-			vResult += "Revolutions: Invading Nations";
-		} else if (vPage == 4) {
-			vResult += "Revolutions: Rebellion Against the Fist";
-		} else if (vPage == 5) {
-			vResult += "Revolutions: Return to Arms";
-		} else if (vPage == 6) {
-			vResult += "Revolutions: Post Wars";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Team Tactical: Crash Ball";
+			} else if (vPage == 2) {
+				vResult += "Wars of Antarrea";
+			} else if (vPage == 3) {
+				vResult += "Revolutions: Invading Nations";
+			} else if (vPage == 4) {
+				vResult += "Revolutions: Rebellion Against the Fist";
+			} else if (vPage == 5) {
+				vResult += "Revolutions: Return to Arms";
+			} else if (vPage == 6) {
+				vResult += "Revolutions: Post Wars";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -75,25 +75,25 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Revolutions: Return to Arms:             Tactical RPG, 3rd story arc.</br>";
 		vDefault += "Revoultions: Post Wars:                  Tactical RPG, 4th story arc.</br>";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Team Tactical: Crash Ball is a tactical board game centered on a battle version of football.</br>";
-		} else if (vPage == 2) {
-			vResult += "Wars of Antarrea is a table-top game where two or more armies battle for supremacy.</br>";
-		} else if (vPage == 3) {
-			vResult += "Revolutions is a Tactical RPG with Invading Nations as its 1st story arc.</br>";
-		} else if (vPage == 4) {
-			vResult += "Revolutions is a Tactical RPG with Rebellion Against the Fist as its 2nd story arc.</br>";
-		} else if (vPage == 5) {
-			vResult += "Revolutions is a Tactical RPG with Return to Arms as its 3rd story arc.</br>";
-		} else if (vPage == 6) {
-			vResult += "Revolutions is a Tactical RPG with Post Wars as its 4th story arc.</br>";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Team Tactical: Crash Ball is a tactical board game centered on a battle version of football.</br>";
+			} else if (vPage == 2) {
+				vResult += "Wars of Antarrea is a table-top game where two or more armies battle for supremacy.</br>";
+			} else if (vPage == 3) {
+				vResult += "Revolutions is a Tactical RPG with Invading Nations as its 1st story arc.</br>";
+			} else if (vPage == 4) {
+				vResult += "Revolutions is a Tactical RPG with Rebellion Against the Fist as its 2nd story arc.</br>";
+			} else if (vPage == 5) {
+				vResult += "Revolutions is a Tactical RPG with Return to Arms as its 3rd story arc.</br>";
+			} else if (vPage == 6) {
+				vResult += "Revolutions is a Tactical RPG with Post Wars as its 4th story arc.</br>";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}

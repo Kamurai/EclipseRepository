@@ -12,15 +12,15 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Grendol";
 
 		vResult += "<title>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Land of the Orcish Empire: Age of Magic";
-		} else if (vPage == 2) {
-			vResult += "Coliseum: Arena";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Land of the Orcish Empire: Age of Magic";
+			} else if (vPage == 2) {
+				vResult += "Coliseum: Arena";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</title>";
 
 		return vResult;
@@ -33,15 +33,15 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "Grendol";
 
 		vResult += "<h2>";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Land of the Orcish Empire: Age of Magic";
-		} else if (vPage == 2) {
-			vResult += "Coliseum: Arena";
-		} else {
-			vResult += vDefault;
-		}
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Land of the Orcish Empire: Age of Magic";
+			} else if (vPage == 2) {
+				vResult += "Coliseum: Arena";
+			} else {
+				vResult += vDefault;
+			}
 		vResult += "</h2>";
 
 		return vResult;
@@ -57,18 +57,18 @@ public class Custom extends division2.section5.Custom {
 		vDefault += "comprise the Grendol Empire.</br>";
 		vDefault += "Coliseum: Arena: a CCG representing the gladitorial arenas of Grendol.</br>";
 
-		vResult += "<p id=\"idCenterContent\">";
-		if (vPage == 0) {
-			vResult += vDefault;
-		} else if (vPage == 1) {
-			vResult += "Land of the Orcish Empire: Age of Magic: is a CCG based on the different factions that ";
-			vResult += "comprise the Grendol Empire.";
-		} else if (vPage == 2) {
-			vResult += "Coliseum: Arena is a CCG representing the gladitorial arenas of Grendol.";
-		} else {
-			vResult += vDefault;
-		}
-		vResult += "</p>";
+		vResult += "<div id=\"idCenterContent\">";
+			if (vPage == 0) {
+				vResult += vDefault;
+			} else if (vPage == 1) {
+				vResult += "Land of the Orcish Empire: Age of Magic: is a CCG based on the different factions that ";
+				vResult += "comprise the Grendol Empire.";
+			} else if (vPage == 2) {
+				vResult += "Coliseum: Arena is a CCG representing the gladitorial arenas of Grendol.";
+			} else {
+				vResult += vDefault;
+			}
+		vResult += "</div>";
 
 		return vResult;
 	}
