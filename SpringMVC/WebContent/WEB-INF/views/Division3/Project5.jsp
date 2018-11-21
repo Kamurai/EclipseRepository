@@ -11,7 +11,7 @@
             Layout vLayout = new Layout(vCustom);
             int vPage = 5;
             int vLevel = 1;
-            int vDivision = 2;
+            int vDivision = 3;
             
             out.println(vUniversal.getHead(vLevel, vDivision));
         %>

@@ -1,6 +1,6 @@
 package division2.section4;
 
-public class Layout extends division2.Layout {
+public class Layout extends main.Layout {
 	public Layout(Custom vCustom) {
 		super(vCustom);
 	}
@@ -8,38 +8,22 @@ public class Layout extends division2.Layout {
 	private String getNavigation(int vLevel) {
 		String vResult = "";
 
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Section1/Index'>Gynowars</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project2'>Assault</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project3'>Mars</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Section4/Index'>Renley</a><br/><br/>";
-		vResult += "<a class=\"navlinkB\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Section4/Project1'>Warring Nations</a><br/><br/>";
-		vResult += "<a class=\"navlinkB\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Section4/Project2'>Psychodom: The One Empire</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Section5/Index'>Antarrea</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project6'>Truth</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project7'>Kingdoms</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project8'>Terminal World</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project9'>Monster Office Workplace</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project10'>Battle Princesses</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project11'>Sacred Offerings</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project12'>The Way</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project13'>Conspiratorium</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division2/Project14'>Conversion</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Section1/Index'>Gynowars</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project2'>Assault</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project3'>Mars</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Section4/Index'>Renley</a><br/><br/>";
+			vResult += "<a class=\"navlinkB\" href='" + vUniversal.getPath(vLevel) + "Division2/Section4/Project1'>Warring Nations</a><br/><br/>";
+			vResult += "<a class=\"navlinkB\" href='" + vUniversal.getPath(vLevel) + "Division2/Section4/Project2'>Psychodom: The One Empire</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Section5/Index'>Antarrea</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project6'>Truth</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project7'>Kingdoms</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project8'>Terminal World</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project9'>Monster Office Workplace</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project10'>Battle Princesses</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project11'>Sacred Offerings</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project12'>The Way</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project13'>Conspiratorium</a><br/><br/>";
+		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel) + "Division2/Project14'>Conversion</a><br/><br/>";
 
 		return vResult;
 	}

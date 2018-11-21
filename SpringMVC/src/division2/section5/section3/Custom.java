@@ -1,6 +1,8 @@
 package division2.section5.section3;
 
 public class Custom extends division2.section5.Custom {
+	main.Universal vUniversal;
+
 	public Custom() {
 		super();
 	}
