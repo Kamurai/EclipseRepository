@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOAN_APPLICATION>
+<_DATA_INFORMATION>
+<DATA_VERSION _Name="Date" _Number="20131126"/>
+<DATA_VERSION _Name="1003" _Number="3.20"/>
+</_DATA_INFORMATION>
+<ADDITIONAL_CASE_DATA>
+<TRANSMITTAL_DATA BelowMarketSubordinateFinancingIndicator="N" BuydownRatePercent="0.000" CurrentFirstMortgageHolderType="Unknown" PropertyAppraisedValueAmount="250000.00" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginatorID="123456789012" LoanOriginationCompanyID="123456789111"/>
+</ADDITIONAL_CASE_DATA>
+<ASSET _CashOrMarketValueAmount="7500.00" _Type="CheckingAccount" BorrowerID="Borr000667777"/>
+<ASSET _CashOrMarketValueAmount="20000.00" _Type="SavingsAccount" BorrowerID="Borr000667777"/>
+<ASSET _CashOrMarketValueAmount="30001.00" _Type="SecuredBorrowedFundsNotDeposited" BorrowerID="Borr000667777"/>
+<ASSET _CashOrMarketValueAmount="100000.00" _Type="CertificateOfDepositTimeDeposit" BorrowerID="Borr000667777"/>
+<ASSET _CashOrMarketValueAmount="150000.00" _Type="MoneyMarketFund" BorrowerID="Borr000667777"/>
+<ASSET _CashOrMarketValueAmount="25000.00" _Type="SavingsAccount" BorrowerID="Borr999603000"/>
+<DOWN_PAYMENT _Amount="12500.00" _Type="SweatEquity"/>
+<DOWN_PAYMENT _Amount="2300.00" _Type="SaleOfChattel"/>
+<DOWN_PAYMENT _Amount="30001.00" _SourceDescription="FMC" _Type="SecuredBorrowedFunds"/>
+<GOVERNMENT_REPORTING HMDA_HOEPALoanStatusIndicator="N" HMDAPreapprovalType="PreapprovalWasNotRequested"/>
+<INTERVIEWER_INFORMATION InterviewersEmployerStreetAddress="412 H St, NW" InterviewersEmployerCity="Washington" InterviewersEmployerState="DC" InterviewersEmployerPostalCode="200121234" InterviewersTelephoneNumber="2023333333" ApplicationTakenMethodType="FaceToFace" InterviewerApplicationSignedDate="20111011" InterviewersEmployerName="ABC Mortgage" InterviewersName="John Done"/>
+<LIABILITY _ID="Liab1" BorrowerID="Borr000667777" REO_ID="ReoP1" _AccountIdentifier="765432" _ExclusionIndicator="N" _HolderName="HOME LOAN" _MonthlyPaymentAmount="1100.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="132" _Type="MortgageLoan" _UnpaidBalanceAmount="145000.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="Y" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab2" BorrowerID="Borr000667777" _AccountIdentifier="8776554" _ExclusionIndicator="N" _HolderName="FMC" _MonthlyPaymentAmount="176.00" _PayoffStatusIndicator="N" _RemainingTermMonths="18" _Type="Installment" _UnpaidBalanceAmount="3001.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab3" BorrowerID="Borr000667777" _AccountIdentifier="234576" _ExclusionIndicator="N" _HolderName="BENEEFICIAL" _MonthlyPaymentAmount="147.00" _PayoffStatusIndicator="N" _RemainingTermMonths="20" _Type="Installment" _UnpaidBalanceAmount="2940.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab4" BorrowerID="Borr000667777" _AccountIdentifier="766554333" _ExclusionIndicator="N" _HolderName="SUPER STORE" _MonthlyPaymentAmount="18.00" _PayoffStatusIndicator="N" _RemainingTermMonths="176" _Type="Revolving" _UnpaidBalanceAmount="3151.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab5" BorrowerID="Borr000667777" _AccountIdentifier="34455667" _ExclusionIndicator="N" _HolderName="BEST DEAL" _MonthlyPaymentAmount="95.00" _PayoffStatusIndicator="N" _RemainingTermMonths="30" _Type="Installment" _UnpaidBalanceAmount="2850.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab6" BorrowerID="Borr000667777" _AccountIdentifier="876655" _ExclusionIndicator="N" _HolderName="EASY BANK" _MonthlyPaymentAmount="27.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="53" _Type="Revolving" _UnpaidBalanceAmount="1417.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab7" BorrowerID="Borr000667777" _AccountIdentifier="45667789" _ExclusionIndicator="N" _HolderName="LOUES" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="34" _Type="Revolving" _UnpaidBalanceAmount="500.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab8" BorrowerID="Borr000667777" _AccountIdentifier="23244545" _ExclusionIndicator="N" _HolderName="BENEEFCL HCL" _MonthlyPaymentAmount="120.00" _PayoffStatusIndicator="N" _RemainingTermMonths="19" _Type="Installment" _UnpaidBalanceAmount="2268.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab9" BorrowerID="Borr000667777" _AccountIdentifier="8374646" _ExclusionIndicator="N" _HolderName="JCPMCCGB" _MonthlyPaymentAmount="35.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="8" _Type="Revolving" _UnpaidBalanceAmount="246.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab10" BorrowerID="Borr000667777" _AccountIdentifier="1234345" _ExclusionIndicator="N" _HolderName="CAR LOAN" _MonthlyPaymentAmount="495.00" _PayoffStatusIndicator="N" _RemainingTermMonths="7" _Type="Installment" _UnpaidBalanceAmount="3200.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab11" BorrowerID="Borr000667777" _AccountIdentifier="6574983" _ExclusionIndicator="N" _HolderName="CITTIFIN" _MonthlyPaymentAmount="365.00" _PayoffStatusIndicator="N" _RemainingTermMonths="54" _Type="Installment" _UnpaidBalanceAmount="19369.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab12" BorrowerID="Borr000667777" _AccountIdentifier="655433" _ExclusionIndicator="N" _HolderName="ASSOCIATES" _MonthlyPaymentAmount="104.00" _PayoffStatusIndicator="N" _RemainingTermMonths="28" _Type="Revolving" _UnpaidBalanceAmount="2812.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab13" BorrowerID="Borr000667777" _AccountIdentifier="87665433" _ExclusionIndicator="N" _HolderName="SIMPLE FINANCING" _MonthlyPaymentAmount="125.00" _PayoffStatusIndicator="N" _RemainingTermMonths="20" _Type="Revolving" _UnpaidBalanceAmount="2413.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab14" BorrowerID="Borr000667777" _AccountIdentifier="2304985438" _ExclusionIndicator="N" _HolderName="ENVOY LUV" _MonthlyPaymentAmount="110.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="13" _Type="Installment" _UnpaidBalanceAmount="1329.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab15" BorrowerID="Borr999603000" _AccountIdentifier="79184" _ExclusionIndicator="N" _HolderName="GMAC" _MonthlyPaymentAmount="244.57" _PayoffStatusIndicator="N" _RemainingTermMonths="25" _Type="Installment" _UnpaidBalanceAmount="5979.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab16" BorrowerID="Borr999603000" _AccountIdentifier="6011785239" _ExclusionIndicator="N" _HolderName="UNIVERSAL VISA" _MonthlyPaymentAmount="25.00" _PayoffStatusIndicator="N" _RemainingTermMonths="38" _Type="Revolving" _UnpaidBalanceAmount="950.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab17" BorrowerID="Borr999603000" _AccountIdentifier="412174" _ExclusionIndicator="N" _HolderName="SIGNET BANK" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="N" _RemainingTermMonths="29" _Type="Revolving" _UnpaidBalanceAmount="423.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab18" BorrowerID="Borr999603000" _AccountIdentifier="98765" _ExclusionIndicator="N" _HolderName="ULYSES BANK" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="N" _RemainingTermMonths="27" _Type="Revolving" _UnpaidBalanceAmount="400.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab19" BorrowerID="Borr999603000" _AccountIdentifier="9998889" _ExclusionIndicator="N" _HolderName="AMERICAN GENERAL FINANCE" _MonthlyPaymentAmount="42.51" _PayoffStatusIndicator="N" _RemainingTermMonths="39" _Type="Installment" _UnpaidBalanceAmount="1646.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab20" BorrowerID="Borr999603000" _AccountIdentifier="1000001" _ExclusionIndicator="N" _HolderName="SEARS" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="N" _RemainingTermMonths="57" _Type="Installment" _UnpaidBalanceAmount="850.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LOAN_PRODUCT_DATA>
+<LOAN_FEATURES BalloonIndicator="N" EscrowWaiverIndicator="N" GSEProjectClassificationType="GNotInaProjectOrDevelopment" GSEPropertyType="Detached" LienPriorityType="FirstLien" LoanDocumentationType="FullDocumentation" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly" ProductName="C06"/>
+</LOAN_PRODUCT_DATA>
+<LOAN_PURPOSE GSETitleMannerHeldDescription="Sole Owner" _Type="ConstructionToPermanent" PropertyRightsType="FeeSimple" PropertyUsageType="PrimaryResidence">
+<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+</LOAN_PURPOSE>
+<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+<MORTGAGE_TERMS BaseLoanAmount="152000.00" LenderCaseIdentifier="DI-C06" LoanAmortizationTermMonths="360" LoanAmortizationType="Fixed" MortgageType="Conventional" RequestedInterestRatePercent="4.500"/>
+<PROPERTY _StreetAddress="1234 Country Rd" _City="Wooster" _State="OH" _PostalCode="446911234" _FinancedNumberOfUnits="1" _StructureBuiltYear="2014">
+<_LEGAL_DESCRIPTION _Type="Other"/>
+<PARSED_STREET_ADDRESS _HouseNumber="1234" _StreetName="Country Rd"/>
+<_VALUATION _MethodType="FNM1004">
+<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+</_VALUATION>
+</PROPERTY>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="770.16"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="75.00"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="150.00"/>
+<REO_PROPERTY REO_ID="ReoP1" BorrowerID="Borr000667777" LiabilityID="Liab1" _StreetAddress="1234 Country Rd" _City="Wooster" _State="OH" _PostalCode="446911234" _CurrentResidenceIndicator="N" _DispositionStatusType="RetainForPrimaryOrSecondaryResidence" _GSEPropertyType="SingleFamily" _LienInstallmentAmount="1100.00" _LienUPBAmount="145000.00" _MaintenanceExpenseAmount="225.00" _MarketValueAmount="250000.00" _SubjectIndicator="Y"/>
+<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="0.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="5500.00" MIAndFundingFeeFinancedAmount="0.00" MIAndFundingFeeTotalAmount="0.00" PrepaidItemsEstimatedAmount="1350.00" PurchasePriceAmount="0.00" RefinanceIncludingDebtsToBePaidOffAmount="145000.00" SellerPaidClosingCostsAmount="0.00" SubordinateLienAmount="0.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+<PURCHASE_CREDIT _Amount="368.00" _SourceType="BorrowerPaidOutsideClosing"/>
+</TRANSACTION_DETAIL>
+<BORROWER BorrowerID="Borr000667777" _FirstName="Elizabeth" _MiddleName="E" _LastName="Spender" _AgeAtApplicationYears="26" _BirthDate="19821108" _HomeTelephoneNumber="3309876543" _PrintPositionType="Borrower" _SSN="000667777" JointAssetLiabilityReportingType="NotJointly" MaritalStatusType="Unmarried" SchoolingYears="16">
+<_MAIL_TO _StreetAddress="PO Box 3214" _City="Wooster" _State="OH" _PostalCode="446911234" _Country="USA"/>
+<_RESIDENCE _StreetAddress="7054 Cannan Center Rd" _City="Wooster" _State="OH" _PostalCode="446911234" BorrowerResidencyBasisType="Rent" BorrowerResidencyDurationMonths="7" BorrowerResidencyDurationYears="2" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="10000.00"/>
+<CURRENT_INCOME IncomeType="Bonus" _MonthlyTotalAmount="1500.00"/>
+<CURRENT_INCOME IncomeType="AlimonyChildSupport" _MonthlyTotalAmount="2000.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="Sole" PriorPropertyUsageType="SecondaryResidence" PropertyForeclosedPastSevenYearsIndicator="N"/>
+<EMPLOYER _Name="e-Normous Engineering" CurrentEmploymentMonthsOnJob="11" CurrentEmploymentTimeInLineOfWorkYears="9" CurrentEmploymentYearsOnJob="8" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotHispanicOrLatino">
+<HMDA_RACE _Type="NativeHawaiianOrOtherPacificIslander"/>
+</GOVERNMENT_MONITORING>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="Rent" _PaymentAmount="950.00"/>
+<CONTACT_POINT _Type="Email" _Value="Elizabeth.Spender@fanniemae.com"/>
+</BORROWER>
+<BORROWER BorrowerID="Borr999603000" _FirstName="Penny" _MiddleName="P" _LastName="Public" _AgeAtApplicationYears="24" _BirthDate="19860501" _HomeTelephoneNumber="5555555555" _PrintPositionType="Borrower" _SSN="999603000" DependentCount="0" JointAssetLiabilityReportingType="NotJointly" MaritalStatusType="Unmarried" SchoolingYears="18">
+<_RESIDENCE _StreetAddress="2935 Augusta #3" _City="San Luis Obispo" _State="CA" _PostalCode="93401" BorrowerResidencyBasisType="Rent" BorrowerResidencyDurationMonths="1" BorrowerResidencyDurationYears="2" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="5000.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="No" IntentToOccupyType="No" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PropertyForeclosedPastSevenYearsIndicator="N"/>
+<EMPLOYER _Name="Possimple" CurrentEmploymentMonthsOnJob="3" CurrentEmploymentTimeInLineOfWorkYears="10" CurrentEmploymentYearsOnJob="7" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotHispanicOrLatino">
+<HMDA_RACE _Type="NativeHawaiianOrOtherPacificIslander"/>
+</GOVERNMENT_MONITORING>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="Rent" _PaymentAmount="875.00"/>
+<CONTACT_POINT _Type="Email" _Value="Penny.Public@fanniemae.com"/>
+</BORROWER>
+</LOAN_APPLICATION>

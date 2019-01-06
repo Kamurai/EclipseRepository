@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 (x64) (http://www.altova.com) by Technology Installations (FANNIE MAE) -->
+<!-- Fannie Mae and Freddie Mac ULDD Phase 3 Extension File -->
+<xsd:schema xmlns:mismo="http://www.mismo.org/residential/2009/schemas" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ULDD="http://www.datamodelextension.org/Schema/ULDD" targetNamespace="http://www.datamodelextension.org/Schema/ULDD" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xsd:import namespace="http://www.mismo.org/residential/2009/schemas" schemaLocation="MISMO_3_0.xsd"/>
+	<xsd:element name="OTHER" type="ULDD:OTHER"/>
+	<xsd:element name="LOAN_IDENTIFIER_EXTENSION" type="ULDD:LOAN_IDENTIFIER_EXTENSION"/>
+	<xsd:element name="GOVERNMENT_MONITORING_DETAIL_EXTENSION" type="ULDD:GOVERNMENT_MONITORING_DETAIL_EXTENSION"/>
+	<xsd:element name="GOVERNMENT_MONITORING_EXTENSION" type="ULDD:GOVERNMENT_MONITORING_EXTENSION"/>
+	<xsd:element name="HMDA_RACE_EXTENSION" type="ULDD:HMDA_RACE_EXTENSION"/>
+	<xsd:complexType name="OTHER">
+		<xsd:annotation>
+			<xsd:documentation>Container for all non MISMO extensions</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element ref="ULDD:GOVERNMENT_MONITORING_DETAIL_EXTENSION" minOccurs="0"/>
+			<xsd:element ref="ULDD:GOVERNMENT_MONITORING_EXTENSION" minOccurs="0"/>
+			<xsd:element ref="ULDD:HMDA_RACE_EXTENSION" minOccurs="0"/>
+			<xsd:element ref="ULDD:LOAN_IDENTIFIER_EXTENSION" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="GOVERNMENT_MONITORING_DETAIL_EXTENSION">
+		<xsd:sequence>
+			<xsd:element name="HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the ethnicity was collected based on visual observation or surname.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDAEthnicityRefusalIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the borrower has stated that they do not wish to furnish the HMDA ethnicity information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the gender was collected based on visual observation or name.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDAGenderRefusalIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the borrower has stated that they do not wish to furnish the HMDA gender information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDAGenderType" type="ULDD:HMDAGenderTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that represents the borrower's or interviewer's statement about the borrower's gender.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the race was collected based on visual observation or surname.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceRefusalIndicator" type="mismo:MISMOIndicator" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>When true, indicates the borrower has stated that they do not wish to furnish the HMDA race information.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="HMDAGenderTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ApplicantSelectedBothMaleAndFemale"/>
+			<xsd:enumeration value="Female"/>
+			<xsd:enumeration value="InformationNotProvidedUnknown"/>
+			<xsd:enumeration value="Male"/>
+			<xsd:enumeration value="NotApplicable"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="GOVERNMENT_MONITORING_EXTENSION">
+		<xsd:sequence>
+			<xsd:element name="HMDA_ETHNICITIES" type="ULDD:HMDA_ETHNICITIES" minOccurs="0"/>
+			<xsd:element name="HMDA_ETHNICITY_ORIGINS" type="ULDD:HMDA_ETHNICITY_ORIGINS" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_ETHNICITIES">
+		<xsd:sequence>
+			<xsd:element name="HMDA_ETHNICITY" type="ULDD:HMDA_ETHNICITY" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_ETHNICITY">
+		<xsd:sequence>
+			<xsd:element name="HMDAEthnicityType" type="mismo:HMDAEthnicityTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that represents the borrower's or interviewer's statement about the borrower's ethnicity as defined in the Home Mortgage Disclosure Act (HMDA).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_ETHNICITY_ORIGINS">
+		<xsd:sequence>
+			<xsd:element name="HMDA_ETHNICITY_ORIGIN" type="ULDD:HMDA_ETHNICITY_ORIGIN" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_ETHNICITY_ORIGIN">
+		<xsd:sequence>
+			<xsd:element name="HMDAEthnicityOriginType" type="ULDD:HMDAEthnicityOriginTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that represents the borrower's or interviewer's statement about the borrower's ethnicity origin as defined in the Home Mortgage Disclosure Act (HMDA).</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDAEthnicityOriginTypeOtherDescription" type="mismo:MISMOString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A free-form text when the value of Other is used for HMDA Ethnicity Origin Type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="HMDAEthnicityOriginTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Cuban"/>
+			<xsd:enumeration value="Mexican"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="PuertoRican"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="HMDA_RACE_EXTENSION">
+		<xsd:sequence>
+			<xsd:element name="HMDA_RACE_DESIGNATIONS" type="ULDD:HMDA_RACE_DESIGNATIONS" minOccurs="0"/>
+			<xsd:element name="HMDA_RACE_DETAIL" type="ULDD:HMDA_RACE_DETAIL" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_RACE_DETAIL">
+		<xsd:sequence>
+			<xsd:element name="HMDARaceType" type="mismo:HMDARaceTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that represents the borrower's or interviewer's statement about the borrower's race as defined in the Home Mortgage Disclosure Act. Up to 5 Race Types may be included per borrower.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceTypeAdditionalDescription" type="mismo:MISMOString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A free-form text field used to provide a supplemental comment or remark regarding HMDA Race Type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_RACE_DESIGNATIONS">
+		<xsd:sequence>
+			<xsd:element name="HMDA_RACE_DESIGNATION" type="ULDD:HMDA_RACE_DESIGNATION" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="HMDA_RACE_DESIGNATION">
+		<xsd:sequence>
+			<xsd:element name="HMDARaceDesignationOtherAsianDescription" type="mismo:MISMOString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A free-form text field used to capture information specific to HMDA Race Designation category of Other Asian.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceDesignationOtherPacificIslanderDescription" type="mismo:MISMOString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A free-form text field used to capture information specific to HMDA Race Designation category of Other Pacific Islander.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceDesignationType" type="ULDD:HMDARaceDesignationTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that represents the borrower's or interviewer's statement about the borrower's race designation as defined in the Home Mortgage Disclosure Act.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="HMDARaceDesignationTypeOtherDescription" type="mismo:MISMOString" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A free-form text field that specifies the enumeration when the value of Other is used for HMDA Race Designation Type.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="HMDARaceDesignationTypeEnumerated">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="AsianIndian"/>
+			<xsd:enumeration value="Chinese"/>
+			<xsd:enumeration value="Filipino"/>
+			<xsd:enumeration value="GuamanianOrChamorro"/>
+			<xsd:enumeration value="Japanese"/>
+			<xsd:enumeration value="Korean"/>
+			<xsd:enumeration value="NativeHawaiian"/>
+			<xsd:enumeration value="Other"/>
+			<xsd:enumeration value="OtherAsian"/>
+			<xsd:enumeration value="OtherPacificIslander"/>
+			<xsd:enumeration value="Samoan"/>
+			<xsd:enumeration value="Vietnamese"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="LOAN_IDENTIFIER_EXTENSION">
+		<xsd:sequence>
+			<xsd:element name="LoanIdentifier" type="ULDD:LoanIdentifier" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>The value of the identifier for the specified type. (i.e. UniversalLoan)</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="LoanIdentifierType" type="ULDD:LoanIdentifierTypeEnumerated" minOccurs="0">
+				<xsd:annotation>
+					<xsd:documentation>A value from a MISMO prescribed list that specifies the type of loan identifier.</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="LoanIdentifierTypeEnumerated">
+		<xsd:annotation>
+			<xsd:documentation>Specifies the type of identifier used for a loan. Includes the ULI</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="LenderLoan"/>
+			<xsd:enumeration value="UniversalLoan"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="LoanIdentifier">
+		<xsd:annotation>
+			<xsd:documentation>The value of the identifier for the specified type. Includes the ULI</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:string"/>
+	</xsd:simpleType>
+</xsd:schema>

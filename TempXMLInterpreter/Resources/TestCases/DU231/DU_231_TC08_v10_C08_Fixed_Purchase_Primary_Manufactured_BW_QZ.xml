@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOAN_APPLICATION>
+<_DATA_INFORMATION>
+<DATA_VERSION _Name="Date" _Number="20131126"/>
+<DATA_VERSION _Name="1003" _Number="3.20"/>
+</_DATA_INFORMATION>
+<ADDITIONAL_CASE_DATA>
+<TRANSMITTAL_DATA BelowMarketSubordinateFinancingIndicator="Y" BuydownRatePercent="0.000" CurrentFirstMortgageHolderType="Unknown" PropertyEstimatedValueAmount="145000.00" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginatorID="123456789012" LoanOriginationCompanyID="123456789111"/>
+</ADDITIONAL_CASE_DATA>
+<ASSET _CashOrMarketValueAmount="7500.00" _Type="EarnestMoneyCashDepositTowardPurchase" _HolderName="With Realtor" BorrowerID="Borr999008881"/>
+<ASSET _CashOrMarketValueAmount="20000.00" _Type="BridgeLoanNotDeposited" BorrowerID="Borr999008881"/>
+<ASSET _CashOrMarketValueAmount="3500.00" _Type="CheckingAccount" BorrowerID="Borr999008881"/>
+<ASSET _CashOrMarketValueAmount="2000.00" _Type="CashOnHand" BorrowerID="Borr999008882"/>
+<ASSET _CashOrMarketValueAmount="15000.00" _Type="SavingsAccount" BorrowerID="Borr999008881"/>
+<ASSET _CashOrMarketValueAmount="10000.00" _Type="SavingsAccount" BorrowerID="Borr999008882"/>
+<DOWN_PAYMENT _Amount="5000.00" _SourceDescription="Trade Equity" _Type="TradeEquity"/>
+<DOWN_PAYMENT _Amount="2000.00" _SourceDescription="Mattress Money" _Type="CashOnHand"/>
+<DOWN_PAYMENT _Amount="4000.00" _SourceDescription="Credit Union Loan" _Type="UnsecuredBorrowedFunds"/>
+<GOVERNMENT_REPORTING HMDA_HOEPALoanStatusIndicator="Y" HMDAPreapprovalType="PreapprovalWasNotRequested"/>
+<INTERVIEWER_INFORMATION InterviewersEmployerStreetAddress="412 H St, NW" InterviewersEmployerCity="Washington" InterviewersEmployerState="DC" InterviewersEmployerPostalCode="200121234" InterviewersTelephoneNumber="2023333333" ApplicationTakenMethodType="Internet" InterviewerApplicationSignedDate="20111011" InterviewersEmployerName="ABC Mortgage" InterviewersName="John Done"/>
+<LIABILITY _ID="Liab1" BorrowerID="Borr999008881" REO_ID="ReoP2" _AccountIdentifier="00853478576" _ExclusionIndicator="N" _HolderName="BRING YOU HOME MTG." _MonthlyPaymentAmount="1117.00" _PayoffStatusIndicator="N" _RemainingTermMonths="83" _Type="MortgageLoan" _UnpaidBalanceAmount="92489.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="Y"/>
+<LIABILITY _ID="Liab2" BorrowerID="Borr999008881" REO_ID="ReoP1" _AccountIdentifier="31684-1571" _ExclusionIndicator="N" _HolderName="HOME 4 YOU MTG." _MonthlyPaymentAmount="278.00" _PayoffStatusIndicator="N" _RemainingTermMonths="66" _Type="MortgageLoan" _UnpaidBalanceAmount="18244.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab3" BorrowerID="Borr999008881" _AccountIdentifier="2127524795" _ExclusionIndicator="N" _HolderName="FIRST CITY BANK" _MonthlyPaymentAmount="242.00" _PayoffStatusIndicator="N" _RemainingTermMonths="20" _Type="Installment" _UnpaidBalanceAmount="4761.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab4" BorrowerID="Borr999008881" _AccountIdentifier="478399751" _ExclusionIndicator="N" _HolderName="YOU AUTO BUY CAR LOAN" _MonthlyPaymentAmount="345.00" _PayoffStatusIndicator="N" _RemainingTermMonths="45" _Type="Installment" _UnpaidBalanceAmount="15185.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab5" BorrowerID="Borr999008881" _AccountIdentifier="653411956" _ExclusionIndicator="N" _HolderName="HOWDY BANK" _MonthlyPaymentAmount="140.00" _PayoffStatusIndicator="N" _RemainingTermMonths="1" _Type="Installment" _UnpaidBalanceAmount="140.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab6" BorrowerID="Borr999008881" _AccountIdentifier="883461751" _ExclusionIndicator="N" _HolderName="MACY'S" _MonthlyPaymentAmount="20.00" _PayoffStatusIndicator="N" _RemainingTermMonths="12" _Type="Revolving" _UnpaidBalanceAmount="226.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab7" BorrowerID="Borr999008881" _AccountIdentifier="5551212202" _ExclusionIndicator="N" _HolderName="DILARD'S" _MonthlyPaymentAmount="10.00" _PayoffStatusIndicator="N" _RemainingTermMonths="26" _Type="Revolving" _UnpaidBalanceAmount="253.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab8" BorrowerID="Borr999008881" _AccountIdentifier="6543554316" _ExclusionIndicator="N" _HolderName="KOHL'S" _MonthlyPaymentAmount="16.00" _PayoffStatusIndicator="N" _RemainingTermMonths="20" _Type="Revolving" _UnpaidBalanceAmount="320.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab9" BorrowerID="Borr999008881" _AccountIdentifier="358479515" _ExclusionIndicator="N" _HolderName="VISA" _MonthlyPaymentAmount="79.00" _PayoffStatusIndicator="N" _RemainingTermMonths="34" _Type="Revolving" _UnpaidBalanceAmount="2663.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab10" BorrowerID="Borr999008881" _AccountIdentifier="245431876" _ExclusionIndicator="N" _HolderName="MASTERCARD" _MonthlyPaymentAmount="40.00" _PayoffStatusIndicator="N" _RemainingTermMonths="30" _Type="Revolving" _UnpaidBalanceAmount="1200.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LOAN_PRODUCT_DATA>
+<LOAN_FEATURES EscrowWaiverIndicator="N" GSEPropertyType="ManufacturedHousing" LienPriorityType="FirstLien" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly"/>
+</LOAN_PRODUCT_DATA>
+<LOAN_PURPOSE GSETitleMannerHeldDescription="Tenants By The Entirety" _Type="Purchase" PropertyRightsType="FeeSimple" PropertyUsageType="PrimaryResidence">
+<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+</LOAN_PURPOSE>
+<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+<MORTGAGE_TERMS BaseLoanAmount="100000.00" LenderCaseIdentifier="DI-C08" LoanAmortizationTermMonths="360" LoanAmortizationType="Fixed" MortgageType="Conventional" RequestedInterestRatePercent="4.250"/>
+<PROPERTY _StreetAddress="1234 Mayflower" _City="Dawson" _State="IA" _PostalCode="50060" _FinancedNumberOfUnits="1" _StructureBuiltYear="1964">
+<_LEGAL_DESCRIPTION _Type="Other"/>
+<PARSED_STREET_ADDRESS _HouseNumber="1234" _StreetName="Mayflower"/>
+<_VALUATION _MethodType="FNM1004">
+<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+</_VALUATION>
+</PROPERTY>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="491.94"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="OtherMortgageLoanPrincipalAndInterest" _PaymentAmount="87.64"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="60.00"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="75.00"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HomeownersAssociationDuesAndCondominiumFees" _PaymentAmount="50.00"/>
+<REO_PROPERTY REO_ID="ReoP1" BorrowerID="Borr999008881" LiabilityID="Liab2" _StreetAddress="8888 Industrial Parkway" _City="El Paso" _State="TX" _PostalCode="80935" _CurrentResidenceIndicator="N" _DispositionStatusType="RetainForPrimaryOrSecondaryResidence" _GSEPropertyType="CommercialNonResidential" _LienInstallmentAmount="278.00" _LienUPBAmount="18244.00" _MaintenanceExpenseAmount="400.00" _MarketValueAmount="80000.00" _SubjectIndicator="N"/>
+<REO_PROPERTY REO_ID="ReoP2" BorrowerID="Borr999008881" LiabilityID="Liab1" _StreetAddress="888 Willis Ave." _City="Dawson" _State="IA" _PostalCode="80935" _CurrentResidenceIndicator="N" _DispositionStatusType="RetainForRental" _GSEPropertyType="MultifamilyMoreThanFourUnits" _LienInstallmentAmount="1117.00" _LienUPBAmount="92489.00" _MaintenanceExpenseAmount="465.00" _MarketValueAmount="150000.00" _RentalIncomeGrossAmount="4711.00" _RentalIncomeNetAmount="1951.25" _SubjectIndicator="N"/>
+<TITLE_HOLDER _Name="Dad Firstimer"/>
+<TITLE_HOLDER _Name="Mom Firstimer"/>
+<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="0.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="2300.00" MIAndFundingFeeFinancedAmount="0.00" MIAndFundingFeeTotalAmount="0.00" PrepaidItemsEstimatedAmount="1270.00" PurchasePriceAmount="145000.00" RefinanceIncludingDebtsToBePaidOffAmount="0.00" SellerPaidClosingCostsAmount="0.00" SubordinateLienAmount="5000.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+<PURCHASE_CREDIT _Amount="7500.00" _Type="EarnestMoney"/>
+<PURCHASE_CREDIT _Amount="376.00" _SourceType="BorrowerPaidOutsideClosing"/>
+</TRANSACTION_DETAIL>
+<BORROWER BorrowerID="Borr999008881" JointAssetBorrowerID="Borr999008882" _FirstName="Dad" _LastName="Firstimer" _AgeAtApplicationYears="43" _BirthDate="19660724" _HomeTelephoneNumber="5154326789" _PrintPositionType="Borrower" _SSN="999008881" DependentCount="2" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="16">
+<_RESIDENCE _StreetAddress="888 Willis Ave." _City="Dawson" _State="IA" _PostalCode="50060" BorrowerResidencyBasisType="Own" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="3200.00"/>
+<CURRENT_INCOME IncomeType="NetRentalIncome" _MonthlyTotalAmount="2610.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="Y" BankruptcyIndicator="Y" BorrowedDownPaymentIndicator="Y" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="Y" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="Y" OutstandingJudgementsIndicator="Y" PartyToLawsuitIndicator="Y" PresentlyDelinquentIndicator="Y" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="Investment" PropertyForeclosedPastSevenYearsIndicator="Y">
+<_EXPLANATION _Description="Test Text 1" _Type="OutstandingJudgments"/>
+<_EXPLANATION _Description="Test Text 2" _Type="DeclaredBankruptcyPastSevenYears"/>
+<_EXPLANATION _Description="Confirmed CR PFS" _Type="DirectIndirectForeclosedPropertyPastSevenYears"/>
+<_EXPLANATION _Description="Test Text 4" _Type="PartyToLawsuit"/>
+<_EXPLANATION _Description="Test Text 5" _Type="ObligatedOnLoanForeclosedOrDeedInLieuOfJudgement"/>
+<_EXPLANATION _Description="Test Text 6" _Type="DelinquencyOrDefault"/>
+<_EXPLANATION _Description="Test Text 7" _Type="AlimonyChildSupport"/>
+<_EXPLANATION _Description="Test Text 8" _Type="BorrowedDownPayment"/>
+<_EXPLANATION _Description="Test Text 9" _Type="CoMakerEndorserOnNote"/>
+</DECLARATION>
+<EMPLOYER _Name="Shaggies" CurrentEmploymentMonthsOnJob="0" CurrentEmploymentTimeInLineOfWorkYears="8" CurrentEmploymentYearsOnJob="8" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING GenderType="Male" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotApplicable">
+<HMDA_RACE _Type="White"/>
+</GOVERNMENT_MONITORING>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="50.00"/>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="100.00"/>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="OtherHousingExpense" _PaymentAmount="100.00"/>
+<CONTACT_POINT _Type="Email" _Value="dfirstimer@fanniemae.com"/>
+</BORROWER>
+<BORROWER BorrowerID="Borr999008882" JointAssetBorrowerID="Borr999008881" _FirstName="Mom" _LastName="Firstimer" _AgeAtApplicationYears="47" _BirthDate="19620321" _HomeTelephoneNumber="5154326789" _PrintPositionType="CoBorrower" _SSN="999008882" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="18">
+<_RESIDENCE _StreetAddress="888 Willis Ave." _City="Dawson" _State="IA" _PostalCode="50060" BorrowerResidencyBasisType="Own" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="500.00"/>
+<CURRENT_INCOME IncomeType="Unemployment" _MonthlyTotalAmount="1750.00"/>
+<CURRENT_INCOME IncomeType="TemporaryLeave" _MonthlyTotalAmount="250.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="Investment" PropertyForeclosedPastSevenYearsIndicator="N"/>
+<EMPLOYER _Name="Maggies" CurrentEmploymentMonthsOnJob="6" CurrentEmploymentTimeInLineOfWorkYears="5" CurrentEmploymentYearsOnJob="5" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotApplicable">
+<HMDA_RACE _Type="White"/>
+</GOVERNMENT_MONITORING>
+<CONTACT_POINT _Type="Email" _Value="mfirstimer@fanniemae.com"/>
+</BORROWER>
+</LOAN_APPLICATION>

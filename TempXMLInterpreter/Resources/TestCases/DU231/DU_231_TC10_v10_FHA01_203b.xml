@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Jay Schlaffer (FANNIE MAE) -->
+<LOAN_APPLICATION>
+	<_DATA_INFORMATION>
+		<DATA_VERSION _Name="Date" _Number="20131126"/>
+		<DATA_VERSION _Name="1003" _Number="3.20"/>
+	</_DATA_INFORMATION>
+	<ADDITIONAL_CASE_DATA>
+		<TRANSMITTAL_DATA BuydownRatePercent="0.000" PropertyEstimatedValueAmount="151000.00" CurrentFirstMortgageHolderType="Unknown" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginationCompanyID="123456789111" LoanOriginatorID="123456789012"/>
+	</ADDITIONAL_CASE_DATA>
+	<ASSET _CashOrMarketValueAmount="3000.00" _Type="GiftOfEquity" _HolderName="Gift of Equity" BorrowerID="Borr991919991"/>
+	<ASSET _CashOrMarketValueAmount="5000.00" _Type="GiftsNotDeposited" _HolderName="Gift" BorrowerID="Borr991919991"/>
+	<ASSET _CashOrMarketValueAmount="15000.00" _Type="TrustAccount" _HolderName="Trust Funds" BorrowerID="Borr991919991"/>
+	<ASSET _CashOrMarketValueAmount="2500.00" _Type="CheckingAccount" _HolderName="Checking" BorrowerID="Borr991919991"/>
+	<ASSET _CashOrMarketValueAmount="6000.00" _Type="SavingsAccount" _HolderName="Savings" BorrowerID="Borr991919991"/>
+	<DOWN_PAYMENT _Amount="2000.00" _SourceDescription="Source NP NonSeller" _Type="FHAGiftSourceEmployer"/>
+	<DOWN_PAYMENT _Amount="5000.00" _SourceDescription="Source Employer" _Type="FHAGiftSourceRelative"/>
+	<DOWN_PAYMENT _Amount="1000.00" _Type="FHAGiftSourceNonprofitReligiousCommunityNonSellerFunded"/>
+	<GOVERNMENT_LOAN>
+		<FHA_LOAN FHA_MIPremiumRefundAmount="0.00" SectionOfActType="203B251" _LenderIdentifier="9999999999"/>
+		<FHA_VA_LOAN GovernmentMortgageCreditCertificateAmount="150.00"/>
+	</GOVERNMENT_LOAN>
+	<GOVERNMENT_REPORTING HMDA_HOEPALoanStatusIndicator="N" HMDAPreapprovalType="PreapprovalWasNotRequested"/>
+	<INTERVIEWER_INFORMATION ApplicationTakenMethodType="FaceToFace" InterviewerApplicationSignedDate="20111011"/>
+	<LIABILITY _ID="Liab1" BorrowerID="Borr991919991" _AccountIdentifier="3563A019732" _ExclusionIndicator="N" _HolderName="MOUNTAIN BANK" _MonthlyPaymentAmount="123.00" _PayoffStatusIndicator="N" _RemainingTermMonths="22" _Type="Installment" _UnpaidBalanceAmount="2600.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab2" BorrowerID="Borr991919991" _AccountIdentifier="98E543184" _ExclusionIndicator="N" _HolderName="HEMLOCKS" _MonthlyPaymentAmount="44.00" _PayoffStatusIndicator="N" _RemainingTermMonths="10" _Type="Revolving" _UnpaidBalanceAmount="437.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LOAN_PRODUCT_DATA>
+		<ARM _IndexCurrentValuePercent="2.500" _IndexMarginPercent="1.000" _QualifyingRatePercent="0.000"/>
+		<LOAN_FEATURES BalloonIndicator="N" EscrowWaiverIndicator="N" FNMProductPlanIdentifier="FHAHY" GSEProjectClassificationType="GNotInaProjectOrDevelopment" GSEPropertyType="Detached" LienPriorityType="FirstLien" LoanDocumentationType="FullDocumentation" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly" ProductName="FHA Hybrid ARM"/>
+	</LOAN_PRODUCT_DATA>
+	<LOAN_PURPOSE _Type="Purchase" PropertyRightsType="FeeSimple" PropertyUsageType="PrimaryResidence">
+		<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+	</LOAN_PURPOSE>
+	<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+	<MORTGAGE_TERMS BaseLoanAmount="142500.00" LenderCaseIdentifier="DI-FHA01" LoanAmortizationTermMonths="360" LoanAmortizationType="AdjustableRate" MortgageType="FHA" RequestedInterestRatePercent="3.250"/>
+	<PROPERTY _StreetAddress="3726 Poplar St" _City="Dawson" _State="IA" _County="DELAWARE" _PostalCode="500661111" _FinancedNumberOfUnits="1">
+		<_LEGAL_DESCRIPTION _Type="Other"/>
+		<PARSED_STREET_ADDRESS _HouseNumber="3726" _StreetName="Poplar St"/>
+		<_VALUATION _MethodType="Other">
+			<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+		</_VALUATION>
+	</PROPERTY>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="631.02"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="OtherMortgageLoanPrincipalAndInterest" _PaymentAmount="27.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="53.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="86.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="MI" _PaymentAmount="46.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HomeownersAssociationDuesAndCondominiumFees" _PaymentAmount="35.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="OtherHousingExpense" _PaymentAmount="50.00"/>
+	<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="0.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="1800.00" MIAndFundingFeeFinancedAmount="2493.00" MIAndFundingFeeTotalAmount="2493.75" PrepaidItemsEstimatedAmount="799.00" PurchasePriceAmount="151000.00" RefinanceIncludingDebtsToBePaidOffAmount="0.00" SalesConcessionAmount="750.00" SellerPaidClosingCostsAmount="1000.00" SubordinateLienAmount="4500.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+		<PURCHASE_CREDIT _Amount="368.00" _SourceType="BorrowerPaidOutsideClosing"/>
+		<PURCHASE_CREDIT _Amount="1000.00" _SourceType="PropertySeller"/>
+	</TRANSACTION_DETAIL>
+	<BORROWER BorrowerID="Borr991919991" _FirstName="Alice" _LastName="Firstimer" _AgeAtApplicationYears="23" _BirthDate="19860307" _HomeTelephoneNumber="5155555555" _PrintPositionType="Borrower" _SSN="991919991" DependentCount="0" JointAssetLiabilityReportingType="NotJointly" MaritalStatusType="Unmarried" SchoolingYears="16">
+		<_RESIDENCE _StreetAddress="9991 Warford" _City="Dawson" _State="IA" _PostalCode="50066" BorrowerResidencyBasisType="LivingRentFree" BorrowerResidencyDurationMonths="0" BorrowerResidencyDurationYears="2" BorrowerResidencyType="Current"/>
+		<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="5000.00"/>
+		<CURRENT_INCOME IncomeType="Overtime" _MonthlyTotalAmount="250.00"/>
+		<CURRENT_INCOME IncomeType="NetRentalIncome" _MonthlyTotalAmount="0.00"/>
+		<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="No" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PropertyForeclosedPastSevenYearsIndicator="N"/>
+		<EMPLOYER _Name="Abacab" CurrentEmploymentMonthsOnJob="0" CurrentEmploymentTimeInLineOfWorkYears="2" CurrentEmploymentYearsOnJob="2" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+		<FHA_VA_BORROWER CAIVRSIdentifier="123456" FNMBankruptcyCount="0" FNMBorrowerCreditRating="0" FirstTimeHomebuyerCounselType="HUDApprovedCounselingAgency" FNMForeclosureCount="0"/>
+		<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotHispanicOrLatino">
+			<HMDA_RACE _Type="Asian"/>
+		</GOVERNMENT_MONITORING>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="Rent"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="OtherMortgageLoanPrincipalAndInterest"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="HazardInsurance"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="RealEstateTax"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="MI"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="HomeownersAssociationDuesAndCondominiumFees"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="OtherHousingExpense"/>
+		<CONTACT_POINT _Type="Email" _Value="alice.f@fanniemae.com"/>
+	</BORROWER>
+</LOAN_APPLICATION>

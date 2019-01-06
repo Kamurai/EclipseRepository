@@ -1,0 +1,1891 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by Jay Schlaffer (FANNIE MAE) -->
+<!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by DANNER HAWKINS (FANNIE MAE) -->
+<!-- =============================================================== -->
+<!--File Name: MISMO_AUS_V2_3_1_FINAL_wFNM_ExtPlusProdExt_04112007 -->
+<!--ELE Version:-->
+<!--Creation date: July 11, 2001-->
+<!--Modification Date: April 11, 2007-->
+<!--Comments: Copyright 2003 Mortgage Bankers Association of America, Inc. Permission to use, copy, modify, and distribute the MISMO DTD and its accompanying documentation for any purpose and without fee is hereby granted in perpetuity, provided that the above copyright notice and this paragraph appear in all copies. The copyright holders make no representations about the suitability of the DTD for any purpose.-->
+<!-- =============================================================== -->
+<!--Modification Date: 03/31/2004 by Gary Haupt for Release 5.4 Added Income Types for 05I-030: FNMBoarderIncome, FNMTrailingCoBorrower, FNMGovernmentMortgageCreditCertificates. Added / Verified Asset Types for 06C-030: CashOnHand, GiftOfEquity (Note: CashOnHand was already present as an asset type)-->
+<!--Modification Date: 04/13/2004 by Gary Haupt to correct data loss and mistranslation of land field 07A-040. Added attribute FNMCostOfLandAcquiredSeparatelyAmount to TRANSACTION_DETAIL-->
+<!--Modification Date: 11/19/2004 by Peter Oldershaw for Gary Haupt to add the Product Extensions needed to support non FNMA products (see comments infornt of added items)-->
+<!--Modification Date: 7/20/2005 by Gary Haupt Added 6 enumerated values to LNC-090 GSEProjectClassificationType; new values address type of review for the project. See Fannie Mae Announcement 05-03 -->
+<!--Modification Date: 7/29/2005 by Gary Haupt MISMO voted to change the names of the 6 new values for LNC-090; 7/29 corrected names based on MISMO request-->
+<!--Modification Date: 9/9/2005 by Gary Haupt Updated FNM Project Warranty Type to reflect 4 new values: FNM1028, FNMExpeditedWarranty, FHA, FNMExpAndFRELmtdWarranty (Noncompliant Name Acknowledged)-->
+<!--Modification Date: 3/1/2006 by Gary Haupt Updated for DODUotW Rel 2.10 / 2.11 Add enumerated values to LOAN_APPLICATION_PROPERTY_VALUATION_MethodType: 
+FNM1004CFRE70B (EDI 132)
+FNM1073FRE465 (EDI 133)
+FNM1075FRE466 (EDI 134)
+FNM2090 (EDI 135)
+FNM1004DFRE442 (EDI 136)
+FNM2000FRE1032 (EDI 137)
+FNM2000AFRE1072 (EDI 138). 
+Note that the MISMO AUS 2.4 Release has marked _VALUATION_MethodType for a new attribute, AppraisalFormType, will be added in MISMO AUS 2.4-->
+<!--Modification Date: 6/26/2006 by Gary Haupt - Added enumerated values for 99B-070 LOAN_APPLICATION_PROPERTY_VALUATION_MethodType, and added comment for LNC-090 LOAN_APPLICATION_LOAN_PRODUCT_DATA_LOAN_FEATURES_GSEProjectClassificationType. In-line comments highlight enumerated values added, as well as values that are no longer supported. These changes will be presented in DODUotW Rel 2.11, and in DU 5.6  The attribute _VALUATION_MethodType has been marked for deprecation in a future MISMO release. A new attribute, _VALUATION_AppraisalFormType, will be added in MISMO AUS V2.4-->
+<!--Modification Date: 3/27/2007 by Matthew Schutz - Updated in anticipation of DU enhancements in Q3 2007. Added new attribute, LMD-035 FNMCommunitySecondsRepaymentStructure, to LOAN_APPLICATION_AFFORDABLE_LENDING with the following enumerations:
+AnyPaymentRequiredWithinFirstFiveYears (1003 v 3.2 Value: 01)
+PaymentsDeferredFiveOrMoreYearsFullyForgiven (1003 v 3.2 Value: 02)
+PaymentsDeferredFiveOrMoreYearsNotFullyForgiven (1003 v 3.2 Value: 03)
+The following enumerations for LMD-030 LOAN_APPLICATION_AFFORDABLE_LENDING FNMCommunityLendingProductType will not be supported by Fannie Mae in the 5.7 release of DU: 
+Fannie32
+Fannie97
+CommunityHomeBuyerProgram. 
+Effective with the new DU release date, MyCommunityMortgage will be the only valid community lending product available in DU. 
+See DU Release notes for 5.7. Consolidated single comments that extended over multiple comment lines.-->
+<!--Modification Date: 8/29/2007 Denise Rivoal - In anticipation of a DU enhancement in 5.7.1, added a new enumeration to LOAN_APPLICATION_LOAN_PRODUCT_DATA_LOAN_FEATURE_GSE Property Type:
+MHSelect.-->
+<!--Modification Date: 5/12/2009 by Tejpal Dhillon - Updates to support new FHA/FHFA requirements.
+    1. Added following enumerations to LOAN_APPLICATION/DOWN_PAYMENT/Type -  FHAGiftSourceNA, FHAGiftSourceRelative, FHAGiftSourceGovernmentAssistance, FHAGiftSourceEmployer, FHAGiftSourceNonprofitReligiousCommunitySellerFunded, FHAGiftSourceNonprofitReligiousCommunityNon-SellerFunded
+    2. Added following enumerations to LOAN_APPLICATION/GOVERNMENT_LOAN/FHA_VA_LOAN/GovernmentRefinanceType - HOPEforHomeowners, PriorFHA
+    3. Added following enumerations to LOAN_APPLICATION/GOVERNMENT_LOAN/FHA_LOAN/SectionOfActType - 257
+    4. a. Added comment to indicate repurposing of GOE-070 formerly used for FNMCreditReportScoreType to support field FirstTimeHomebuyerCounselType
+        b. Added new attribute for GOE-070 - LOAN_APPLICATION/BORROWER/FHA_VA_BORROWER/FirstTimeHomebuyerCounselType - NotCounseled,HUDApprovedCounselingAgency
+    5. Added new attribute LOAN_APPLICATION/ADDITIONAL_CASE_DATA/TRANSMITTAL_DATA/LoanOriginatorID
+    6. Added new attribute LOAN_APPLICATION/ADDITIONAL_CASE_DATA/TRANSMITTAL_DATA/LoanOriginationCompanyID
+    7. Added new attribute LOAN_APPLICATION/PROPERTY/_VALUATION/APPRAISER/_SupervisoryAppraiserLicenseNumber 
+-->
+<!--Modification Date: 2/10/2010 by Tejpal Dhillon - Updates to support new enumerations for DU 8.01
+1. 4 new Enumerations added for GSEProjectClassificationType - VCondo, GNotInaProjectOrDevelopment, TPUD and TCO_OP
+2. New Enumeration added for FNMCommunityLendingProductType - HFAAffordableAdvantage 
+-->
+<!--Modification Date: 5/24/2011 by Sandro Barchitta - Updates to support new FHA/FHFA requirements.
+    1. Fannie Mae does not support Enumeration Trailing Co-Borrower Income on the /LOAN_APPLICATION/CURRENT_INCOME/IncomeType
+    2. Fannie Mae does not support the following enumerations on the /LOAN_APPLICATION/SUMMARY/_AmountType:
+ TotalMonthlyIncomeNotIncludingNetRentalIncome, TotalPresentHousingExpense, SubtotalResubordinatedLiabilitiesBalanceForSubjectProperty, SubtotalLiquidAssetsNotIncludingGift, SubtotalNonLiquidAssets.
+    3. Added Enumeration to /LOAN_APPLICATION/SUMMARY/_AmountType IPCsExcessFinancingConcessionsOrSalesConcessionsAmount,
+    4. Added new attribute GOVERNMENT_LOAN/LOAN_APPLICATION/FHA_LOAN/_SponsoredOriginatorEIN,	 
+	5. Modified Enumeration to LOAN_APPLICATION/AFFORDABLE_LENDING/FNMCommunityLendingProductName - HFAPreferredRiskSharing
+	6. Added Enumeration to LOAN_APPLICATION/AFFORDABLE_LENDING/FNMCommunityLendingProductName - HFAPreferred
+   -->
+<!-- Modification Date: 11/20/2012 by Jay Schlaffer - Updates to support DU 8.3 and 9.0.
+    1. Added Enumeration to CURRENT_INCOME/IncomeType CapitalGains
+    2. Added Enumeration to CURRENT_INCOME/IncomeType EmploymentRelatedAssets
+    3. Added Enumeration to CURRENT_INCOME/IncomeType ForeignIncome
+    4. Added Enumeration to CURRENT_INCOME/IncomeType RoyaltyPayment
+    5. Added Enumeration to CURRENT_INCOME/IncomeType SeasonalIncome
+    6. Added Enumeration to CURRENT_INCOME/IncomeType TemporaryLeave  
+    7. Added Enumeration to CURRENT_INCOME/IncomeType TipIncome
+	9. Deleted Enumeration to LOAN_FEATURES/GSEProjectClassificationType TPUD
+	10. Deleted Enumeration to LOAN_FEATURES/GSEProjectClassificationType TCO-OP
+	11. Deleted Enumeration to LOAN_FEATURES/GSEProjectClassificationType A_IIICondominium
+	12. Deleted Enumeration to LOAN_FEATURES/GSEProjectClassificationType B_IICondominium
+	13. Deleted Enumeration to LOAN_FEATURES/GSEProjectClassificationType C_Icondominium
+	14. Added Enumeration to SUMMARY/_AmountType IPCsExcessFinancingConcessionsOrSalesConcessionsAmount
+	15. Deleted Enumeration to SUMMARY/_AmountType TotalMonthlyIncomeNotIncludingNetRentalIncome
+	16. Deleted Enumeration to SUMMARY/_AmountType TotalMonthlyIncomeNotIncludingNetRentalIncome
+	17. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitiesPaidByClosingNotIncludingSubjectPropertyLiensBalance
+	18. Deleted Enumeration to SUMMARY/_AmountType TotalPresentHousingExpense
+	19. Deleted Enumeration to SUMMARY/_AmountType TotalLiabilitesBalance
+	20. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitesMonthlyPayment
+	21. Deleted Enumeration to SUMMARY/_AmountType SubtotalOmittedLiabilitesBalance
+	22. Deleted Enumeration to SUMMARY/_AmountType SubtotalOmittedLiabilitiesMonthlyPayment
+	23. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitiesPaidByClosingNotIncludingSubjectPropertyLiensMonthlyPayment
+	24. Deleted Enumeration to SUMMARY/_AmountType SubtotalResubordinatedLiabilitesMonthlyPaymentForSubjectProperty
+	25. Deleted Enumeration to SUMMARY/_AmountType SubtotalSubjectPropertyLiensPaidByClosingBalance
+	26. Deleted Enumeration to SUMMARY/_AmountType SubtotalSubjectPropertyLiensPaidByClosingMonthlyPayment
+	27. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitiesForRentalPropertyBalance
+	28. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitiesForRentalPropertyMonthlyPayment
+	29. Deleted Enumeration to SUMMARY/_AmountType SubtotalResubordinatedLiabilitiesBalanceForSubjectProperty
+	30. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiquidAssetsNotIncludingGift
+	31. Deleted Enumeration to SUMMARY/_AmountType SubtotalNonLiquidAssets
+	32. Deleted Enumeration to SUMMARY/_AmountType TotalLiabilitiesBalance
+	33. Deleted Enumeration to SUMMARY/_AmountType SubtotalLiabilitiesMonthlyPayment
+	34. Deleted Enumeration to SUMMARY/_AmountType SubtotalOmittedLiabilitiesBalance
+	35. Deleted Enumeration to SUMMARY/_AmountType SubtotalResubordinatedLiabilitiesMonthlyPaymentForSubjectProperty
+   -->
+<!--Modification Date: 3/19/2013 by Jay Schlaffer - Updates to support DU 9.0 May Update
+1.  Added Enumeration to LOAN_FEATURES/MICompanyNameType Essent
+2.  Deleted Enumeration to LOAN_FEATURES/MICompanyNameType RadianGuarantyIncorporated 
+-->
+<!--Modification Date: 10/02/2013 by Jay Schlaffer - Updates to align with the 1003 spec update. 
+1.  Added Enumeration to LOAN_FEATURES/MICompanyNameType NMI
+2.  Added Enumeration to LOAN_FEATURES/MICompanyNameType RadianGuarantyIncorporated
+3.  Deleted Enumeration to LOAN_FEATURES/MICompanyNameType AmerinGuaranteeCorporation
+4.  Deleted Enumeration to LOAN_FEATURES/MICompanyNameType CommonwealthMortgageAssuranceCompany
+-->
+<!--Modification Date: 1/13/2015 by Jay Schlaffer - Update to support DU 9.2.1
+1.  Added ApprisalIdentfier Attribute to the _VALUATION Element
+-->
+<!--Modification Date: 9/29/2015 by Jay Schlaffer - Update to support DU 9.3
+1. Added FIPSCodeIdentifier Attribute to the TRANSMITTAL_DATA Element
+2. Added Enumeration to AFFORDABLE_LENDING/_FNMCommunityLendingProductType HomeReady
+3. Added Enumeration to CURRENT_INCOME/IncomeType AuxiliaryUnitIncome
+4. Added Enumeration to CURRENT_INCOME/IncomeType HousingChoiceVoucherProgramSection8
+5. Added Enumeration to CURRENT_INCOME/IncomeType NonBorrowerHouseholdIncome
+6. Added Enumeration to TREASACTION_DETAIL -> PURCHASE_CREDIT/_Type SweatEquity
+-->
+<!--Modification Date: 2/09/2016 by Jay Schlaffer - Update to support DU 10.0
+1. Created new Element LOAN_DETAIL
+2. Added TotalMortgagedPropertiesCount Attribute to the LOAN_DETAIL Element
+-->
+<!--Modification Date 10/04/2016 by Integration Team - Update to support DU 10.0
+1. Changed data type of CounselingConfirmationIndicator from Boolean to Enumerated
+2. Changed accepted values of CounselingConfirmationIndicator from Y/N to  HomeBuyerEducationComplete/OneOnOneCounselingComplete
+-->
+<!--Modification Date 10/04/2016 by Integration Team - Update to support DU 10.0
+1. Add VERIFICATION container under ADDITIONAL_CASE_DATA
+2. Add data points of IncomeAssetVerificationType and IncomeAssetVerificationIdentifier
+-->
+<!--Modification Date 12/02/2016 by Integration Team - Update to support DU 10.0
+	Added Placeholder as enumeration for IncomeAssetVerificationType
+-->
+<!--Modification Date 05/30/2017 by Sandro Barchitta & Doug Gross - Update to support DU 10.1
+1. Added HMDAGenderType to the GOVERNMENT_MONITORING_EXTENSION Element
+2. Added HMDAGenderRefusalIndicator to the GOVERNMENT_MONITORING_EXTENSION Element
+3. Added HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator to the GOVERNMENT_MONITORING_EXTENSION Element 
+4. Added HMDAEthnicityType to the GOVERNMENT_MONITORING_EXTENSION Element
+5. Added HMDAEthnicityOriginType Attribute to the GOVERNMENT_MONITORING_EXTENSION Element
+6. Added HMDAEthnicityOriginTypeOtherDescription Attribute to the GOVERNMENT_MONITORING_EXTENSION Element
+7. Added HMDAEthnicityRefusalIndicator Attribute to the GOVERNMENT_MONITORING_EXTENSION Element
+8. Added HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator Attribute to the GOVERNMENT_MONITORING_EXTENSION Element
+9. Added _ID to the GOVERNMENT_MONITORING_EXTENSION Element
+10. Added HMDARaceType to the GOVERNMENT_MONITORING_EXTENSION Element 
+11. Added HMDARaceRefusalIndicator Attribute to the GOVERNMENT_MONITORING_EXTENSION Element
+12. Added HMDARaceTypeAdditionalDescription to the GOVERNMENT_MONITORING_EXTENSION Element 
+13. Added HMDARaceDesignationType to the GOVERNMENT_MONITORING_EXTENSION Element  
+14. Added HMDARaceDesignationOtherAsianDescription to the GOVERNMENT_MONITORING_EXTENSION Element  
+15. Added HMDARaceDesignationOtherPacificIslanderDescription to the GOVERNMENT_MONITORING_EXTENSION Element  
+16. Added HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator to the GOVERNMENT_MONITORING_EXTENSION Element 
+17. Added ApplicationTakenMethodType to the GOVERNMENT_MONITORING_EXTENSION Element 
+18. Added DataVerify as enumeration for IncomeAssetVerificationType
+-->
+<!--Modification Date 06/30/2017 by Sandro Barchitta & Doug Gross - Update to support DU 10.1
+1. Added Id to the HMDA_RACE_EXTENSION Element
+-->
+<!-- Modification Date: 04/23/2018 by Jagan Soma - Updates to support DU 10.2 Release.
+	1. Added Enumeration to LOAN_FEATURES/GSEPropertyType MH Advantage
+-->
+<!-- Modification Date: 04/23/2018 by Jagan Soma - Updates to support DU 10.2 June Release.
+	1. Added Enumeration to SUMMARY/_AmountType EnergyImprovementAmount
+
+	2. Added Enumeration to SUMMARY/_AmountType PACELoanPayoffAmount
+-->
+<!-- Modification Date: 05/04/2018 by Reza Shahmirzadi & John Jones - Updates to support additional DU Data Validation Service partners.
+	1. Added DVS Partners to IncomeAssetVerificationType
+	IncomeAssetVerificationType (AdvancedData | Avantus | Blend | Chronos | ComplianceEase | CoreLogic | CreditInterlink | DataVerify | Finicity | FirstAmerican | Formfree | Informative | MeridianLink | NCS | Placeholder | Plaid | PointServ | PrivateEyes | SharperLending | Universal | VeriTax)
+-->
+<!-- =============================================================== -->
+<!ELEMENT LOAN_APPLICATION (_DATA_INFORMATION?, ADDITIONAL_CASE_DATA?, AFFORDABLE_LENDING?, ASSET*, DOWN_PAYMENT*, GOVERNMENT_LOAN?, GOVERNMENT_REPORTING?, INTERVIEWER_INFORMATION?, LIABILITY*, LOAN_DETAIL?, LOAN_PRODUCT_DATA?, LOAN_PURPOSE?, LOAN_QUALIFICATION?, MORTGAGE_TERMS?, PROPERTY?, PROPOSED_HOUSING_EXPENSE*, REO_PROPERTY*, TITLE_HOLDER*, TRANSACTION_DETAIL?, BORROWER+)>
+<!--Added attribute to AUS 2.2, Modified version to 2.3, Modified version to 2.3.1 -->
+<!ATTLIST LOAN_APPLICATION
+	MISMOVersionID CDATA #FIXED "2.3.1"
+>
+<!ELEMENT _DATA_INFORMATION (DATA_VERSION+)>
+<!ELEMENT DATA_VERSION EMPTY>
+<!--#DOCUMENTATION:000-020 String-->
+<!ATTLIST DATA_VERSION
+	_Name CDATA #REQUIRED
+>
+<!--#DOCUMENTATION:000-030 String-->
+<!ATTLIST DATA_VERSION
+	_Number CDATA #REQUIRED
+>
+<!--Added to AUS 2.3.1 -->
+<!ELEMENT GOVERNMENT_REPORTING EMPTY>
+<!ATTLIST GOVERNMENT_REPORTING
+	HMDAPurposeOfLoanType (HomePurchase | HomeImprovement | Refinancing) #IMPLIED
+	HMDAPreapprovalType (PreapprovalWasRequested | PreapprovalWasNotRequested | NotApplicable) #IMPLIED
+	HMDA_HOEPALoanStatusIndicator (Y | N) #IMPLIED
+	HMDARateSpreadPercent CDATA #IMPLIED
+>
+<!ELEMENT ADDITIONAL_CASE_DATA (MORTGAGE_SCORE*, TRANSMITTAL_DATA?, VERIFICATION*)>
+<!-- Added for product extensions -->
+<!ATTLIST ADDITIONAL_CASE_DATA
+	FNMConstructionType (StickBuilt | ManufacturedSingleWide | ManufacturedDoubleWide | PrecutModularKit | Other) #IMPLIED
+	FNMConstructionTypeOtherDescription CDATA #IMPLIED
+	FNMForeignNationalIndicator (Y | N) #IMPLIED
+	FNM_USCitizenEmployedAbroadIndicator (Y | N) #IMPLIED
+	FNMTwelveMonthMortgageRolling30DaysLateCount CDATA #IMPLIED
+	FNMPropertiesFinancedByLenderCount CDATA #IMPLIED
+	FNMFirstLienFinancingProviderType (SameLenderAsSecondLien | OtherInstitution | PrivatelyHeld | OtherProvider) #IMPLIED
+	FNMFirstLienFinancingProviderTypeOtherDescription CDATA #IMPLIED
+	FNMSubordinateLienFinancingProviderType (SameLenderAsFirstLien | OtherInstitution | PrivatelyHeld | OtherProvider) #IMPLIED
+	FNMSubordinateLienFinancingProviderTypeOtherDescription CDATA #IMPLIED
+	FNMSecondLienFinancingType (StandAloneOpenEnd | StandAloneClosedEnd | ConcurrentOpenEnd | ConcurrentClosedEnd | Unknown | Other) #IMPLIED
+	FNMSecondLienFinancingTypeOtherDescription CDATA #IMPLIED
+>
+<!ELEMENT MORTGAGE_SCORE EMPTY>
+<!--#DOCUMENTATION:SCA-040 Date/Time-->
+<!ATTLIST MORTGAGE_SCORE
+	_Date CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:SCA-020 Enumerated-->
+<!--Added enumeration to AUS 2.2-->
+<!ATTLIST MORTGAGE_SCORE
+	_Type (FraudFilterScore | GE_IQScore | Other | PMIAuraAQIScore | UGIAccuscore) #IMPLIED
+>
+<!--Added to AUS 2.2  String-->
+<!ATTLIST MORTGAGE_SCORE
+	_TypeOtherDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:SCA-030 String-->
+<!ATTLIST MORTGAGE_SCORE
+	_Value CDATA #IMPLIED
+>
+<!ELEMENT TRANSMITTAL_DATA EMPTY>
+<!-- Added for product extensions -->
+<!ATTLIST TRANSMITTAL_DATA
+	FNMFirstLienFinancingType (Fixed | ARMWithoutNegativeAmortization | ARMWithNegativeAmortization | BalloonMortgage | Reverse | OpenEnd | LandContract | InstallmentSale | Other) #IMPLIED
+>
+<!-- Added for product extensions -->
+<!ATTLIST TRANSMITTAL_DATA
+	FNMFirstLienFinancingTypeOtherDescription CDATA #IMPLIED
+>
+<!--Added to AUS 2.2. Boolean-->
+<!ATTLIST TRANSMITTAL_DATA
+	ArmsLengthIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:99B-020 Boolean-->
+<!ATTLIST TRANSMITTAL_DATA
+	BelowMarketSubordinateFinancingIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:99B-050 Numeric-->
+<!ATTLIST TRANSMITTAL_DATA
+	BuydownRatePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Description of the point in the mortgage process at which the loan is being submitted for automated underwriting. Enumerated-->
+<!ATTLIST TRANSMITTAL_DATA
+	CaseStateType (Application | FinalDisposition | PostClosingQualityControl | Prequalification | Underwriting) #IMPLIED
+>
+<!--Added to AUS 2.2. Boolean-->
+<!ATTLIST TRANSMITTAL_DATA
+	CreditReportAuthorizationIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:99B-030 Enumerated-->
+<!ATTLIST TRANSMITTAL_DATA
+	CurrentFirstMortgageHolderType (FNM | FRE | Other | Unknown) #IMPLIED
+>
+<!--#DOCUMENTATION:The user's branch identification code for the loan. String-->
+<!ATTLIST TRANSMITTAL_DATA
+	LenderBranchIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:A tracking number assigned by the wholesale lender to identify the loan for pipeline management. String-->
+<!ATTLIST TRANSMITTAL_DATA
+	LenderRegistrationIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:99B-040 Money  -->
+<!ATTLIST TRANSMITTAL_DATA
+	PropertyAppraisedValueAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Borrower's or Originator's estimate of property's present market value in dollars. Money -->
+<!ATTLIST TRANSMITTAL_DATA
+	PropertyEstimatedValueAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	InvestorLoanIdentifier CDATA #IMPLIED
+>
+<!--Added DU9.3 -->
+<!ATTLIST TRANSMITTAL_DATA
+	FIPSCodeIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	InvestorInstitutionIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	CommitmentReferenceIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	ConcurrentOriginationIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	ConcurrentOriginationLenderIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	RateLockPeriodDays CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	RateLockType (BestEfforts | Mandatory) #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	RateLockRequestedExtensionDays CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	LoanOriginatorID CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST TRANSMITTAL_DATA
+	LoanOriginationCompanyID CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ELEMENT VERIFICATION EMPTY>
+<!--#DOCUMENTATION:ADS-020 Enumerated-->
+<!ATTLIST VERIFICATION
+	IncomeAssetVerificationType (AdvancedData | Avantus | Blend | Chronos | ComplianceEase | CoreLogic | CreditInterlink | DataVerify | Finicity | FirstAmerican | Formfree | Informative | MeridianLink | NCS | Placeholder | Plaid | PointServ | PrivateEyes | SharperLending | Universal | VeriTax) #IMPLIED
+>
+<!--#DOCUMENTATION:ADS-030 Alphanumeric-->
+<!ATTLIST VERIFICATION
+	IncomeAssetVerificationIdentifier CDATA #IMPLIED
+>
+<!ELEMENT AFFORDABLE_LENDING EMPTY>
+<!-- marked for future deprecation 2.3.1 -->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMCommunityLendingProductName CDATA #IMPLIED
+>
+<!-- Added in AUS 2.3.1 -->
+<!--#DOCUMENTATION:LMD-030-->
+<!--Fannie32, Fannie97 and CommunityHomeBuyerProgram will not be supported by Fannie Mae in the 5.7 release of DU.-->
+<!-- 02/10/10 - New Enumeration for FNMCommunityLendingProductType, HFAAffordableAdvantage added for DU 8.01 -->
+<!-- 05/24/11 - New Enumeration for FNMCommunityLendingProductType: MyCommunityMortgage, HFAPreferred for DU 8.3 -->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMCommunityLendingProductType (CommunityHomeBuyerProgram | Fannie97 | Fannie32 | HFAAffordableAdvantage | HomeReady | MyCommunityMortgage | HFAPreferred | HFAPreferredRiskSharing | Other) #IMPLIED
+>
+<!-- Added to AUS 2.3.1-->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMCommunityLendingProductTypeOtherDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-050 Boolean-->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMCommunitySecondsIndicator (Y | N) #IMPLIED
+>
+<!-- Added to AUS 2.3.1-->
+<!--#DOCUMENTATION:LMD-035-->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMCommunitySecondsRepaymentStructure (AnyPaymentRequiredWithinFirstFiveYears | PaymentsDeferredFiveOrMoreYearsFullyForgiven | PaymentsDeferredFiveOrMoreYearsNotFullyForgiven) #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-040 Boolean-->
+<!ATTLIST AFFORDABLE_LENDING
+	FNMNeighborsMortgageEligibilityIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:Freddie Mac's identifier used to specify the affordable mortgage product being financed. String-->
+<!ATTLIST AFFORDABLE_LENDING
+	FREAffordableProgramIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-070 Numeric-->
+<!ATTLIST AFFORDABLE_LENDING
+	HUDIncomeLimitAdjustmentFactor CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-080 Money-->
+<!ATTLIST AFFORDABLE_LENDING
+	HUDLendingIncomeLimitAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-060 Money-->
+<!ATTLIST AFFORDABLE_LENDING
+	HUDMedianIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LMD-020 String-->
+<!ATTLIST AFFORDABLE_LENDING
+	MSAIdentifier CDATA #IMPLIED
+>
+<!ELEMENT ASSET EMPTY>
+<!ATTLIST ASSET
+	BorrowerID IDREFS #IMPLIED
+>
+<!--#DOCUMENTATION:06C-100 06B-030 String-->
+<!ATTLIST ASSET
+	_AccountIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Money 06A-040 (Cash Deposit Toward Purchase), 06B-040 (Life Insurance), 06D-050 (Automobile), 06C-110 (All other assets)When used in conjuction with Asset Type.-->
+<!ATTLIST ASSET
+	_CashOrMarketValueAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-030 Enumerated-->
+<!--Added enumerations for AUS 2.2-->
+<!ATTLIST ASSET
+	_Type (Automobile | Bond | BridgeLoanNotDeposited | CashOnHand | CertificateOfDepositTimeDeposit | CheckingAccount | EarnestMoneyCashDepositTowardPurchase | GiftOfEquity | GiftsTotal | GiftsNotDeposited | LifeInsurance | MoneyMarketFund | MutualFund | NetWorthOfBusinessOwned | OtherLiquidAssets | OtherNonLiquidAssets | PendingNetSaleProceedsFromRealEstateAssets | RelocationMoney | RetirementFund | SaleOtherAssets | SavingsAccount | SecuredBorrowedFundsNotDeposited | Stock | TrustAccount) #IMPLIED
+>
+<!--Added to AUS 2.3-->
+<!ATTLIST ASSET
+	_VerifiedIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:06A-030 06C-040 String-->
+<!ATTLIST ASSET
+	_HolderName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-050 String-->
+<!ATTLIST ASSET
+	_HolderStreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-060 String-->
+<!ATTLIST ASSET
+	_HolderCity CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-070 String-->
+<!ATTLIST ASSET
+	_HolderState CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-080 06C-090 String-->
+<!ATTLIST ASSET
+	_HolderPostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06D-030 String-->
+<!ATTLIST ASSET
+	AutomobileMakeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06D-040 Numeric-->
+<!ATTLIST ASSET
+	AutomobileModelYear CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06B-050 Money-->
+<!ATTLIST ASSET
+	LifeInsuranceFaceValueAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-130 String-->
+<!ATTLIST ASSET
+	OtherAssetTypeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06C-120 Numeric-->
+<!ATTLIST ASSET
+	StockBondMutualFundShareCount CDATA #IMPLIED
+>
+<!ELEMENT DOWN_PAYMENT EMPTY>
+<!--#DOCUMENTATION:02E-030 Money-->
+<!ATTLIST DOWN_PAYMENT
+	_Amount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02E-040 String-->
+<!ATTLIST DOWN_PAYMENT
+	_SourceDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02E-020 Enumerated-->
+<!ATTLIST DOWN_PAYMENT
+	_Type (BridgeLoan | CashOnHand | CheckingSavings | DepositOnSalesContract | EquityOnPendingSale | EquityOnSoldProperty | EquityOnSubjectProperty | FHAGiftSourceEmployer | FHAGiftSourceGovernmentAssistance | FHAGiftSourceNA | FHAGiftSourceNonprofitReligiousCommunityNonSellerFunded | FHAGiftSourceNonprofitReligiousCommunitySellerFunded | FHAGiftSourceRelative | GiftFunds | LifeInsuranceCashValue | LotEquity | OtherTypeOfDownPayment | RentWithOptionToPurchase | RetirementFunds | SaleOfChattel | SecuredBorrowedFunds | StocksAndBonds | SweatEquity | TradeEquity | TrustFunds | UnsecuredBorrowedFunds) #IMPLIED
+>
+<!ELEMENT GOVERNMENT_LOAN (FHA_LOAN?, FHA_VA_LOAN?, VA_LOAN?)>
+<!ELEMENT FHA_LOAN EMPTY>
+<!--#DOCUMENTATION:Dollar amount of discount points to be financed on a FHA no cash out refinance Money-->
+<!ATTLIST FHA_LOAN
+	BorrowerFinancedFHADiscountPointsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Indicates how the borrower or lender prefers that the judgement process treat alimony in an FHA transaction. Numeric      -->
+<!ATTLIST FHA_LOAN
+	FHAAlimonyLiabilityTreatmentType (AdditionToDebt | ReductionToIncome) #IMPLIED
+>
+<!--#DOCUMENTATION:GOB-060 Numeric-->
+<!ATTLIST FHA_LOAN
+	FHACoverageRenewalRatePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOB-050 Money-->
+<!ATTLIST FHA_LOAN
+	FHA_MIPremiumRefundAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOB-040 Numeric-->
+<!ATTLIST FHA_LOAN
+	FHAUpfrontMIPremiumPercent CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  String-->
+<!ATTLIST FHA_LOAN
+	_LenderIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  String-->
+<!ATTLIST FHA_LOAN
+	_SponsorIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOB-020 Enumerated-->
+<!ATTLIST FHA_LOAN
+	SectionOfActType (203B | 203B251 | 203B2 | 203K | 203K251 | 221D2 | 221D2251 | 234C | 234C251 | 257) #IMPLIED
+>
+<!ELEMENT FHA_VA_LOAN EMPTY>
+<!--#DOCUMENTATION:GOA-050 Money-->
+<!ATTLIST FHA_VA_LOAN
+	BorrowerPaidFHA_VAClosingCostsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-060 Numeric-->
+<!ATTLIST FHA_VA_LOAN
+	BorrowerPaidFHA_VAClosingCostsPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-030 Money-->
+<!ATTLIST FHA_VA_LOAN
+	GovernmentMortgageCreditCertificateAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-110 Enumerated-->
+<!ATTLIST FHA_VA_LOAN
+	GovernmentRefinanceType (FullDocumentation | HOPEforHomeowners | InterestRateReductionRefinanceLoan | PriorFHA | StreamlineWithAppraisal | StreamlineWithoutAppraisal) #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-090 Money-->
+<!ATTLIST FHA_VA_LOAN
+	OtherPartyPaidFHA_VAClosingCostsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-100 Numeric-->
+<!ATTLIST FHA_VA_LOAN
+	OtherPartyPaidFHA_VAClosingCostsPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-020 Boolean-->
+<!ATTLIST FHA_VA_LOAN
+	PropertyEnergyEfficientHomeIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-080 Numeric-->
+<!ATTLIST FHA_VA_LOAN
+	SellerPaidFHA_VAClosingCostsPercent CDATA #IMPLIED
+>
+<!ELEMENT VA_LOAN EMPTY>
+<!--#DOCUMENTATION:GOC-020 Boolean-->
+<!ATTLIST VA_LOAN
+	VABorrowerCoBorrowerMarriedIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:GOC-060 Numeric-->
+<!ATTLIST VA_LOAN
+	BorrowerFundingFeePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOC-030 Money-->
+<!ATTLIST VA_LOAN
+	VAEntitlementAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOC-040 Money-->
+<!ATTLIST VA_LOAN
+	VAMaintenanceExpenseMonthlyAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Money-->
+<!ATTLIST VA_LOAN
+	VAResidualIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOC-050 Money-->
+<!ATTLIST VA_LOAN
+	VAUtilityExpenseMonthlyAmount CDATA #IMPLIED
+>
+<!ELEMENT INTERVIEWER_INFORMATION EMPTY>
+<!--#DOCUMENTATION:10B-070 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersEmployerStreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-090 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersEmployerCity CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-100 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersEmployerState CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-110,10B-120 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersEmployerPostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-050 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersTelephoneNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-020 Enumerated-->
+<!--Added additional valid value to AUS 2.3 -->
+<!ATTLIST INTERVIEWER_INFORMATION
+	ApplicationTakenMethodType (FaceToFace | Mail | Telephone | Internet) #IMPLIED
+>
+<!--#DOCUMENTATION:10B-040 Date/Time-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewerApplicationSignedDate CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-060 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersEmployerName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10B-030 String-->
+<!ATTLIST INTERVIEWER_INFORMATION
+	InterviewersName CDATA #IMPLIED
+>
+<!ELEMENT LIABILITY EMPTY>
+<!ATTLIST LIABILITY
+	_ID ID #IMPLIED
+	BorrowerID IDREFS #IMPLIED
+>
+<!--#DOCUMENTATION:06L-150-->
+<!ATTLIST LIABILITY
+	REO_ID IDREF #IMPLIED
+>
+<!--#DOCUMENTATION:06L-050 String-->
+<!ATTLIST LIABILITY
+	_HolderStreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-060 String-->
+<!ATTLIST LIABILITY
+	_HolderCity CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-070 String-->
+<!ATTLIST LIABILITY
+	_HolderState CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-080,06L-090 String-->
+<!ATTLIST LIABILITY
+	_HolderPostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06F-060 String-->
+<!ATTLIST LIABILITY
+	AlimonyOwedToName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-100 String-->
+<!ATTLIST LIABILITY
+	_AccountIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-170 Boolean-->
+<!ATTLIST LIABILITY
+	_ExclusionIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:06L-040 String-->
+<!ATTLIST LIABILITY
+	_HolderName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-110 06F-040 Money-->
+<!ATTLIST LIABILITY
+	_MonthlyPaymentAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-140 Boolean-->
+<!ATTLIST LIABILITY
+	_PayoffStatusIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.2. Boolean-->
+<!ATTLIST LIABILITY
+	_PayoffWithCurrentAssetsIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:06F-050 06L-120 Numeric-->
+<!ATTLIST LIABILITY
+	_RemainingTermMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06F-030 06L-030 Enumerated-->
+<!ATTLIST LIABILITY
+	_Type (Alimony | ChildCare | ChildSupport | CollectionsJudgementsAndLiens | HELOC | Installment | JobRelatedExpenses | LeasePayments | MortgageLoan | Open30DayChargeAccount | OtherLiability | Revolving | SeparateMaintenanceExpense | OtherExpense | Taxes) #IMPLIED
+>
+<!--#DOCUMENTATION:06L-130 Money-->
+<!ATTLIST LIABILITY
+	_UnpaidBalanceAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06L-160 Boolean-->
+<!ATTLIST LIABILITY
+	SubjectLoanResubordinationIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1 Fannie Mae Proprietary-->
+<!ATTLIST LIABILITY
+	FNMSubjectPropertyIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1 Fannie Mae Proprietary-->
+<!ATTLIST LIABILITY
+	FNMRentalPropertyIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT LOAN_DETAIL EMPTY>
+<!--#DOCUMENTATION:ADS-020 ADS-030-->
+<!ATTLIST LOAN_DETAIL
+	TotalMortgagedPropertiesCount CDATA #IMPLIED
+>
+<!ELEMENT LOAN_PRODUCT_DATA (ARM?, BUYDOWN*, LOAN_FEATURES?, PAYMENT_ADJUSTMENT*, RATE_ADJUSTMENT*)>
+<!ELEMENT ARM EMPTY>
+<!--#DOCUMENTATION:ARM-020 Numeric-->
+<!ATTLIST ARM
+	_IndexCurrentValuePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:ARM-040 Numeric-->
+<!ATTLIST ARM
+	_IndexMarginPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:ARM-030 Enumerated -->
+<!ATTLIST ARM
+	_IndexType (EleventhDistrictCostOfFunds | OneYearTreasury | ThreeYearTreasury | SixMonthTreasury | DailyCertificateOfDepositRate | FNM60DayRequiredNetYield | FNM_LIBOR | FederalCostOfFunds | FRE60DayRequiredNetYield | FRE_LIBOR | LIBOR | MonthlyAverageConstantMaturingTreasury | NationalAverageContractRateFHLBB | NationalMonthlyMedianCostOfFunds | Other | TreasuryBillDailyValue | WallStreetJournalLIBOR | WeeklyAverageCertificateOfDepositRate | WeeklyAverageConstantMaturingTreasury | WeeklyAveragePrimeRate | WeeklyAverageSecondaryMarketTreasuryBillInvestmentYield | WeeklyAverageTreasuryAuctionAverageBondDiscountYield | WeeklyAverageTreasuryAuctionAverageInvestmentYield) #IMPLIED
+>
+<!--#DOCUMENTATION:ARM-050 Numeric-->
+<!ATTLIST ARM
+	_QualifyingRatePercent CDATA #IMPLIED
+>
+<!--Added to AUS 2.2. Boolean-->
+<!ATTLIST ARM
+	_ConversionOptionIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-170 Money-->
+<!ATTLIST ARM
+	PaymentAdjustmentLifetimeCapAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-160 Numeric-->
+<!ATTLIST ARM
+	PaymentAdjustmentLifetimeCapPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-150 Numeric-->
+<!ATTLIST ARM
+	RateAdjustmentLifetimeCapPercent CDATA #IMPLIED
+>
+<!ELEMENT BUYDOWN EMPTY>
+<!--#DOCUMENTATION:BUA-060 Enumerated-->
+<!ATTLIST BUYDOWN
+	_BaseDateType (NoteDate | FirstPaymentDate | LastPaymentDate) #IMPLIED
+>
+<!--#DOCUMENTATION:BUA-020 Numeric-->
+<!ATTLIST BUYDOWN
+	_ChangeFrequencyMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Source of the buydown funds. Enumerated-->
+<!ATTLIST BUYDOWN
+	_ContributorType (Borrower | Other | LenderPremiumFinanced | Seller | Builder) #IMPLIED
+>
+<!--#DOCUMENTATION:BUA-030 Numeric-->
+<!ATTLIST BUYDOWN
+	_DurationMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:BUA-040 Numeric-->
+<!ATTLIST BUYDOWN
+	_IncreaseRatePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:BUA-050 Boolean-->
+<!ATTLIST BUYDOWN
+	_LenderFundingIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:BUA-070 Boolean-->
+<!ATTLIST BUYDOWN
+	_PermanentIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT LOAN_FEATURES EMPTY>
+<!-- Added for product extensions. 4 values added to FNMProjectWarrantyType on 9/9/2005.   Noncompliant value name acknowledged.    -->
+<!ATTLIST LOAN_FEATURES
+	FNMProjectWarrantyType (FNMAndFRELimitedWarranty | FNMAndFREStandardWarranty | FNMLimitedWarranty | FNMStandardWarranty | FRELimitedWarranty | FREStandardWarranty | OtherWarrantable | NonWarrantable | FNM1028 | FNMExpeditedWarranty | FHA | FNMExpAndFRELmtdWarranty) #IMPLIED
+>
+<!-- Added for product extensions -->
+<!ATTLIST LOAN_FEATURES
+	FNMProjectWarrantyTypeOtherDescription CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	NameDocumentsDrawnInType (Broker | Lender | Investor) #IMPLIED
+>
+<!-- Added for Extended Products -->
+<!ATTLIST LOAN_FEATURES
+	FNMCondominiumCharacteristicsType (Condotel | TwoToFourUnitCondominiumProject | KiddieCondominium | OtherTypeCondominium) #IMPLIED
+>
+<!-- Added for Extended Products -->
+<!ATTLIST LOAN_FEATURES
+	FNMCondominiumCharacteristicsTypeOtherDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-030 Boolean-->
+<!ATTLIST LOAN_FEATURES
+	AssumabilityIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-110 Boolean-->
+<!ATTLIST LOAN_FEATURES
+	BalloonIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-020 Numeric-->
+<!ATTLIST LOAN_FEATURES
+	BalloonLoanMaturityTermMonths CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1-->
+<!ATTLIST LOAN_FEATURES
+	BuydownTemporarySubsidyIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-140 Enumerated-->
+<!--Accepted values changed from (Y | N) to (HomeBuyerEducationComplete | OneOnOneCounselingComplete) for DU 10.0-->
+<!ATTLIST LOAN_FEATURES
+	CounselingConfirmationIndicator (HomeBuyerEducationComplete | OneOnOneCounselingComplete) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-130 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	DownPaymentOptionType (ThreeTwoOption | FivePercentOption | FNM97Option) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-180 Boolean-->
+<!ATTLIST LOAN_FEATURES
+	EscrowWaiverIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:Used by LP to identify the specific type of product offering. String-->
+<!ATTLIST LOAN_FEATURES
+	FREOfferingIdentifier CDATA #IMPLIED
+>
+<!-- Added in AUS 2.3 to correct spelling-->
+<!--#DOCUMENTATION:PID-040 String-->
+<!ATTLIST LOAN_FEATURES
+	FNMProductPlanIdentifier CDATA #IMPLIED
+>
+<!--Mark for deprecation in future non-backwardly compatible release-->
+<!--#DOCUMENTATION:PID-040 String-->
+<!ATTLIST LOAN_FEATURES
+	FNMProductPlanIdentifier CDATA #IMPLIED
+>
+<!--New project review types 'P', 'Q', 'R', 'S', 'T', and 'U' added 7/20/2005 and updated 7/29/2005 -->
+<!-- 6/26/2006 Fannie Mae will no longer support the enumerated value III_PUD. It will remain in the enumerated list for compatibility. Comments for this DTD data point regarding the discontinuance of III_PUD support will be presented in DODUotW Rel 2.11 and in DU 5.6 MISMO AUS V2.4 has marked GSEProjectClassificationType for deprecation in a future release. AUS V2.4 has added two new attributes: FNMProjectClassificationType and FREProjectClassificationType -->
+<!-- 02/10/10 : 4 new Enumerations added in DU 8.01 for GSEProjectClassificationType - VCondo, GNotInaProjectOrDevelopment, TPUD and TCO_OP
+-->
+<!--#DOCUMENTATION:LNC-090 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	GSEProjectClassificationType (ApprovedFHA_VACondominiumProjectOrSpotLoan | OneCooperative | TwoCooperative | E_PUD | F_PUD | GNotInaProjectOrDevelopment | III_PUD | PCondominium | QCondominium | RCondominium | SCondominium | TCondominium | UCondominium | VCondo) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-040 Enumerated-->
+<!--Added enumeration to AUS 2.2 -->
+<!--Added enumeration to AUS 2.3 -->
+<!-- Added ManufacturedHousingMultiWide and ManufacturedHomeCondominiumOrPUDOrCooperative AUS 2.3.1. ManufacturedHousingDoubleWide and ManufacturedHomeCondominium are marked for deprecation 2.3.1-->
+<!-- Added MHSelect to support Fannie Mae in the 5.7.1 release of DU-->
+<!ATTLIST LOAN_FEATURES
+	GSEPropertyType (Attached | Condominium | Cooperative | Detached | HighRiseCondominium | ManufacturedHousing | Modular | PUD | ManufacturedHousingSingleWide | ManufacturedHousingDoubleWide | DetachedCondominium | ManufacturedHomeCondominium | ManufacturedHousingMultiWide | ManufacturedHomeCondominiumOrPUDOrCooperative | MHSelect | MHAdvantage) #IMPLIED
+>
+<!--#DOCUMENTATION:Maximum dollar amount of credit available on all HELOCs on the subject property, regardless of whether the borrower has accessed the amount. Money-->
+<!ATTLIST LOAN_FEATURES
+	HELOCMaximumBalanceAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.2.  Money-->
+<!ATTLIST LOAN_FEATURES
+	HELOCInitialAdvanceAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.2.  Numeric-->
+<!ATTLIST LOAN_FEATURES
+	InterestOnlyTerm CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Boolean-->
+<!ATTLIST LOAN_FEATURES
+	LenderSelfInsuredIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-020 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	LienPriorityType (FirstLien | Other | SecondLien) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-030 Enumerated-->
+<!--Added enumeration to AUS 2.3.1 -->
+<!--Added Fannie Mae Proprietary enumerated values to AUS 2.3.1-->
+<!ATTLIST LOAN_FEATURES
+	LoanDocumentationType (Alternative | FullDocumentation | NoDepositVerification | NoDepositVerificationEmploymentVerificationOrIncomeVerification | NoDocumentation | NoEmploymentVerificationOrIncomeVerification | Reduced | StreamlineRefinance | NoRatio | FNMLimitedDocumentation | NoIncomeNoEmploymentNoAssetsOn1003 | NoIncomeOn1003 | NoVerificationOfStatedIncomeEmploymentOrAssets | NoVerificationOfStatedIncomeOrAssests | NoVerificationOfStatedAssets | NoVerificationOfStatedIncomeOrEmployment | NoVerificationOfStatedIncome | VerbalVerificationOfEmployment | OnePaystub | OnePaystubAndVerbalVerificationOfEmployment | OnePaystubAndOneW2AndVerbalVerificationOfEmploymentOrOneYear1040 | FNMNoIncomeAndNoAssetsOn1003 | FNMNoAssetsOn1003 | FNMNoIncomeAndNoEmploymentOn1003) #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-070 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	LoanRepaymentType (InterestOnly | NoNegativeAmortization | PotentialNegativeAmortization | ScheduledAmortization | ScheduledNegativeAmortization) #IMPLIED
+>
+<!--#DOCUMENTATION:LEA-040 Numeric-->
+<!ATTLIST FHA_LOAN
+	_SponsoredOriginatorEIN CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-190 Date/Time-->
+<!ATTLIST LOAN_FEATURES
+	LoanScheduledClosingDate CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	MICertificationStatusType (LenderToObtain | SellerOfLoanToObtain) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-210 Numeric-->
+<!ATTLIST LOAN_FEATURES
+	MICoveragePercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-220 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	MICompanyNameType (CMG_MICompany | Essent | GECapitalMICorporation | MortgageGuarantyInsuranceCorporation | PMI_MICorporation | NMI | RadianGuarantyIncorporated | RepublicMICompany | TriadGuarantyInsuranceCorporation | UnitedGuarantyCorporation) #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-100 Numeric-->
+<!ATTLIST LOAN_FEATURES
+	NegativeAmortizationLimitPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-040 Enumerated-->
+<!ATTLIST LOAN_FEATURES
+	PaymentFrequencyType (Biweekly | Monthly) #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-050 Boolean-->
+<!ATTLIST LOAN_FEATURES
+	PrepaymentPenaltyIndicator (Y | N) #IMPLIED
+>
+<!--AUS 2.2 addition-->
+<!ATTLIST LOAN_FEATURES
+	FullPrepaymentPenaltyOptionType (Hard | Soft) #IMPLIED
+>
+<!--AUS 2.2 addition-->
+<!ATTLIST LOAN_FEATURES
+	PrepaymentPenaltyTermMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PCH-060 Boolean-->
+<!ATTLIST LOAN_FEATURES
+	PrepaymentRestrictionIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:PID-020 String-->
+<!ATTLIST LOAN_FEATURES
+	ProductDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PID-030 String-->
+<!ATTLIST LOAN_FEATURES
+	ProductName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:LNC-200 Date/Time-->
+<!ATTLIST LOAN_FEATURES
+	ScheduledFirstPaymentDate CDATA #IMPLIED
+>
+<!--AUS 2.2 addition-->
+<!ATTLIST LOAN_FEATURES
+	LoanClosingStatusType (Closed | TableFunded) #IMPLIED
+>
+<!--AUS 2.2 addition-->
+<!ATTLIST LOAN_FEATURES
+	ServicingTransferStatusType (Retained | Released) #IMPLIED
+>
+<!ELEMENT PAYMENT_ADJUSTMENT EMPTY>
+<!--#DOCUMENTATION:PAJ-100 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	FirstPaymentAdjustmentMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-070 Money-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_Amount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-050 Enumerated-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_CalculationType (AddFixedDollarAmountToTheCurrentPayment | AddPercentToCurrentPaymentAmount | AddPercentToEffectivePaymentRate) #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-030 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_DurationMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-060 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_Percent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-090 Money-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_PeriodicCapAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-080 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_PeriodicCapPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-020 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	_PeriodNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:PAJ-040 Numeric-->
+<!ATTLIST PAYMENT_ADJUSTMENT
+	SubsequentPaymentAdjustmentMonths CDATA #IMPLIED
+>
+<!ELEMENT RATE_ADJUSTMENT EMPTY>
+<!--#DOCUMENTATION:RAJ-080 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	FirstRateAdjustmentMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-050 Enumerated-->
+<!ATTLIST RATE_ADJUSTMENT
+	_CalculationType (AddPercentToCurrentRate | AddPercentToOriginalRate | IndexPlusMargin) #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-030 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	_DurationMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-060 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	_Percent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-020 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	_PeriodNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-070 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	_SubsequentCapPercent CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:RAJ-040 Numeric-->
+<!ATTLIST RATE_ADJUSTMENT
+	SubsequentRateAdjustmentMonths CDATA #IMPLIED
+>
+<!ELEMENT LOAN_PURPOSE (CONSTRUCTION_REFINANCE_DATA?)>
+<!--#DOCUMENTATION:02B-060 String-->
+<!ATTLIST LOAN_PURPOSE
+	GSETitleMannerHeldDescription CDATA #IMPLIED
+>
+<!--AUS 2.3 Mark valid values ConstructionOnly and ConstructionToPermanent for deprecation in future non-backwardly compatible release-->
+<!--#DOCUMENTATION:02B-030 Enumerated-->
+<!ATTLIST LOAN_PURPOSE
+	_Type (ConstructionOnly | ConstructionToPermanent | Other | Purchase | Refinance) #IMPLIED
+>
+<!--#DOCUMENTATION:02B-040 String-->
+<!ATTLIST LOAN_PURPOSE
+	OtherLoanPurposeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02B-080 Date/Time-->
+<!ATTLIST LOAN_PURPOSE
+	PropertyLeaseholdExpirationDate CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02B-070 Enumerated-->
+<!ATTLIST LOAN_PURPOSE
+	PropertyRightsType (FeeSimple | Leasehold) #IMPLIED
+>
+<!--#DOCUMENTATION:02B-050 Enumerated-->
+<!ATTLIST LOAN_PURPOSE
+	PropertyUsageType (Investor | PrimaryResidence | SecondHome) #IMPLIED
+>
+<!ELEMENT CONSTRUCTION_REFINANCE_DATA EMPTY>
+<!-- Added for product extensions -->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	FNMCashOutIncludingNonMortgageAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-060 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	ConstructionImprovementCostsAmount CDATA #IMPLIED
+>
+<!-- AUS 2.3 added new element Construction Purpose Type -->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	ConstructionPurposeType (ConstructionOnly | ConstructionToPermanent) #IMPLIED
+>
+<!--#DOCUMENTATION:The amount of cash the borrower will receive at the closing of the loan on a refinance transaction based on Freddie Mac guidelines. Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	FRECashOutAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-070 Enumerated-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	GSERefinancePurposeType (CashOutDebtConsolidation | CashOutHomeImprovement | CashOutLimited | CashOutOther | NoCashOutFHAStreamlinedRefinance | NoCashOutFREOwnedRefinance | NoCashOutOther | NoCashOutStreamlinedRefinance | ChangeInRateTerm) #IMPLIED
+>
+<!--#DOCUMENTATION:02D-050 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	LandEstimatedValueAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-030 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	LandOriginalCostAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-020 Date/Time-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	PropertyAcquiredYear CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-040 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	PropertyExistingLienAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-030 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	PropertyOriginalCostAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-100 Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	RefinanceImprovementCostsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02D-090 Enumerated-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	RefinanceImprovementsType (Made | ToBeMade | Unknown) #IMPLIED
+>
+<!--#DOCUMENTATION:02D-080 String-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	RefinanceProposedImprovementsDescription CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Boolean-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	SecondaryFinancingRefinanceIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1  Boolean-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	FNMSecondMortgageFinancingOriginalPropertyIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.3.1  Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	StructuralAlterationsConventionalAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1  Money-->
+<!ATTLIST CONSTRUCTION_REFINANCE_DATA
+	NonStructuralAlterationsConventionalAmount CDATA #IMPLIED
+>
+<!ELEMENT LOAN_QUALIFICATION EMPTY>
+<!--#DOCUMENTATION:00A-030 Boolean-->
+<!ATTLIST LOAN_QUALIFICATION
+	AdditionalBorrowerAssetsNotConsideredIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:00A-020 Boolean-->
+<!ATTLIST LOAN_QUALIFICATION
+	AdditionalBorrowerAssetsConsideredIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT MORTGAGE_TERMS EMPTY>
+<!--#DOCUMENTATION:01A-040 String-->
+<!ATTLIST MORTGAGE_TERMS
+	AgencyCaseIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-110 String-->
+<!ATTLIST MORTGAGE_TERMS
+	ARMTypeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: Money-->
+<!ATTLIST MORTGAGE_TERMS
+	BaseLoanAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-060 Money-->
+<!ATTLIST MORTGAGE_TERMS
+	BorrowerRequestedLoanAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-050 String-->
+<!ATTLIST MORTGAGE_TERMS
+	LenderCaseIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-080 Numeric-->
+<!ATTLIST MORTGAGE_TERMS
+	LoanAmortizationTermMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-090 Enumerated-->
+<!ATTLIST MORTGAGE_TERMS
+	LoanAmortizationType (AdjustableRate | Fixed | GraduatedPaymentMortgage | GrowingEquityMortgage | OtherAmortizationType) #IMPLIED
+>
+<!--#DOCUMENTATION:01A-020 Enumerated-->
+<!--Added enumeration to AUS 2.2-->
+<!--Note: Farmers Home Administration is the same as Farm Service Agency, or Rural Housing Service or USDA/Rural Housing Service-->
+<!ATTLIST MORTGAGE_TERMS
+	MortgageType (Conventional | FarmersHomeAdministration | FHA | Other | VA | HELOC) #IMPLIED
+>
+<!--#DOCUMENTATION:01A-030 String-->
+<!ATTLIST MORTGAGE_TERMS
+	OtherMortgageTypeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: 01A-100 String-->
+<!ATTLIST MORTGAGE_TERMS
+	OtherAmortizationTypeDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:01A-070 Numeric-->
+<!ATTLIST MORTGAGE_TERMS
+	RequestedInterestRatePercent CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 PARSED_STREET_ADDRESS and _VALUATION-->
+<!ELEMENT PROPERTY (_LEGAL_DESCRIPTION*, PARSED_STREET_ADDRESS?, _VALUATION*, FNM_PROPERTY_PROFILE*)>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMBuildingStoriesCount CDATA #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMPropertyLocationType (Rural | Urban | Suburban) #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMPropertyUseType (Residential | MixedResidentialAndCommercial | MixedResidentialAndAgricultural | MixedResidentialAndOther | NonResidential | UnimprovedLand | Other) #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMPropertyUseTypeOtherDescription CDATA #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMPropertyZoningType (Residential | Commercial | Industrial | Agricultural | NonResidentialWithGrandfatheredResidentialUse | NoZoning | Other) #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMPropertyZoningTypeOtherDescription CDATA #IMPLIED
+>
+<!-- Added for Product extensions -->
+<!ATTLIST PROPERTY
+	FNMImprovedLivingAreaSquareFeetNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-020 String-->
+<!ATTLIST PROPERTY
+	_StreetAddress CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  String-->
+<!ATTLIST PROPERTY
+	_StreetAddress2 CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-030 String-->
+<!ATTLIST PROPERTY
+	_City CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-040 String-->
+<!ATTLIST PROPERTY
+	_State CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-120 String-->
+<!ATTLIST PROPERTY
+	_County CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-050,02A-060 String-->
+<!ATTLIST PROPERTY
+	_PostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Physical status of the structure. Enumerated-->
+<!ATTLIST PROPERTY
+	BuildingStatusType (Existing | Proposed | SubjectToAlterationImprovementRepairAndRehabilitation | SubstantiallyRehabilitated | UnderConstruction) #IMPLIED
+>
+<!--#DOCUMENTATION:02A-070 Numeric-->
+<!ATTLIST PROPERTY
+	_FinancedNumberOfUnits CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-100 Date/Time-->
+<!ATTLIST PROPERTY
+	_StructureBuiltYear CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Date/Time-->
+<!ATTLIST PROPERTY
+	_AcquiredDate CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Boolean-->
+<!ATTLIST PROPERTY
+	PlannedUnitDevelopmentIndicator (Y | N) #IMPLIED
+>
+<!--Added to AUS 2.2  Numeric-->
+<!ATTLIST PROPERTY
+	_AcreageNumber CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ELEMENT PARSED_STREET_ADDRESS EMPTY>
+<!ATTLIST PARSED_STREET_ADDRESS
+	_ApartmentOrUnit CDATA #IMPLIED
+	_DirectionPrefix CDATA #IMPLIED
+	_DirectionSuffix CDATA #IMPLIED
+	_BuildingNumber CDATA #IMPLIED
+	_HouseNumber CDATA #IMPLIED
+	_Military_APO_FPO CDATA #IMPLIED
+	_PostOfficeBox CDATA #IMPLIED
+	_RuralRoute CDATA #IMPLIED
+	_StreetName CDATA #IMPLIED
+	_StreetSuffix CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ELEMENT _VALUATION (APPRAISER*)>
+<!--Added to AUS 2.3.1 -->
+<!--Enumerated values added for DODUotW Rel 2.11 and for DU 5.6 Changes in Fannie Mae support for 99B-070 follow: 6/26/2006 Fannie Mae does not support the following enumerated values: EmployeeRelocationCouncil2001, FNM1073, FNM2065, FRE2070Interior, FRE2070Exterior, BrokerPriceOption, AutomatedValuationModel, TaxValuation, DriveBy, FullAppraisal, FNM2055InteriorAndExterior, FNM2095InteriorAndExterior. These values will remain in the enumerated list for compatibility.-->
+<!ATTLIST _VALUATION
+	_MethodType (FNM1004 | EmployeeRelocationCouncil2001 | FNM1073 | FNM1025 | FNM2055Exterior | FNM2065 | FRE2070Interior | FRE2070Exterior | FNM2075 | BrokerPriceOpinion | AutomatedValuationModel | TaxValuation | DriveBy | FullAppraisal | None | FNM2055InteriorAndExterior | FNM2095Exterior | FNM2095InteriorAndExterior | PriorAppraisalUsed | Form261805 | Form268712 | FNM1004CFRE70B | FNM1073FRE465 | FNM1075FRE466 | FNM2090 | FNM1004DFRE442 | FNM2000FRE1032 | FNM2000AFRE1072 | Other) #IMPLIED
+>
+<!--Added to support CU integration.  Not a standard MISMO2.3.1 data point. -->
+<!ATTLIST _VALUATION
+	AppraisalIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST _VALUATION
+	_MethodTypeOtherDescription CDATA #IMPLIED
+>
+<!-- Added for product extensions -->
+<!ELEMENT FNM_PROPERTY_PROFILE EMPTY>
+<!ATTLIST FNM_PROPERTY_PROFILE
+	FNMUniquePropertyType (LogHome | GeodesicDome | Houseboat | Timeshare | PropertyOnIndianLand | NonArmsLengthTransaction | TaxShelteredSyndication | BuilderModelHome | PropertyCurrentlyVacant | InLawSuite | 1031EquityExchange | OtherUniqueProperty | None) #IMPLIED
+	FNMUniquePropertyTypeOtherDescription CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ELEMENT APPRAISER EMPTY>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST APPRAISER
+	_Name CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST APPRAISER
+	_CompanyName CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST APPRAISER
+	_LicenseIdentifier CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST APPRAISER
+	_LicenseState CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1 -->
+<!ATTLIST APPRAISER
+	_SupervisoryAppraiserLicenseNumber CDATA #IMPLIED
+>
+<!ELEMENT _LEGAL_DESCRIPTION EMPTY>
+<!--#DOCUMENTATION:02A-090 String-->
+<!ATTLIST _LEGAL_DESCRIPTION
+	_TextDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:02A-080 Enumerated-->
+<!ATTLIST _LEGAL_DESCRIPTION
+	_Type (MetesAndBounds | Other) #IMPLIED
+>
+<!ELEMENT PROPOSED_HOUSING_EXPENSE EMPTY>
+<!--#DOCUMENTATION:05H-040 Enumerated-->
+<!ATTLIST PROPOSED_HOUSING_EXPENSE
+	HousingExpenseType (FirstMortgagePrincipalAndInterest | GroundRent | HazardInsurance | HomeownersAssociationDuesAndCondominiumFees | MI | OtherHousingExpense | OtherMortgageLoanPrincipalAndInterest | RealEstateTax) #IMPLIED
+>
+<!--#DOCUMENTATION:05H-050 Money-->
+<!ATTLIST PROPOSED_HOUSING_EXPENSE
+	_PaymentAmount CDATA #IMPLIED
+>
+<!ELEMENT REO_PROPERTY EMPTY>
+<!--#DOCUMENTATION:06G-180-->
+<!ATTLIST REO_PROPERTY
+	REO_ID ID #IMPLIED
+	BorrowerID IDREFS #IMPLIED
+	LiabilityID IDREFS #IMPLIED
+>
+<!--#DOCUMENTATION:06G-030 String-->
+<!ATTLIST REO_PROPERTY
+	_StreetAddress CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  String-->
+<!ATTLIST REO_PROPERTY
+	_StreetAddress2 CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-040 String-->
+<!ATTLIST REO_PROPERTY
+	_City CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-050 String-->
+<!ATTLIST REO_PROPERTY
+	_State CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-060,06G-070 String-->
+<!ATTLIST REO_PROPERTY
+	_PostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-160 Boolean-->
+<!ATTLIST REO_PROPERTY
+	_CurrentResidenceIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:06G-080 Enumerated-->
+<!ATTLIST REO_PROPERTY
+	_DispositionStatusType (PendingSale | RetainForRental | RetainForPrimaryOrSecondaryResidence | Sold) #IMPLIED
+>
+<!--#DOCUMENTATION:06G-090 Enumerated-->
+<!ATTLIST REO_PROPERTY
+	_GSEPropertyType (SingleFamily | Condominium | Townhouse | Cooperative | TwoToFourUnitProperty | MultifamilyMoreThanFourUnits | ManufacturedMobileHome | CommercialNonResidential | MixedUseResidential | Farm | HomeAndBusinessCombined | Land) #IMPLIED
+>
+<!--#DOCUMENTATION:Money 06G-130-->
+<!ATTLIST REO_PROPERTY
+	_LienInstallmentAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Money 06G-110-->
+<!ATTLIST REO_PROPERTY
+	_LienUPBAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-140 Money-->
+<!ATTLIST REO_PROPERTY
+	_MaintenanceExpenseAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Money 06G-100-->
+<!ATTLIST REO_PROPERTY
+	_MarketValueAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-120 Money-->
+<!ATTLIST REO_PROPERTY
+	_RentalIncomeGrossAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-150 Money-->
+<!ATTLIST REO_PROPERTY
+	_RentalIncomeNetAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06G-170 Boolean-->
+<!ATTLIST REO_PROPERTY
+	_SubjectIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT TITLE_HOLDER EMPTY>
+<!--#DOCUMENTATION:string 02C-020-->
+<!ATTLIST TITLE_HOLDER
+	_Name CDATA #IMPLIED
+>
+<!--Added to AUS 2.2 Boolean-->
+<!ATTLIST TITLE_HOLDER
+	LandTrustType (IllinoisLandTrust) #IMPLIED
+>
+<!ELEMENT TRANSACTION_DETAIL (PURCHASE_CREDIT*)>
+<!--#DOCUMENTATION:07A-030 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	AlterationsImprovementsAndRepairsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-090 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	BorrowerPaidDiscountPointsTotalAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-070 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	EstimatedClosingCostsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-040 Money-->
+<!--Added as FNM proprietary attribute because MISMO AUS does not have an equivalent field, and field used by DU   -->
+<!ATTLIST TRANSACTION_DETAIL
+	FNMCostOfLandAcquiredSeparatelyAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-120 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	MIAndFundingFeeFinancedAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-080 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	MIAndFundingFeeTotalAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-060 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	PrepaidItemsEstimatedAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-020 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	PurchasePriceAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-050 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	RefinanceIncludingDebtsToBePaidOffAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOA-040 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	SalesConcessionAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-110 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	SellerPaidClosingCostsAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07A-100 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	SubordinateLienAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.2  Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	SubordinateLienHELOCAmount CDATA #IMPLIED
+>
+<!-- FREReserveAmount marked for deprecation to correct spelling in AUS 2.3.1-->
+<!--Added to AUS 2.3 Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	FREReserveAmount CDATA #IMPLIED
+>
+<!--Added to AUS 2.3.1  Money-->
+<!ATTLIST TRANSACTION_DETAIL
+	FREReservesAmount CDATA #IMPLIED
+>
+<!ELEMENT PURCHASE_CREDIT EMPTY>
+<!--#DOCUMENTATION:07B-030 Money-->
+<!ATTLIST PURCHASE_CREDIT
+	_Amount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:07B-020 Enumerated-->
+<!--Added enumeration to AUS 2.2-->
+<!ATTLIST PURCHASE_CREDIT
+	_SourceType (BorrowerPaidOutsideClosing | PropertySeller | Lender | NonParentRelative) #IMPLIED
+>
+<!--#DOCUMENTATION:07B-020 Enumerated-->
+<!ATTLIST PURCHASE_CREDIT
+	_Type (EarnestMoney | RelocationFunds | EmployerAssistedHousing | LeasePurchaseFund | SweatEquity | Other) #IMPLIED
+>
+<!--Added additional element _MAIL_TO to AUS 2.3-->
+<!--Added additional element CONTACT_POINT to AUS 2.3.1-->
+<!ELEMENT BORROWER (_ALIAS*, _MAIL_TO?, _RESIDENCE*, CURRENT_INCOME*, DECLARATION?, DEPENDENT*, EMPLOYER*, FHA_VA_BORROWER?, GOVERNMENT_MONITORING?, PRESENT_HOUSING_EXPENSE*, SUMMARY*, VA_BORROWER?, CONTACT_POINT*)>
+<!ATTLIST BORROWER
+	BorrowerID ID #IMPLIED
+>
+<!--#DOCUMENTATION:03A-140-->
+<!ATTLIST BORROWER
+	JointAssetBorrowerID IDREF #IMPLIED
+>
+<!--#DOCUMENTATION:03A-040 String-->
+<!ATTLIST BORROWER
+	_FirstName CDATA #REQUIRED
+>
+<!--#DOCUMENTATION:03A-050 String-->
+<!ATTLIST BORROWER
+	_MiddleName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03A-060 String-->
+<!ATTLIST BORROWER
+	_LastName CDATA #REQUIRED
+>
+<!--#DOCUMENTATION:03A-070 String-->
+<!ATTLIST BORROWER
+	_NameSuffix CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03A-090 Numeric-->
+<!ATTLIST BORROWER
+	_AgeAtApplicationYears CDATA #IMPLIED
+>
+<!--Added attribute to AUS 2.3-->
+<!ATTLIST BORROWER
+	_BirthDate CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:09A-030 Date/Time-->
+<!ATTLIST BORROWER
+	_ApplicationSignedDate CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03A-080 String-->
+<!-- Marked for deprecation in 2.3.1, CONTACT_POINT to be used instead -->
+<!ATTLIST BORROWER
+	_HomeTelephoneNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03A-020 Enumerated-->
+<!ATTLIST BORROWER
+	_PrintPositionType (Borrower | CoBorrower) #IMPLIED
+>
+<!--#DOCUMENTATION:03A-030 String-->
+<!ATTLIST BORROWER
+	_SSN CDATA #REQUIRED
+>
+<!--#DOCUMENTATION:03A-120 Numeric-->
+<!ATTLIST BORROWER
+	DependentCount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03A-130 Enumerated-->
+<!ATTLIST BORROWER
+	JointAssetLiabilityReportingType (Jointly | NotJointly) #IMPLIED
+>
+<!--#DOCUMENTATION:03A-110 Enumerated-->
+<!ATTLIST BORROWER
+	MaritalStatusType (Married | NotProvided | Separated | Unknown | Unmarried) #IMPLIED
+>
+<!--#DOCUMENTATION:03A-100 Numeric-->
+<!ATTLIST BORROWER
+	SchoolingYears CDATA #IMPLIED
+>
+<!-- Added to AUS 2.3.1-->
+<!ATTLIST BORROWER
+	CreditReportIdentifier CDATA #IMPLIED
+>
+<!-- Added to AUS 2.3.1-->
+<!ELEMENT CONTACT_POINT EMPTY>
+<!ATTLIST CONTACT_POINT
+	_RoleType (Home | Mobile | Work) #IMPLIED
+	_Type (Email | Fax | Other | Phone) #IMPLIED
+	_TypeOtherDescription CDATA #IMPLIED
+	_Value CDATA #IMPLIED
+	_PreferenceIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT _ALIAS EMPTY>
+<!--#DOCUMENTATION:06H-030 String-->
+<!ATTLIST _ALIAS
+	_FirstName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06H-050 String-->
+<!ATTLIST _ALIAS
+	_LastName CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06H-040 String-->
+<!ATTLIST _ALIAS
+	_MiddleName CDATA #IMPLIED
+>
+<!--Added additional element and attributes to AUS 2.3-->
+<!ELEMENT _MAIL_TO EMPTY>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_StreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_StreetAddress2 CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_City CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_State CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_PostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION: String-->
+<!ATTLIST _MAIL_TO
+	_Country CDATA #IMPLIED
+>
+<!ELEMENT _RESIDENCE EMPTY>
+<!--#DOCUMENTATION:03C-040 String-->
+<!ATTLIST _RESIDENCE
+	_StreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-050 String-->
+<!ATTLIST _RESIDENCE
+	_City CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-060 String-->
+<!ATTLIST _RESIDENCE
+	_State CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-070, 03C-080 String-->
+<!ATTLIST _RESIDENCE
+	_PostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Country in which Borrower's residence is located if not in USA. String-->
+<!ATTLIST _RESIDENCE
+	_Country CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-090 Enumerated-->
+<!ATTLIST _RESIDENCE
+	BorrowerResidencyBasisType (LivingRentFree | Own | Rent) #IMPLIED
+>
+<!--#DOCUMENTATION:03C-110 Numeric-->
+<!ATTLIST _RESIDENCE
+	BorrowerResidencyDurationMonths CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-100 Numeric-->
+<!ATTLIST _RESIDENCE
+	BorrowerResidencyDurationYears CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:03C-030 Enumerated-->
+<!ATTLIST _RESIDENCE
+	BorrowerResidencyType (Current | Prior) #IMPLIED
+>
+<!ELEMENT CURRENT_INCOME EMPTY>
+<!--#DOCUMENTATION:05I-030 Enumerated-->
+<!ATTLIST CURRENT_INCOME
+	IncomeType (AccessoryUnitIncome | AlimonyChildSupport | AutomobileExpenseAccount | Base | Bonus | Commissions | DividendsInterest | FosterCare | HousingChoiceVoucherProgramSection8 | NetRentalIncome | NonBorrowerHouseholdIncome | NotesReceivableInstallment | OtherTypesOfIncome | Overtime | Pension | SocialSecurity | SubjectPropertyNetCashFlow | Trust | Unemployment | VABenefitsNonEducational | MortgageDifferential | MilitaryBasePay | MilitaryRationsAllowance | MilitaryFlightPay | MilitaryHazardPay | MilitaryClothesAllowance | MilitaryQuartersAllowance | MilitaryPropPay | MilitaryOverseasPay | MilitaryCombatPay | MilitaryVariableHousingAllowance | FNMBoarderIncome | FNMGovernmentMortgageCreditCertificate | CapitalGains | EmploymentRelatedAssets | ForeignIncome | RoyaltyPayment | SeasonalIncome | TemporaryLeave | TipIncome) #IMPLIED
+>
+<!--#DOCUMENTATION:05I-040 Money-->
+<!ATTLIST CURRENT_INCOME
+	_MonthlyTotalAmount CDATA #IMPLIED
+>
+<!ELEMENT DECLARATION (_EXPLANATION*)>
+<!--#DOCUMENTATION:08A-090 Boolean-->
+<!ATTLIST DECLARATION
+	AlimonyChildSupportObligationIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-040 Boolean-->
+<!ATTLIST DECLARATION
+	BankruptcyIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-100 Boolean-->
+<!ATTLIST DECLARATION
+	BorrowedDownPaymentIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-120 Enumerated-->
+<!-- Updated for AUS 2.3.1, added enumerated values NonResidentAlien and Unknown -->
+<!ATTLIST DECLARATION
+	CitizenshipResidencyType (USCitizen | PermanentResidentAlien | NonPermanentResidentAlien | NonResidentAlien | Unknown) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-110 Boolean-->
+<!ATTLIST DECLARATION
+	CoMakerEndorserOfNoteIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-140 Boolean-->
+<!ATTLIST DECLARATION
+	HomeownerPastThreeYearsType (Yes | No | Unknown) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-130 Boolean-->
+<!ATTLIST DECLARATION
+	IntentToOccupyType (Yes | No | Unknown) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-070 Boolean-->
+<!ATTLIST DECLARATION
+	LoanForeclosureOrJudgementIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-030 Boolean-->
+<!ATTLIST DECLARATION
+	OutstandingJudgementsIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-060 Boolean-->
+<!ATTLIST DECLARATION
+	PartyToLawsuitIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-080 Boolean-->
+<!ATTLIST DECLARATION
+	PresentlyDelinquentIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-160 Enumerated-->
+<!ATTLIST DECLARATION
+	PriorPropertyTitleType (Sole | JointWithSpouse | JointWithOtherThanSpouse) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-150 Enumerated-->
+<!ATTLIST DECLARATION
+	PriorPropertyUsageType (Investment | PrimaryResidence | SecondaryResidence) #IMPLIED
+>
+<!--#DOCUMENTATION:08A-050 Boolean-->
+<!ATTLIST DECLARATION
+	PropertyForeclosedPastSevenYearsIndicator (Y | N) #IMPLIED
+>
+<!ELEMENT _EXPLANATION EMPTY>
+<!--#DOCUMENTATION:08B-040 String-->
+<!ATTLIST _EXPLANATION
+	_Description CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:08B-030 Enumerated-->
+<!ATTLIST _EXPLANATION
+	_Type (AlimonyChildSupport | BorrowedDownPayment | CoMakerEndorserOnNote | DeclaredBankruptcyPastSevenYears | DelinquencyOrDefault | DirectIndirectForeclosedPropertyPastSevenYears | ObligatedOnLoanForeclosedOrDeedInLieuOfJudgement | OutstandingJudgments | PartyToLawsuit) #IMPLIED
+>
+<!ELEMENT DEPENDENT EMPTY>
+<!--#DOCUMENTATION:03B-030 Numeric-->
+<!ATTLIST DEPENDENT
+	_AgeYears CDATA #IMPLIED
+>
+<!ELEMENT EMPLOYER EMPTY>
+<!--#DOCUMENTATION:04A-030, 04B-030 String-->
+<!ATTLIST EMPLOYER
+	_Name CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-040, 04B-040 String-->
+<!ATTLIST EMPLOYER
+	_StreetAddress CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-050, 04B-050 String-->
+<!ATTLIST EMPLOYER
+	_City CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-060,04B-060 String-->
+<!ATTLIST EMPLOYER
+	_State CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-070, 04A-080, 04B-070, 04B-080 String-->
+<!ATTLIST EMPLOYER
+	_PostalCode CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-140, 04B-150 String-->
+<!ATTLIST EMPLOYER
+	_TelephoneNumber CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-110 Numeric-->
+<!ATTLIST EMPLOYER
+	CurrentEmploymentMonthsOnJob CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-120 Numeric-->
+<!ATTLIST EMPLOYER
+	CurrentEmploymentTimeInLineOfWorkYears CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-100 Numeric-->
+<!ATTLIST EMPLOYER
+	CurrentEmploymentYearsOnJob CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04A-090, 04B-090 Boolean-->
+<!ATTLIST EMPLOYER
+	EmploymentBorrowerSelfEmployedIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:04B-100 Boolean-->
+<!ATTLIST EMPLOYER
+	EmploymentCurrentIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:04A-130, 04B-140 String-->
+<!ATTLIST EMPLOYER
+	EmploymentPositionDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Sections 04A/04B Boolean-->
+<!ATTLIST EMPLOYER
+	EmploymentPrimaryIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:04B-130 Money-->
+<!ATTLIST EMPLOYER
+	IncomeEmploymentMonthlyAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04B-120 Date/Time-->
+<!ATTLIST EMPLOYER
+	PreviousEmploymentEndDate CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:04B-110 Date/Time-->
+<!ATTLIST EMPLOYER
+	PreviousEmploymentStartDate CDATA #IMPLIED
+>
+<!ELEMENT FHA_VA_BORROWER EMPTY>
+<!--#DOCUMENTATION:GOE-030 String-->
+<!ATTLIST FHA_VA_BORROWER
+	CAIVRSIdentifier CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOE-050 Numeric-->
+<!ATTLIST FHA_VA_BORROWER
+	FNMBankruptcyCount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOE-040 String-->
+<!ATTLIST FHA_VA_BORROWER
+	FNMBorrowerCreditRating CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOE-070 Enumerated. This 1003 field will now be used to capture /LOAN_APPLICATION/BORROWER/FHA_VA_BORROWER/@FirstTimeHomebuyerCounselType -->
+<!ATTLIST FHA_VA_BORROWER
+	FNMCreditReportScoreType (CreditQuote | FICO) #IMPLIED
+>
+<!--#DOCUMENTATION:GOE-060 Numeric-->
+<!ATTLIST FHA_VA_BORROWER
+	FNMForeclosureCount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:Indicates borrower qualifies as a veteran under HUD guidelines and that the loan application should be evaluated as a 203(b)(2) Veteran Loan. If any borrower qualifies as a veteran under VA guidelines then the loan (including all borrowers) may be processed as a VA loan application. Boolean-->
+<!ATTLIST FHA_VA_BORROWER
+	VeteranStatusIndicator (Y | N) #IMPLIED
+>
+<!--#DOCUMENTATION:GOE-070 Enumerated. -->
+<!ATTLIST FHA_VA_BORROWER
+	FirstTimeHomebuyerCounselType (HUDApprovedCounselingAgency | NotCounseled) #IMPLIED
+>
+<!-- Added HMDA_RACE element to AUS 2.3-->
+<!-- Added to support New HMDA Requirements-->
+<!ELEMENT GOVERNMENT_MONITORING (HMDA_RACE*, GOVERNMENT_MONITORING_EXTENSION?)>
+<!--Added new enumerated value to AUS 2.3-->
+<!--#DOCUMENTATION:10A-060 Enumerated-->
+<!ATTLIST GOVERNMENT_MONITORING
+	GenderType (Female | InformationNotProvidedUnknown | Male | NotApplicable) #IMPLIED
+>
+<!-- Deprecate OtherRaceNationalOriginDescription in a future non-backwardly compatible release -->
+<!--#DOCUMENTATION:10A-050 String-->
+<!ATTLIST GOVERNMENT_MONITORING
+	OtherRaceNationalOriginDescription CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:10A-030 Boolean-->
+<!ATTLIST GOVERNMENT_MONITORING
+	RaceNationalOriginRefusalIndicator (Y | N) #IMPLIED
+>
+<!--Deprecate RaceNationalOriginType in a future non-backwardly compatible release -->
+<!--#DOCUMENTATION:10A-040 Enumerated-->
+<!ATTLIST GOVERNMENT_MONITORING
+	RaceNationalOriginType (AmericanIndianOrAlaskanNative | AsianOrPacificIslander | BlackNotOfHispanicOrigin | Hispanic | InformationNotProvided | Other | WhiteNotOfHispanicOrigin) #IMPLIED
+>
+<!--Added additional attribute to AUS 2.3-->
+<!ATTLIST GOVERNMENT_MONITORING
+	HMDAEthnicityType (HispanicOrLatino | NotHispanicOrLatino | InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication | NotApplicable) #IMPLIED
+>
+<!-- Added element to AUS 2.3-->
+<!ELEMENT HMDA_RACE EMPTY>
+<!ATTLIST HMDA_RACE
+	_Type (AmericanIndianOrAlaskaNative | Asian | BlackOrAfricanAmerican | NativeHawaiianOrOtherPacificIslander | White | InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication | NotApplicable) #IMPLIED
+>
+<!ELEMENT PRESENT_HOUSING_EXPENSE EMPTY>
+<!--#DOCUMENTATION:05H-040 Enumerated-->
+<!ATTLIST PRESENT_HOUSING_EXPENSE
+	HousingExpenseType (FirstMortgagePrincipalAndInterest | HazardInsurance | HomeownersAssociationDuesAndCondominiumFees | MI | OtherHousingExpense | OtherMortgageLoanPrincipalAndInterest | RealEstateTax | Rent) #IMPLIED
+>
+<!--#DOCUMENTATION:05H-050 Money-->
+<!ATTLIST PRESENT_HOUSING_EXPENSE
+	_PaymentAmount CDATA #IMPLIED
+>
+<!ELEMENT SUMMARY EMPTY>
+<!--#DOCUMENTATION:06S-040 Money-->
+<!ATTLIST SUMMARY
+	_Amount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:06S-030 Enumerated-->
+<!--Corrected mis-spelling "liabilites" in AUS 2.2 Incorrectly spelled words will be deleted upon the next major release. Correct enumerated values added(incorrect in parens) are: TotalLiabilitiesBalance (TotalLiabilitesBalance), SubtotalLiabilitiesMonthlyPayment (SubtotalLiabilitesMonthlyPayment), SubtotalOmittedLiabilitiesBalance (SubtotalLiabilitesMonthlyPayment), SubtotalResubordinatedLiabilitiesMonthlyPaymentForSubjectProperty (SubtotalResubordinatedLiabilitesMonthlyPaymentForSubjectProperty)-->
+<!-- Added enumeration UndrawnHELOC to AUS 2.3.1 -->
+<!ATTLIST SUMMARY
+	_AmountType (IPCsExcessFinancingConcessionsOrSalesConcessionsAmount | UndrawnHELOC | EnergyImprovementAmount | PACELoanPayoffAmount) #IMPLIED
+>
+<!ELEMENT VA_BORROWER EMPTY>
+<!--#DOCUMENTATION:GOD-080 Money-->
+<!ATTLIST VA_BORROWER
+	VACoBorrowerNonTaxableIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-100 Money-->
+<!ATTLIST VA_BORROWER
+	VACoBorrowerTaxableIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-030 Money-->
+<!ATTLIST VA_BORROWER
+	VAFederalTaxAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-050 Money-->
+<!ATTLIST VA_BORROWER
+	VALocalTaxAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-070 Money-->
+<!ATTLIST VA_BORROWER
+	VAPrimaryBorrowerNonTaxableIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-090 Money-->
+<!ATTLIST VA_BORROWER
+	VAPrimaryBorrowerTaxableIncomeAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-060 Money-->
+<!ATTLIST VA_BORROWER
+	VASocialSecurityTaxAmount CDATA #IMPLIED
+>
+<!--#DOCUMENTATION:GOD-040 Money-->
+<!ATTLIST VA_BORROWER
+	VAStateTaxAmount CDATA #IMPLIED
+>
+<!--
+    New HMDA Requirements
+-->
+<!--Define GOVERNMENT_MONITORING_EXTENSION and child elements-->
+<!ELEMENT GOVERNMENT_MONITORING_EXTENSION (GOVERNMENT_MONITORING_DETAIL?, HMDA_ETHNICITIES?, HMDA_ETHNICITY_ORIGINS?, HMDA_RACES?)>
+<!--Define HMDA_ETHNICITY_ORIGINS and repeating child element-->
+<!ELEMENT HMDA_ETHNICITY_ORIGINS (HMDA_ETHNICITY_ORIGIN*)>
+<!ELEMENT HMDA_ETHNICITY_ORIGIN EMPTY>
+<!ATTLIST HMDA_ETHNICITY_ORIGIN
+	HMDAEthnicityOriginType (Cuban | Mexican | Other | PuertoRican) #IMPLIED
+	HMDAEthnicityOriginTypeOtherDescription CDATA #IMPLIED
+>
+<!--Define HMDA_ETHNICITY structure and child elements-->
+<!ELEMENT HMDA_ETHNICITIES (HMDA_ETHNICITY*)>
+<!ELEMENT HMDA_ETHNICITY EMPTY>
+<!ATTLIST HMDA_ETHNICITY
+	HMDAEthnicityType (HispanicOrLatino | InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication | NotApplicable | NotHispanicOrLatino) #IMPLIED
+>
+<!--Define HMDA_RACES structure and child elements-->
+<!--<!ELEMENT HMDA_RACES (HMDA_RACE*)>
+<!ELEMENT HMDA_RACE (HMDA_RACE_EXTENSION*)>-->
+<!ELEMENT HMDA_RACES (HMDA_RACE_EXTENSION*)>
+<!ELEMENT HMDA_RACE_EXTENSION (HMDA_RACE_DETAIL?, HMDA_RACE_DESIGNATIONS?)>
+<!ATTLIST HMDA_RACE_EXTENSION
+	_ID ID #IMPLIED
+	Id CDATA #IMPLIED
+>
+<!ELEMENT HMDA_RACE_DETAIL EMPTY>
+<!ATTLIST HMDA_RACE_DETAIL
+	HMDARaceType (AmericanIndianOrAlaskaNative | Asian | BlackOrAfricanAmerican | InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication | NativeHawaiianOrOtherPacificIslander | NotApplicable | White) #IMPLIED
+	HMDARaceTypeAdditionalDescription CDATA #IMPLIED
+>
+<!ELEMENT HMDA_RACE_DESIGNATIONS (HMDA_RACE_DESIGNATION*)>
+<!ELEMENT HMDA_RACE_DESIGNATION EMPTY>
+<!ATTLIST HMDA_RACE_DESIGNATION
+	HMDARaceDesignationType (AsianIndian | Chinese | Filipino | GuamanianOrChamorro | Japanese | Korean | NativeHawaiian | OtherAsian | OtherPacificIslander | Samoan | Vietnamese) #IMPLIED
+	HMDARaceDesignationOtherAsianDescription CDATA #IMPLIED
+	HMDARaceDesignationOtherPacificIslanderDescription CDATA #IMPLIED
+>
+<!--Define GOVERNMENT_MONITORING_DETAIL child elements-->
+<!ELEMENT GOVERNMENT_MONITORING_DETAIL EMPTY>
+<!ATTLIST GOVERNMENT_MONITORING_DETAIL
+	ApplicationTakenMethodType (FaceToFace | Mail | Telephone | Internet) #IMPLIED
+	HMDAEthnicityCollectedBasedOnVisualObservationOrSurnameIndicator (Y | N) #IMPLIED
+	HMDAEthnicityRefusalIndicator (Y | N) #IMPLIED
+	HMDAGenderCollectedBasedOnVisualObservationOrNameIndicator (Y | N) #IMPLIED
+	HMDAGenderRefusalIndicator (Y | N) #IMPLIED
+	HMDAGenderType (Female | InformationNotProvidedUnknown | Male | NotApplicable | ApplicantSelectedBothMaleAndFemale) #IMPLIED
+	HMDARaceCollectedBasedOnVisualObservationOrSurnameIndicator (Y | N) #IMPLIED
+	HMDARaceRefusalIndicator (Y | N) #IMPLIED
+>

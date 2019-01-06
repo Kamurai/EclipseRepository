@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOAN_APPLICATION>
+	<_DATA_INFORMATION>
+		<DATA_VERSION _Name="Date" _Number="20131126"/>
+		<DATA_VERSION _Name="1003" _Number="3.20"/>
+	</_DATA_INFORMATION>
+	<ADDITIONAL_CASE_DATA>
+		<TRANSMITTAL_DATA BuydownRatePercent="0.000" PropertyEstimatedValueAmount="375000.00" CurrentFirstMortgageHolderType="Unknown" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginationCompanyID="123456789111" LoanOriginatorID="123456789012"/>
+	</ADDITIONAL_CASE_DATA>
+	<AFFORDABLE_LENDING FNMCommunitySecondsIndicator="N" FNMNeighborsMortgageEligibilityIndicator="N" HUDIncomeLimitAdjustmentFactor="0" HUDLendingIncomeLimitAmount="0.00" HUDMedianIncomeAmount="0.00"/>
+	<ASSET _CashOrMarketValueAmount="8300.00" _Type="CheckingAccount" _HolderName="Checking" BorrowerID="Borr999606666"/>
+	<ASSET _CashOrMarketValueAmount="2000.00" _Type="SavingsAccount" _HolderName="Savings" BorrowerID="Borr999606666"/>
+	<ASSET _CashOrMarketValueAmount="230000.00" _Type="RetirementFund" BorrowerID="Borr999606666"/>
+	<ASSET _CashOrMarketValueAmount="600000.00" _Type="NetWorthOfBusinessOwned" BorrowerID="Borr999606666"/>
+	<GOVERNMENT_REPORTING HMDAPreapprovalType="PreapprovalWasNotRequested"/>
+	<INTERVIEWER_INFORMATION InterviewersEmployerStreetAddress="412 H St, NW" InterviewersEmployerCity="Washington" InterviewersEmployerState="DC" InterviewersEmployerPostalCode="200121234" InterviewersTelephoneNumber="2023333333" ApplicationTakenMethodType="Internet" InterviewerApplicationSignedDate="20111011" InterviewersEmployerName="ABC Mortgage" InterviewersName="John Done"/>
+	<LIABILITY _ID="Liab1" BorrowerID="Borr999606666" REO_ID="ReoP1" _AccountIdentifier="1234567" _ExclusionIndicator="N" _HolderName="KENTUCKY NATIONAL" _MonthlyPaymentAmount="817.00" _PayoffStatusIndicator="N" _RemainingTermMonths="152" _Type="MortgageLoan" _UnpaidBalanceAmount="123773.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="Y"/>
+	<LIABILITY _ID="Liab2" BorrowerID="Borr999606666" _AccountIdentifier="145000" _ExclusionIndicator="N" _HolderName="BANK ONE" _MonthlyPaymentAmount="217.00" _PayoffStatusIndicator="N" _RemainingTermMonths="25" _Type="Installment" _UnpaidBalanceAmount="5342.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab3" BorrowerID="Borr999606666" _AccountIdentifier="64483" _ExclusionIndicator="N" _HolderName="KENTUCKY TELCO" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="N" _RemainingTermMonths="17" _Type="Installment" _UnpaidBalanceAmount="254.71" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab4" BorrowerID="Borr999606666" _AccountIdentifier="478355" _ExclusionIndicator="N" _HolderName="ATT UNIVERSAL CARD" _MonthlyPaymentAmount="67.00" _PayoffStatusIndicator="N" _RemainingTermMonths="50" _Type="Revolving" _UnpaidBalanceAmount="3350.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab5" BorrowerID="Borr999606666" _AccountIdentifier="601100" _ExclusionIndicator="N" _HolderName="DISCOVER CARD SERVICES" _MonthlyPaymentAmount="36.00" _PayoffStatusIndicator="N" _RemainingTermMonths="50" _Type="Revolving" _UnpaidBalanceAmount="1800.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab6" BorrowerID="Borr999606666" _AccountIdentifier="441716" _ExclusionIndicator="N" _HolderName="FIRST USA BANK" _MonthlyPaymentAmount="41.00" _PayoffStatusIndicator="N" _RemainingTermMonths="50" _Type="Revolving" _UnpaidBalanceAmount="2050.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab7" BorrowerID="Borr999606666" _AccountIdentifier="621865" _ExclusionIndicator="N" _HolderName="HESS/ CRS" _MonthlyPaymentAmount="15.00" _PayoffStatusIndicator="N" _RemainingTermMonths="50" _Type="Revolving" _UnpaidBalanceAmount="750.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab8" BorrowerID="Borr999606666" _AccountIdentifier="0987665" _ExclusionIndicator="N" _HolderName="HOBBS BANK" _MonthlyPaymentAmount="80.00" _PayoffStatusIndicator="N" _RemainingTermMonths="46" _Type="Revolving" _UnpaidBalanceAmount="3673.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab9" BorrowerID="Borr999606666" _AccountIdentifier="431300" _ExclusionIndicator="N" _HolderName="MBNA AMERICA BANK" _MonthlyPaymentAmount="50.00" _PayoffStatusIndicator="N" _RemainingTermMonths="4" _Type="Revolving" _UnpaidBalanceAmount="200.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab10" BorrowerID="Borr999606666" _ExclusionIndicator="N" _HolderName="Auto Lease" _MonthlyPaymentAmount="385.00" _PayoffStatusIndicator="N" _RemainingTermMonths="37" _Type="LeasePayments" _UnpaidBalanceAmount="14000.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab11" BorrowerID="Borr999606666" _ExclusionIndicator="N" _HolderName="Other Liabilities" _MonthlyPaymentAmount="100.00" _PayoffStatusIndicator="N" _RemainingTermMonths="23" _Type="OtherLiability" _UnpaidBalanceAmount="2300.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab12" BorrowerID="Borr999606666" _AccountIdentifier="540756" _ExclusionIndicator="Y" _HolderName="GE CARD CO" _MonthlyPaymentAmount="63.00" _PayoffStatusIndicator="N" _RemainingTermMonths="50" _Type="Revolving" _UnpaidBalanceAmount="3114.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LOAN_PRODUCT_DATA>
+		<LOAN_FEATURES BalloonIndicator="N" EscrowWaiverIndicator="N" GSEProjectClassificationType="GNotInaProjectOrDevelopment" GSEPropertyType="Detached" LienPriorityType="FirstLien" LoanDocumentationType="FullDocumentation" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly" ProductName="C30FX"/>
+	</LOAN_PRODUCT_DATA>
+	<LOAN_PURPOSE _Type="Purchase" PropertyRightsType="FeeSimple" PropertyUsageType="PrimaryResidence">
+		<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+	</LOAN_PURPOSE>
+	<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+	<MORTGAGE_TERMS BaseLoanAmount="300000.00" LenderCaseIdentifier="DI-CL01 Hmstyl" LoanAmortizationTermMonths="360" LoanAmortizationType="Fixed" MortgageType="Conventional" RequestedInterestRatePercent="4.500"/>
+	<PROPERTY _StreetAddress="1234 Builders La" _City="Louisville" _State="KY" _PostalCode="402071234" _FinancedNumberOfUnits="1">
+		<_LEGAL_DESCRIPTION _Type="MetesAndBounds"/>
+		<PARSED_STREET_ADDRESS _HouseNumber="1234" _StreetName="Builders La"/>
+		<_VALUATION _MethodType="FNM1004">
+			<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+		</_VALUATION>
+	</PROPERTY>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="1520.06"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="OtherMortgageLoanPrincipalAndInterest" _PaymentAmount="225.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="150.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="241.00"/>
+	<REO_PROPERTY REO_ID="ReoP1" BorrowerID="Borr999606666" LiabilityID="Liab1" _StreetAddress="5209 Noosh Way" _City="Louisville" _State="KY" _PostalCode="402071234" _CurrentResidenceIndicator="N" _DispositionStatusType="RetainForRental" _GSEPropertyType="TwoToFourUnitProperty" _LienInstallmentAmount="817.00" _LienUPBAmount="123773.00" _MaintenanceExpenseAmount="795.00" _MarketValueAmount="237000.00" _RentalIncomeGrossAmount="2750.00" _RentalIncomeNetAmount="450.50" _SubjectIndicator="N"/>
+	<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="100000.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="6750.00" MIAndFundingFeeFinancedAmount="0.00" MIAndFundingFeeTotalAmount="0.00" PrepaidItemsEstimatedAmount="2346.00" PurchasePriceAmount="275000.00" RefinanceIncludingDebtsToBePaidOffAmount="0.00" SellerPaidClosingCostsAmount="0.00" SubordinateLienAmount="37500.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+		<PURCHASE_CREDIT _Amount="368.00" _SourceType="BorrowerPaidOutsideClosing"/>
+	</TRANSACTION_DETAIL>
+	<BORROWER BorrowerID="Borr999606666" _FirstName="Suzi" _MiddleName="S" _LastName="Builder" _AgeAtApplicationYears="40" _PrintPositionType="Borrower" _SSN="999606666" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Separated" SchoolingYears="16">
+		<_MAIL_TO _StreetAddress="5404 Pawnee Trail" _City="Louisville" _State="KY" _PostalCode="402071234" _Country="USA"/>
+		<_RESIDENCE _StreetAddress="5404 Pawnee Trail" _City="Louisville" _State="KY" _PostalCode="402071234" BorrowerResidencyBasisType="Rent" BorrowerResidencyDurationMonths="10" BorrowerResidencyDurationYears="1" BorrowerResidencyType="Current"/>
+		<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="8000.00"/>
+		<CURRENT_INCOME IncomeType="NetRentalIncome" _MonthlyTotalAmount="850.00"/>
+		<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="PermanentResidentAlien" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithOtherThanSpouse" PriorPropertyUsageType="Investment" PropertyForeclosedPastSevenYearsIndicator="N"/>
+		<EMPLOYER _Name="Barnaby's Home Improvement" CurrentEmploymentMonthsOnJob="0" CurrentEmploymentTimeInLineOfWorkYears="21" CurrentEmploymentYearsOnJob="21" EmploymentBorrowerSelfEmployedIndicator="Y" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+		<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotApplicable">
+			<HMDA_RACE _Type="InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication"/>
+		</GOVERNMENT_MONITORING>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="Rent" _PaymentAmount="3500.00"/>
+		<CONTACT_POINT _Type="Email" _Value="Suzi.B@fanniemae.com"/>
+	</BORROWER>
+</LOAN_APPLICATION>

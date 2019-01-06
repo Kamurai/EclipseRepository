@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2015 rel. 3 (x64)-->
+<MESSAGE xmlns="http://www.mismo.org/residential/2009/schemas" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ULAD="http://www.datamodelextension.org/Schema/ULAD" MISMOReferenceModelIdentifier="3.4.032420160128" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="http://www.datamodelextension.org/Schema/ULAD ULAD_ExtensionV3_4.xsd">
+	<ABOUT_VERSIONS>
+		<ABOUT_VERSION>
+			<CreatedDatetime>2015-08-24T09:30:47Z</CreatedDatetime>
+			<DataVersionName>Refi Example</DataVersionName>
+		</ABOUT_VERSION>
+	</ABOUT_VERSIONS>
+	<DEAL_SETS>
+		<DEAL_SET>
+			<DEALS>
+				<DEAL>
+					<ASSETS>
+						<ASSET SequenceNumber="1" xlink:label="ASSET_1">
+							<ASSET_DETAIL>
+								<AssetAccountIdentifier>6655</AssetAccountIdentifier>
+								<AssetCashOrMarketValueAmount>15000.00</AssetCashOrMarketValueAmount>
+								<AssetType>SavingsAccount</AssetType>
+							</ASSET_DETAIL>
+							<ASSET_HOLDER>
+								<NAME>
+									<FullName>WAVE BOARD CREDIT UNION</FullName>
+								</NAME>
+							</ASSET_HOLDER>
+						</ASSET>
+						<ASSET SequenceNumber="2" xlink:label="ASSET_2">
+							<ASSET_DETAIL>
+								<AssetAccountIdentifier>1021</AssetAccountIdentifier>
+								<AssetCashOrMarketValueAmount>3210.00</AssetCashOrMarketValueAmount>
+								<AssetType>CheckingAccount</AssetType>
+							</ASSET_DETAIL>
+							<ASSET_HOLDER>
+								<NAME>
+									<FullName>FISH BOWL BANK</FullName>
+								</NAME>
+							</ASSET_HOLDER>
+						</ASSET>
+						<ASSET SequenceNumber="3" xlink:label="ASSET_3">
+							<OWNED_PROPERTY>
+								<OWNED_PROPERTY_DETAIL>
+									<OwnedPropertyDispositionStatusType>Retain</OwnedPropertyDispositionStatusType>
+									<OwnedPropertyMaintenanceExpenseAmount>450.00</OwnedPropertyMaintenanceExpenseAmount>
+									<OwnedPropertyRentalIncomeGrossAmount>1750.00</OwnedPropertyRentalIncomeGrossAmount>
+									<OwnedPropertyRentalIncomeNetAmount>137.00</OwnedPropertyRentalIncomeNetAmount>
+									<OwnedPropertySubjectIndicator>true</OwnedPropertySubjectIndicator>
+								</OWNED_PROPERTY_DETAIL>
+								<PROPERTY>
+									<ADDRESS>
+										<AddressLineText>8 RIDER WAY</AddressLineText>
+										<CityName>SWEET BEACH</CityName>
+										<PostalCode>33100</PostalCode>
+										<StateCode>FL</StateCode>
+									</ADDRESS>
+									<PROPERTY_DETAIL>
+										<PropertyEstimatedValueAmount>180000.00</PropertyEstimatedValueAmount>
+									</PROPERTY_DETAIL>
+								</PROPERTY>
+							</OWNED_PROPERTY>
+						</ASSET>
+						<ASSET SequenceNumber="4" xlink:label="ASSET_4">
+							<OWNED_PROPERTY>
+								<OWNED_PROPERTY_DETAIL>
+									<OwnedPropertyDispositionStatusType>Retain</OwnedPropertyDispositionStatusType>
+									<OwnedPropertySubjectIndicator>false</OwnedPropertySubjectIndicator>
+								</OWNED_PROPERTY_DETAIL>
+								<PROPERTY>
+									<ADDRESS>
+										<AddressLineText>19 PALMETTO ROAD</AddressLineText>
+										<CityName>SWEET BEACH</CityName>
+										<PostalCode>33100</PostalCode>
+										<StateCode>FL</StateCode>
+									</ADDRESS>
+									<PROPERTY_DETAIL>
+										<PropertyEstimatedValueAmount>300000.00</PropertyEstimatedValueAmount>
+										<PropertyUsageType>PrimaryResidence</PropertyUsageType>
+									</PROPERTY_DETAIL>
+								</PROPERTY>
+							</OWNED_PROPERTY>
+						</ASSET>
+					</ASSETS>
+					<COLLATERALS>
+						<COLLATERAL>
+							<SUBJECT_PROPERTY>
+								<ADDRESS>
+									<AddressLineText>8 RIDER WAY</AddressLineText>
+									<CityName>SWEET BEACH</CityName>
+									<CountyName>SUN</CountyName>
+									<PostalCode>33100</PostalCode>
+									<StateCode>FL</StateCode>
+								</ADDRESS>
+								<PROJECT>
+									<PROJECT_DETAIL>
+										<PUDIndicator>false</PUDIndicator>
+									</PROJECT_DETAIL>
+								</PROJECT>
+								<PROPERTY_DETAIL>
+									<FinancedUnitCount>1</FinancedUnitCount>
+									<PropertyEstateType>FeeSimple</PropertyEstateType>
+									<PropertyExistingCleanEnergyLienIndicator>false</PropertyExistingCleanEnergyLienIndicator>
+									<PropertyInProjectIndicator>false</PropertyInProjectIndicator>
+									<PropertyMixedUsageIndicator>false</PropertyMixedUsageIndicator>
+									<PropertyUsageType>Investment</PropertyUsageType>
+								</PROPERTY_DETAIL>
+							</SUBJECT_PROPERTY>
+						</COLLATERAL>
+					</COLLATERALS>
+					<LIABILITIES>
+						<!--Liabilities related to Properties owned by the borrower-->
+						<LIABILITY SequenceNumber="1" xlink:label="LIABILITY_1">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>98765432</LiabilityAccountIdentifier>
+								<LiabilityMonthlyPaymentAmount>725.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPaymentIncludesTaxesInsuranceIndicator>false</LiabilityPaymentIncludesTaxesInsuranceIndicator>
+								<LiabilityPayoffStatusIndicator>true</LiabilityPayoffStatusIndicator>
+								<LiabilityType>MortgageLoan</LiabilityType>
+								<LiabilityUnpaidBalanceAmount>100000.00</LiabilityUnpaidBalanceAmount>
+								<MortgageType>FHA</MortgageType>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>TAXPAYER CU</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="2" xlink:label="LIABILITY_2">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>123SUM</LiabilityAccountIdentifier>
+								<LiabilityMonthlyPaymentAmount>1500.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPaymentIncludesTaxesInsuranceIndicator>true</LiabilityPaymentIncludesTaxesInsuranceIndicator>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityType>MortgageLoan</LiabilityType>
+								<LiabilityUnpaidBalanceAmount>275000.00</LiabilityUnpaidBalanceAmount>
+								<MortgageType>Conventional</MortgageType>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>BEACHIE BIGGS</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="3" xlink:label="LIABILITY_3">
+							<LIABILITY_DETAIL>
+								<HELOCMaximumBalanceAmount>33000.00</HELOCMaximumBalanceAmount>
+								<LiabilityAccountIdentifier>9988-2</LiabilityAccountIdentifier>
+								<LiabilityMonthlyPaymentAmount>100.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPaymentIncludesTaxesInsuranceIndicator>false</LiabilityPaymentIncludesTaxesInsuranceIndicator>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityType>MortgageLoan</LiabilityType>
+								<LiabilityUnpaidBalanceAmount>20000.00</LiabilityUnpaidBalanceAmount>
+								<MortgageType>Other</MortgageType>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>WAVE BOARD CU</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="4" xlink:label="LIABILITY_4">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>9876</LiabilityAccountIdentifier>
+								<LiabilityMonthlyPaymentAmount>285.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityType>Revolving</LiabilityType>
+								<LiabilityUnpaidBalanceAmount>14321.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>BUY IT</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY SequenceNumber="5" xlink:label="LIABILITY_5">
+							<LIABILITY_DETAIL>
+								<LiabilityAccountIdentifier>6789</LiabilityAccountIdentifier>
+								<LiabilityMonthlyPaymentAmount>213.00</LiabilityMonthlyPaymentAmount>
+								<LiabilityPayoffStatusIndicator>false</LiabilityPayoffStatusIndicator>
+								<LiabilityType>LeasePayment</LiabilityType>
+								<LiabilityUnpaidBalanceAmount>630.00</LiabilityUnpaidBalanceAmount>
+							</LIABILITY_DETAIL>
+							<LIABILITY_HOLDER>
+								<NAME>
+									<FullName>AUTO WORLD</FullName>
+								</NAME>
+							</LIABILITY_HOLDER>
+						</LIABILITY>
+						<LIABILITY_SUMMARY>
+							<TotalSubjectPropertyPayoffsAndPaymentsAmount>100000.00</TotalSubjectPropertyPayoffsAndPaymentsAmount>
+						</LIABILITY_SUMMARY>
+					</LIABILITIES>
+					<LOANS>
+						<LOAN LoanRoleType="SubjectLoan">
+							<ADJUSTMENT>
+								<INTEREST_RATE_ADJUSTMENT>
+									<INTEREST_RATE_PER_CHANGE_ADJUSTMENT_RULES>
+										<INTEREST_RATE_PER_CHANGE_ADJUSTMENT_RULE>
+											<AdjustmentRuleType>First</AdjustmentRuleType>
+											<PerChangeRateAdjustmentFrequencyMonthsCount>12</PerChangeRateAdjustmentFrequencyMonthsCount>
+										</INTEREST_RATE_PER_CHANGE_ADJUSTMENT_RULE>
+									</INTEREST_RATE_PER_CHANGE_ADJUSTMENT_RULES>
+								</INTEREST_RATE_ADJUSTMENT>
+							</ADJUSTMENT>
+							<AMORTIZATION>
+								<AMORTIZATION_RULE>
+									<AmortizationType>AdjustableRate</AmortizationType>
+									<LoanAmortizationPeriodCount>360</LoanAmortizationPeriodCount>
+									<LoanAmortizationPeriodType>Month</LoanAmortizationPeriodType>
+								</AMORTIZATION_RULE>
+							</AMORTIZATION>
+							<CLOSING_INFORMATION>
+								<CLOSING_INFORMATION_DETAIL>
+									<CashToBorrowerAtClosingAmount>17500.00</CashToBorrowerAtClosingAmount>
+								</CLOSING_INFORMATION_DETAIL>
+							</CLOSING_INFORMATION>
+							<DOCUMENT_SPECIFIC_DATA_SETS>
+								<DOCUMENT_SPECIFIC_DATA_SET>
+									<URLA>
+										<URLA_DETAIL>
+											<BorrowerRequestedLoanAmount>120000.00</BorrowerRequestedLoanAmount>
+											<EstimatedClosingCostsAmount>2500.00</EstimatedClosingCostsAmount>
+										</URLA_DETAIL>
+										<URLA_TOTAL>
+											<URLATotalDueFromBorrowerAtClosingAmount>102500.00</URLATotalDueFromBorrowerAtClosingAmount>
+											<EXTENSION>
+												<OTHER>
+													<ULAD:URLA_TOTAL_EXTENSION>
+													<ULAD:URLAAccountBasedAssetTotalAmount>18210.00</ULAD:URLAAccountBasedAssetTotalAmount>
+													<ULAD:URLATotalMortgageLoansAmount>120000.00</ULAD:URLATotalMortgageLoansAmount>
+													</ULAD:URLA_TOTAL_EXTENSION>
+												</OTHER>
+											</EXTENSION>
+										</URLA_TOTAL>
+									</URLA>
+								</DOCUMENT_SPECIFIC_DATA_SET>
+							</DOCUMENT_SPECIFIC_DATA_SETS>
+							<HOUSING_EXPENSES>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>572.90</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>FirstMortgagePrincipalAndInterest</HousingExpenseType>
+								</HOUSING_EXPENSE>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>50.00</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>HomeownersInsurance</HousingExpenseType>
+								</HOUSING_EXPENSE>
+								<HOUSING_EXPENSE>
+									<HousingExpensePaymentAmount>400.00</HousingExpensePaymentAmount>
+									<HousingExpenseTimingType>Proposed</HousingExpenseTimingType>
+									<HousingExpenseType>RealEstateTax</HousingExpenseType>
+								</HOUSING_EXPENSE>
+								<HOUSING_EXPENSE_SUMMARY>
+									<HousingExpenseProposedTotalMonthlyPaymentAmount>1022.90</HousingExpenseProposedTotalMonthlyPaymentAmount>
+								</HOUSING_EXPENSE_SUMMARY>
+							</HOUSING_EXPENSES>
+							<LOAN_DETAIL>
+								<BorrowerCount>1</BorrowerCount>
+								<InitialFixedPeriodEffectiveMonthsCount>60</InitialFixedPeriodEffectiveMonthsCount>
+							</LOAN_DETAIL>
+							<REFINANCE>
+								<RefinanceCashOutDeterminationType>CashOut</RefinanceCashOutDeterminationType>
+							</REFINANCE>
+							<TERMS_OF_LOAN>
+								<BaseLoanAmount>120000.00</BaseLoanAmount>
+								<LienPriorityType>FirstLien</LienPriorityType>
+								<LoanPurposeType>Refinance</LoanPurposeType>
+								<MortgageType>Conventional</MortgageType>
+								<NoteAmount>120000.00</NoteAmount>
+								<NoteRatePercent>4.000</NoteRatePercent>
+							</TERMS_OF_LOAN>
+						</LOAN>
+					</LOANS>
+					<PARTIES>
+						<PARTY>
+							<INDIVIDUAL>
+								<!--Borrower's Alias Names-->
+								<ALIASES>
+									<ALIAS>
+										<NAME>
+											<FirstName>SUE</FirstName>
+											<LastName>SUMMER</LastName>
+											<MiddleName>VICTORIA</MiddleName>
+										</NAME>
+									</ALIAS>
+									<ALIAS>
+										<NAME>
+											<FirstName>SUE</FirstName>
+											<LastName>JONES</LastName>
+											<MiddleName>V.</MiddleName>
+										</NAME>
+									</ALIAS>
+									<ALIAS>
+										<NAME>
+											<FirstName>S.</FirstName>
+											<LastName>JONES</LastName>
+											<MiddleName>VICTORIA</MiddleName>
+										</NAME>
+									</ALIAS>
+								</ALIASES>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>SUEVEE@EMAIL.COM</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3219994567</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Home</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3219997890</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Mobile</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>3219999999</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+										<CONTACT_POINT_DETAIL>
+											<ContactPointRoleType>Work</ContactPointRoleType>
+										</CONTACT_POINT_DETAIL>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<!--Borrower's name, 1 of 2 current Titleholders and the future Titleholder.-->
+								<NAME>
+									<FirstName>SUE</FirstName>
+									<LastName>SUMMER</LastName>
+									<MiddleName>V</MiddleName>
+								</NAME>
+							</INDIVIDUAL>
+							<!--Borrower selected english as preferred language-->
+							<LANGUAGES>
+								<LANGUAGE>
+									<LanguageCode>eng</LanguageCode>
+								</LANGUAGE>
+							</LANGUAGES>
+							<ROLES>
+								<ROLE SequenceNumber="1" xlink:label="BORROWER_1">
+									<BORROWER>
+										<!--Borrower Information Section 1-->
+										<BORROWER_DETAIL>
+											<BorrowerBirthDate>1960-08-12</BorrowerBirthDate>
+											<CommunityPropertyStateResidentIndicator>false</CommunityPropertyStateResidentIndicator>
+											<DependentCount>4</DependentCount>
+											<MaritalStatusType>Separated</MaritalStatusType>
+											<SelfDeclaredMilitaryServiceIndicator>false</SelfDeclaredMilitaryServiceIndicator>
+										</BORROWER_DETAIL>
+										<!--Declarations Counseling Information-->
+										<COUNSELING>
+											<COUNSELING_EVENTS>
+												<COUNSELING_EVENT>
+													<COUNSELING_EVENT_DETAIL>
+														<CounselingConfirmationIndicator>false</CounselingConfirmationIndicator>
+														<CounselingType>Counseling</CounselingType>
+													</COUNSELING_EVENT_DETAIL>
+												</COUNSELING_EVENT>
+												<COUNSELING_EVENT>
+													<COUNSELING_EVENT_DETAIL>
+														<CounselingConfirmationIndicator>false</CounselingConfirmationIndicator>
+														<CounselingType>Education</CounselingType>
+													</COUNSELING_EVENT_DETAIL>
+												</COUNSELING_EVENT>
+											</COUNSELING_EVENTS>
+										</COUNSELING>
+										<CURRENT_INCOME>
+											<CURRENT_INCOME_DETAIL>
+												<URLABorrowerTotalOtherIncomeAmount>10000.00</URLABorrowerTotalOtherIncomeAmount>
+											</CURRENT_INCOME_DETAIL>
+											<CURRENT_INCOME_ITEMS>
+												<!--Income from Current Second Employer-->
+												<CURRENT_INCOME_ITEM SequenceNumber="1" xlink:label="CURRENT_INCOME_ITEM_1">
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>750.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>true</EmploymentIncomeIndicator>
+														<IncomeType>Commissions</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+												<!--Non Employment Income-->
+												<CURRENT_INCOME_ITEM>
+													<CURRENT_INCOME_ITEM_DETAIL>
+														<CurrentIncomeMonthlyTotalAmount>10000.00</CurrentIncomeMonthlyTotalAmount>
+														<EmploymentIncomeIndicator>false</EmploymentIncomeIndicator>
+														<IncomeType>ChildSupport</IncomeType>
+													</CURRENT_INCOME_ITEM_DETAIL>
+												</CURRENT_INCOME_ITEM>
+											</CURRENT_INCOME_ITEMS>
+										</CURRENT_INCOME>
+										<DECLARATION>
+											<DECLARATION_DETAIL>
+												<BankruptcyIndicator>false</BankruptcyIndicator>
+												<CitizenshipResidencyType>USCitizen</CitizenshipResidencyType>
+												<IntentToOccupyType>No</IntentToOccupyType>
+												<OutstandingJudgmentsIndicator>false</OutstandingJudgmentsIndicator>
+												<PartyToLawsuitIndicator>false</PartyToLawsuitIndicator>
+												<PresentlyDelinquentIndicator>false</PresentlyDelinquentIndicator>
+												<PriorPropertyDeedInLieuConveyedIndicator>false</PriorPropertyDeedInLieuConveyedIndicator>
+												<PriorPropertyForeclosureCompletedIndicator>false</PriorPropertyForeclosureCompletedIndicator>
+												<PriorPropertyShortSaleCompletedIndicator>false</PriorPropertyShortSaleCompletedIndicator>
+												<PropertyProposedCleanEnergyLienIndicator>false</PropertyProposedCleanEnergyLienIndicator>
+												<UndisclosedBorrowedFundsIndicator>false</UndisclosedBorrowedFundsIndicator>
+												<UndisclosedComakerOfNoteIndicator>false</UndisclosedComakerOfNoteIndicator>
+												<UndisclosedCreditApplicationIndicator>false</UndisclosedCreditApplicationIndicator>
+												<UndisclosedMortgageApplicationIndicator>false</UndisclosedMortgageApplicationIndicator>
+											</DECLARATION_DETAIL>
+										</DECLARATION>
+										<DEPENDENTS>
+											<DEPENDENT>
+												<DependentAgeYearsCount>2</DependentAgeYearsCount>
+											</DEPENDENT>
+											<DEPENDENT>
+												<DependentAgeYearsCount>4</DependentAgeYearsCount>
+											</DEPENDENT>
+											<DEPENDENT>
+												<DependentAgeYearsCount>16</DependentAgeYearsCount>
+											</DEPENDENT>
+											<DEPENDENT>
+												<DependentAgeYearsCount>17</DependentAgeYearsCount>
+											</DEPENDENT>
+										</DEPENDENTS>
+										<EMPLOYERS>
+											<EMPLOYER SequenceNumber="1" xlink:label="EMPLOYER_1">
+												<LEGAL_ENTITY>
+													<CONTACTS>
+														<CONTACT>
+															<CONTACT_POINTS>
+																<CONTACT_POINT>
+																	<CONTACT_POINT_TELEPHONE>
+																		<ContactPointTelephoneValue>3219999999</ContactPointTelephoneValue>
+																	</CONTACT_POINT_TELEPHONE>
+																</CONTACT_POINT>
+															</CONTACT_POINTS>
+														</CONTACT>
+													</CONTACTS>
+													<LEGAL_ENTITY_DETAIL>
+														<FullName>LEARN &amp; PLAY</FullName>
+													</LEGAL_ENTITY_DETAIL>
+												</LEGAL_ENTITY>
+												<ADDRESS>
+													<AddressLineText>19 PALMETTO ROAD</AddressLineText>
+													<CityName>SWEET BEACH</CityName>
+													<PostalCode>33100</PostalCode>
+													<StateCode>FL</StateCode>
+												</ADDRESS>
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>true</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentMonthlyIncomeAmount>2500</EmploymentMonthlyIncomeAmount>
+													<EmploymentPositionDescription>OWNER/ OPERATOR</EmploymentPositionDescription>
+													<EmploymentStartDate>2014-01</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>48</EmploymentTimeInLineOfWorkMonthsCount>
+													<OwnershipInterestType>GreaterThanOrEqualTo25Percent</OwnershipInterestType>
+												</EMPLOYMENT>
+											</EMPLOYER>
+											<EMPLOYER SequenceNumber="2" xlink:label="EMPLOYER_2">
+												<LEGAL_ENTITY>
+													<CONTACTS>
+														<CONTACT>
+															<CONTACT_POINTS>
+																<CONTACT_POINT>
+																	<CONTACT_POINT_TELEPHONE>
+																		<ContactPointTelephoneValue>3219991234</ContactPointTelephoneValue>
+																	</CONTACT_POINT_TELEPHONE>
+																</CONTACT_POINT>
+															</CONTACT_POINTS>
+														</CONTACT>
+													</CONTACTS>
+													<LEGAL_ENTITY_DETAIL>
+														<FullName>SING SONG SINGERS</FullName>
+													</LEGAL_ENTITY_DETAIL>
+												</LEGAL_ENTITY>
+												<ADDRESS>
+													<AddressLineText>10 SONGBIRD LANE</AddressLineText>
+													<CityName>TALENT</CityName>
+													<PostalCode>33103</PostalCode>
+													<StateCode>FL</StateCode>
+												</ADDRESS>
+												<EMPLOYMENT>
+													<EmploymentBorrowerSelfEmployedIndicator>false</EmploymentBorrowerSelfEmployedIndicator>
+													<EmploymentMonthlyIncomeAmount>750</EmploymentMonthlyIncomeAmount>
+													<EmploymentPositionDescription>ENTERTAINER</EmploymentPositionDescription>
+													<EmploymentStartDate>1995-08</EmploymentStartDate>
+													<EmploymentStatusType>Current</EmploymentStatusType>
+													<EmploymentTimeInLineOfWorkMonthsCount>240</EmploymentTimeInLineOfWorkMonthsCount>
+													<SpecialBorrowerEmployerRelationshipIndicator>true</SpecialBorrowerEmployerRelationshipIndicator>
+												</EMPLOYMENT>
+											</EMPLOYER>
+										</EMPLOYERS>
+										<GOVERNMENT_MONITORING>
+											<GOVERNMENT_MONITORING_DETAIL>
+												<HMDAEthnicityRefusalIndicator>false</HMDAEthnicityRefusalIndicator>
+												<HMDAGenderRefusalIndicator>false</HMDAGenderRefusalIndicator>
+												<HMDARaceRefusalIndicator>false</HMDARaceRefusalIndicator>
+												<EXTENSION>
+													<OTHER>
+														<ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+															<ULAD:ApplicationTakenMethodType>Email</ULAD:ApplicationTakenMethodType>
+															<ULAD:HMDAGenderType>Female</ULAD:HMDAGenderType>
+														</ULAD:GOVERNMENT_MONITORING_DETAIL_EXTENSION>
+													</OTHER>
+												</EXTENSION>
+											</GOVERNMENT_MONITORING_DETAIL>
+											<HMDA_RACES>
+												<HMDA_RACE>
+													<HMDA_RACE_DESIGNATIONS>
+														<HMDA_RACE_DESIGNATION>
+															<EXTENSION>
+																<OTHER>
+																	<ULAD:HMDA_RACE_DESIGNATION_EXTENSION>
+																		<ULAD:HMDARaceDesignationType>NativeHawaiian</ULAD:HMDARaceDesignationType>
+																	</ULAD:HMDA_RACE_DESIGNATION_EXTENSION>
+																</OTHER>
+															</EXTENSION>
+														</HMDA_RACE_DESIGNATION>
+													</HMDA_RACE_DESIGNATIONS>
+													<HMDA_RACE_DETAIL>
+														<HMDARaceType>NativeHawaiianOrOtherPacificIslander</HMDARaceType>
+													</HMDA_RACE_DETAIL>
+												</HMDA_RACE>
+											</HMDA_RACES>
+											<EXTENSION>
+												<OTHER>
+													<ULAD:GOVERNMENT_MONITORING_EXTENSION>
+														<ULAD:HMDA_ETHNICITIES>
+															<ULAD:HMDA_ETHNICITY>
+																<ULAD:HMDAEthnicityType>NotHispanicOrLatino</ULAD:HMDAEthnicityType>
+															</ULAD:HMDA_ETHNICITY>
+														</ULAD:HMDA_ETHNICITIES>
+													</ULAD:GOVERNMENT_MONITORING_EXTENSION>
+												</OTHER>
+											</EXTENSION>
+										</GOVERNMENT_MONITORING>
+										<RESIDENCES>
+											<!--Borrower Current Address-->
+											<RESIDENCE>
+												<ADDRESS>
+													<AddressLineText>19 PALMETTO ROAD</AddressLineText>
+													<CityName>SWEET BEACH </CityName>
+													<PostalCode>33100</PostalCode>
+													<StateCode>FL</StateCode>
+												</ADDRESS>
+												<RESIDENCE_DETAIL>
+													<BorrowerResidencyBasisType>Own</BorrowerResidencyBasisType>
+													<BorrowerResidencyDurationMonthsCount>23</BorrowerResidencyDurationMonthsCount>
+													<BorrowerResidencyType>Current</BorrowerResidencyType>
+												</RESIDENCE_DETAIL>
+											</RESIDENCE>
+											<!--Borrower Previous Address-->
+											<RESIDENCE>
+												<ADDRESS>
+													<AddressLineText>123 CORAL WAY</AddressLineText>
+													<CityName>MIAMI BEACH</CityName>
+													<PostalCode>33140</PostalCode>
+													<StateCode>FL</StateCode>
+												</ADDRESS>
+												<RESIDENCE_DETAIL>
+													<BorrowerResidencyBasisType>Own</BorrowerResidencyBasisType>
+													<BorrowerResidencyDurationMonthsCount>72</BorrowerResidencyDurationMonthsCount>
+													<BorrowerResidencyType>Prior</BorrowerResidencyType>
+												</RESIDENCE_DETAIL>
+											</RESIDENCE>
+										</RESIDENCES>
+									</BORROWER>
+									<ROLE_DETAIL>
+										<PartyRoleType>Borrower</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+							<TAXPAYER_IDENTIFIERS>
+								<TAXPAYER_IDENTIFIER>
+									<TaxpayerIdentifierType>SocialSecurityNumber</TaxpayerIdentifierType>
+									<TaxpayerIdentifierValue>123445555</TaxpayerIdentifierValue>
+								</TAXPAYER_IDENTIFIER>
+							</TAXPAYER_IDENTIFIERS>
+						</PARTY>
+						<!--New Titleholder.-->
+						<PARTY>
+							<INDIVIDUAL>
+								<NAME>
+									<FullName>SUE V. SUMMER</FullName>
+								</NAME>
+							</INDIVIDUAL>
+							<ROLES>
+								<ROLE>
+									<PROPERTY_OWNER>
+										<PropertyOwnerStatusType>Proposed</PropertyOwnerStatusType>
+										<RelationshipVestingType>Individual</RelationshipVestingType>
+									</PROPERTY_OWNER>
+									<ROLE_DETAIL>
+										<PartyRoleType>PropertyOwner</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+						</PARTY>
+						<!--Current Titleholders.-->
+						<PARTY>
+							<INDIVIDUAL>
+								<NAME>
+									<FullName>SUE V. SUMMER AND SANDY P. SUMMER</FullName>
+								</NAME>
+							</INDIVIDUAL>
+							<ROLES>
+								<ROLE>
+									<PROPERTY_OWNER>
+										<PropertyOwnerStatusType>Current</PropertyOwnerStatusType>
+									</PROPERTY_OWNER>
+									<ROLE_DETAIL>
+										<PartyRoleType>PropertyOwner</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+						</PARTY>
+						<PARTY>
+							<LEGAL_ENTITY>
+								<LEGAL_ENTITY_DETAIL>
+									<FullName>MORTGAGE LOANS R US</FullName>
+								</LEGAL_ENTITY_DETAIL>
+							</LEGAL_ENTITY>
+							<ADDRESSES>
+								<ADDRESS>
+									<AddressLineText>4321 RANDOM BLVD</AddressLineText>
+									<CityName>SOMECITY</CityName>
+									<PostalCode>12345</PostalCode>
+									<StateCode>FL</StateCode>
+								</ADDRESS>
+							</ADDRESSES>
+							<ROLES>
+								<ROLE>
+									<LICENSES>
+										<LICENSE>
+											<LICENSE_DETAIL>
+												<LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
+												<LicenseIdentifier>1111</LicenseIdentifier>
+											</LICENSE_DETAIL>
+										</LICENSE>
+									</LICENSES>
+									<ROLE_DETAIL>
+										<PartyRoleType>LoanOriginationCompany</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+						</PARTY>
+						<PARTY>
+							<INDIVIDUAL>
+								<CONTACT_POINTS>
+									<CONTACT_POINT>
+										<CONTACT_POINT_EMAIL>
+											<ContactPointEmailValue>GREGSMITH@EMAIL.COM</ContactPointEmailValue>
+										</CONTACT_POINT_EMAIL>
+									</CONTACT_POINT>
+									<CONTACT_POINT>
+										<CONTACT_POINT_TELEPHONE>
+											<ContactPointTelephoneValue>2223334444</ContactPointTelephoneValue>
+										</CONTACT_POINT_TELEPHONE>
+									</CONTACT_POINT>
+								</CONTACT_POINTS>
+								<NAME>
+									<FirstName>GREG</FirstName>
+									<LastName>SMITH</LastName>
+								</NAME>
+							</INDIVIDUAL>
+							<ROLES>
+								<ROLE>
+									<LICENSES>
+										<LICENSE>
+											<LICENSE_DETAIL>
+												<LicenseAuthorityLevelType>Private</LicenseAuthorityLevelType>
+												<LicenseIdentifier>12345</LicenseIdentifier>
+											</LICENSE_DETAIL>
+										</LICENSE>
+										<LICENSE>
+											<LICENSE_DETAIL>
+												<LicenseAuthorityLevelType>PublicState</LicenseAuthorityLevelType>
+												<LicenseIdentifier>FL-54321</LicenseIdentifier>
+											</LICENSE_DETAIL>
+										</LICENSE>
+									</LICENSES>
+									<ROLE_DETAIL>
+										<PartyRoleType>LoanOriginator</PartyRoleType>
+									</ROLE_DETAIL>
+								</ROLE>
+							</ROLES>
+						</PARTY>
+					</PARTIES>
+					<RELATIONSHIPS xsi:type="RELATIONSHIPS">
+						<!-- Linking Assets to Borrower-->
+						<RELATIONSHIP SequenceNumber="1" xlink:from="ASSET_1" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="2" xlink:from="ASSET_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="3" xlink:from="ASSET_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="4" xlink:from="ASSET_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_ROLE"/>
+						<!-- Linking Assets (Property Owned) to corresponding Borrower's Liability-->
+						<RELATIONSHIP SequenceNumber="5" xlink:from="ASSET_3" xlink:to="LIABILITY_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_LIABILITY"/>
+						<RELATIONSHIP SequenceNumber="6" xlink:from="ASSET_4" xlink:to="LIABILITY_2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_LIABILITY"/>
+						<RELATIONSHIP SequenceNumber="7" xlink:from="ASSET_4" xlink:to="LIABILITY_3" xlink:arcrole="urn:fdc:mismo.org:2009:residential/ASSET_IsAssociatedWith_LIABILITY"/>
+						<!-- Linking Borrower's Income to Second Current Employer-->
+						<RELATIONSHIP SequenceNumber="8" xlink:from="CURRENT_INCOME_ITEM_1" xlink:to="EMPLOYER_2" xlink:arcrole="urn:fdc:mismo.org:2009:residential/CURRENT_INCOME_ITEM_IsAssociatedWith_EMPLOYER"/>
+						<!-- Linking Liabilities to Borrower-->
+						<RELATIONSHIP SequenceNumber="9" xlink:from="LIABILITY_1" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="10" xlink:from="LIABILITY_2" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="11" xlink:from="LIABILITY_3" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="12" xlink:from="LIABILITY_4" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"/>
+						<RELATIONSHIP SequenceNumber="13" xlink:from="LIABILITY_5" xlink:to="BORROWER_1" xlink:arcrole="urn:fdc:mismo.org:2009:residential/LIABILITY_IsAssociatedWith_ROLE"/>
+					</RELATIONSHIPS>
+				</DEAL>
+			</DEALS>
+		</DEAL_SET>
+	</DEAL_SETS>
+</MESSAGE>

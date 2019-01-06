@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOAN_APPLICATION>
+	<_DATA_INFORMATION>
+		<DATA_VERSION _Name="Date" _Number="20131126"/>
+		<DATA_VERSION _Name="1003" _Number="3.20"/>
+	</_DATA_INFORMATION>
+	<ADDITIONAL_CASE_DATA>
+		<TRANSMITTAL_DATA BuydownRatePercent="0.000" PropertyEstimatedValueAmount="550000.00" CurrentFirstMortgageHolderType="Unknown" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginationCompanyID="123456789111" LoanOriginatorID="123456789012"/>
+	</ADDITIONAL_CASE_DATA>
+	<ASSET _AccountIdentifier="Checking" _CashOrMarketValueAmount="7500.00" _Type="CheckingAccount" _HolderName="Checking" BorrowerID="Borr999603333"/>
+	<ASSET _CashOrMarketValueAmount="100000.00" _Type="MoneyMarketFund" _HolderName="Money Market" BorrowerID="Borr999603333"/>
+	<ASSET _CashOrMarketValueAmount="25000.00" _Type="SavingsAccount" _HolderName="Savings" BorrowerID="Borr999603333"/>
+	<ASSET _AccountIdentifier="123457" _CashOrMarketValueAmount="57000.00" _Type="Stock" _HolderName="ABC123 Corp" StockBondMutualFundShareCount="450" BorrowerID="Borr999603333"/>
+	<GOVERNMENT_LOAN>
+		<FHA_VA_LOAN GovernmentMortgageCreditCertificateAmount="0.00"/>
+		<VA_LOAN VABorrowerCoBorrowerMarriedIndicator="Y" VAEntitlementAmount="36000.00" VAMaintenanceExpenseMonthlyAmount="0.00" VAUtilityExpenseMonthlyAmount="0.00"/>
+	</GOVERNMENT_LOAN>
+	<GOVERNMENT_REPORTING HMDAPreapprovalType="PreapprovalWasNotRequested"/>
+	<INTERVIEWER_INFORMATION InterviewersEmployerStreetAddress="412 H St, NW" InterviewersEmployerCity="Washington" InterviewersEmployerState="DC" InterviewersEmployerPostalCode="200121234" InterviewersTelephoneNumber="2023333333" ApplicationTakenMethodType="FaceToFace" InterviewerApplicationSignedDate="20111011" InterviewersEmployerName="ABC Mortgage" InterviewersName="John Done"/>
+	<LIABILITY _ID="Liab1" BorrowerID="Borr999603333" REO_ID="ReoP1" _AccountIdentifier="502088" _ExclusionIndicator="N" _HolderName="BEST EVER MORTGAGE" _MonthlyPaymentAmount="1691.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="125" _Type="MortgageLoan" _UnpaidBalanceAmount="210279.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab2" BorrowerID="Borr999603333" REO_ID="ReoP1" _AccountIdentifier="757570" _ExclusionIndicator="N" _HolderName="CALLABLE MORTGAGE" _MonthlyPaymentAmount="1671.00" _PayoffStatusIndicator="Y" _RemainingTermMonths="126" _Type="MortgageLoan" _UnpaidBalanceAmount="210027.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab3" BorrowerID="Borr999603333" _AccountIdentifier="200021" _ExclusionIndicator="N" _HolderName="RELENTLESS BANK" _MonthlyPaymentAmount="46.22" _PayoffStatusIndicator="N" _RemainingTermMonths="34" _Type="Installment" _UnpaidBalanceAmount="1554.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab4" BorrowerID="Borr999603333" _AccountIdentifier="435617" _ExclusionIndicator="N" _HolderName="ALLEN BANK CARD" _MonthlyPaymentAmount="133.00" _PayoffStatusIndicator="N" _RemainingTermMonths="36" _Type="Revolving" _UnpaidBalanceAmount="4665.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab5" BorrowerID="Borr999603333" _AccountIdentifier="171442" _ExclusionIndicator="N" _HolderName="BURSTING CREDIT" _MonthlyPaymentAmount="27.00" _PayoffStatusIndicator="N" _RemainingTermMonths="51" _Type="Revolving" _UnpaidBalanceAmount="1357.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab6" BorrowerID="Borr999603333" _AccountIdentifier="529115" _ExclusionIndicator="N" _HolderName="CAPITAL BANK" _MonthlyPaymentAmount="10.00" _PayoffStatusIndicator="N" _RemainingTermMonths="3" _Type="Revolving" _UnpaidBalanceAmount="29.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LIABILITY _ID="Liab7" BorrowerID="Borr999603333" _AccountIdentifier="411711911" _ExclusionIndicator="N" _HolderName="PRIME VISA" _MonthlyPaymentAmount="40.00" _PayoffStatusIndicator="N" _RemainingTermMonths="12" _Type="Revolving" _UnpaidBalanceAmount="450.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+	<LOAN_PRODUCT_DATA>
+		<LOAN_FEATURES BalloonIndicator="N" EscrowWaiverIndicator="N" GSEPropertyType="Condominium" LienPriorityType="FirstLien" LoanDocumentationType="FullDocumentation" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly" ProductName="VA30F"/>
+	</LOAN_PRODUCT_DATA>
+	<LOAN_PURPOSE _Type="Purchase" PropertyRightsType="FeeSimple" PropertyUsageType="PrimaryResidence">
+		<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+	</LOAN_PURPOSE>
+	<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+	<MORTGAGE_TERMS BaseLoanAmount="315400.00" LenderCaseIdentifier="DI-VA01 30Fixed" LoanAmortizationTermMonths="360" LoanAmortizationType="Fixed" MortgageType="VA" RequestedInterestRatePercent="5.250"/>
+	<PROPERTY _StreetAddress="1223 Rodman" _City="Washington" _State="DC" _PostalCode="20008" _FinancedNumberOfUnits="1" _StructureBuiltYear="1972">
+		<_LEGAL_DESCRIPTION _Type="Other"/>
+		<PARSED_STREET_ADDRESS _HouseNumber="1223" _StreetName="Rodman"/>
+		<_VALUATION _MethodType="FNM1004">
+			<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+		</_VALUATION>
+	</PROPERTY>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="1756.49"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="65.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="205.00"/>
+	<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HomeownersAssociationDuesAndCondominiumFees" _PaymentAmount="400.00"/>
+	<REO_PROPERTY REO_ID="ReoP1" BorrowerID="Borr999603333" LiabilityID="Liab1 Liab2" _StreetAddress="4321 CulDeSac Street" _City="Someplace" _State="MA" _PostalCode="02723" _CurrentResidenceIndicator="Y" _DispositionStatusType="PendingSale" _GSEPropertyType="SingleFamily" _LienInstallmentAmount="3362.00" _LienUPBAmount="420306.00" _MaintenanceExpenseAmount="700.00" _MarketValueAmount="600000.00" _SubjectIndicator="N"/>
+	<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="0.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="4785.00" MIAndFundingFeeFinancedAmount="2687.00" MIAndFundingFeeTotalAmount="3942.00" PrepaidItemsEstimatedAmount="1500.00" PurchasePriceAmount="550000.00" RefinanceIncludingDebtsToBePaidOffAmount="0.00" SalesConcessionAmount="0.00" SellerPaidClosingCostsAmount="0.00" SubordinateLienAmount="0.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+		<PURCHASE_CREDIT _Amount="450.00" _SourceType="BorrowerPaidOutsideClosing"/>
+		<PURCHASE_CREDIT _Amount="500.00" _Type="Other"/>
+	</TRANSACTION_DETAIL>
+	<BORROWER BorrowerID="Borr999603333" JointAssetBorrowerID="Borr500602222" _FirstName="Andy" _LastName="America" _AgeAtApplicationYears="47" _HomeTelephoneNumber="5088888888" _PrintPositionType="Borrower" _SSN="999603333" DependentCount="1" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="16">
+		<_MAIL_TO _StreetAddress="4321 CulDeSac Street" _City="Someplace" _State="MA" _PostalCode="02723" _Country="USA"/>
+		<_RESIDENCE _StreetAddress="4321 CulDeSac Street" _City="Someplace" _State="MA" _PostalCode="02723" BorrowerResidencyBasisType="Own" BorrowerResidencyDurationMonths="4" BorrowerResidencyDurationYears="6" BorrowerResidencyType="Current"/>
+		<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="4000.00"/>
+		<CURRENT_INCOME IncomeType="MilitaryCombatPay" _MonthlyTotalAmount="250.00"/>
+		<CURRENT_INCOME IncomeType="VABenefitsNonEducational" _MonthlyTotalAmount="225.00"/>
+		<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="PrimaryResidence" PropertyForeclosedPastSevenYearsIndicator="N"/>
+		<EMPLOYER _Name="Army" CurrentEmploymentMonthsOnJob="4" CurrentEmploymentTimeInLineOfWorkYears="15" CurrentEmploymentYearsOnJob="15" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+		<FHA_VA_BORROWER FNMBankruptcyCount="0" FNMBorrowerCreditRating="0" FNMForeclosureCount="0"/>
+		<GOVERNMENT_MONITORING GenderType="Male" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotHispanicOrLatino">
+			<HMDA_RACE _Type="AmericanIndianOrAlaskaNative"/>
+		</GOVERNMENT_MONITORING>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="3362.00"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="135.00"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="338.00"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="MI" _PaymentAmount="75.00"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="HomeownersAssociationDuesAndCondominiumFees" _PaymentAmount="300.00"/>
+		<PRESENT_HOUSING_EXPENSE HousingExpenseType="OtherHousingExpense" _PaymentAmount="23.00"/>
+		<VA_BORROWER VAFederalTaxAmount="1375.00"/>
+		<CONTACT_POINT _Type="Email" _Value="andy.a@fanniemae.com"/>
+	</BORROWER>
+	<BORROWER BorrowerID="Borr500602222" JointAssetBorrowerID="Borr999603333" _FirstName="Amy" _LastName="America" _AgeAtApplicationYears="47" _HomeTelephoneNumber="5088888888" _PrintPositionType="CoBorrower" _SSN="500602222" DependentCount="0" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="18">
+		<_MAIL_TO _StreetAddress="4321 CulDeSac Street" _City="Someplace" _State="MA" _PostalCode="02723" _Country="USA"/>
+		<_RESIDENCE _StreetAddress="4321 CulDeSac Street" _City="Someplace" _State="MA" _PostalCode="02723" BorrowerResidencyBasisType="Own" BorrowerResidencyDurationMonths="4" BorrowerResidencyDurationYears="6" BorrowerResidencyType="Current"/>
+		<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="4400.00"/>
+		<CURRENT_INCOME IncomeType="MilitaryQuartersAllowance" _MonthlyTotalAmount="375.00"/>
+		<CURRENT_INCOME IncomeType="MilitaryPropPay" _MonthlyTotalAmount="75.00"/>
+		<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="Yes" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="PrimaryResidence" PropertyForeclosedPastSevenYearsIndicator="N"/>
+		<EMPLOYER _Name="Navy" CurrentEmploymentMonthsOnJob="11" CurrentEmploymentTimeInLineOfWorkYears="18" CurrentEmploymentYearsOnJob="18" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+		<FHA_VA_BORROWER FNMBankruptcyCount="0" FNMBorrowerCreditRating="0" FNMForeclosureCount="0"/>
+		<GOVERNMENT_MONITORING GenderType="Female" RaceNationalOriginRefusalIndicator="N" HMDAEthnicityType="NotHispanicOrLatino">
+			<HMDA_RACE _Type="White"/>
+		</GOVERNMENT_MONITORING>
+		<VA_BORROWER VAFederalTaxAmount="1100.00"/>
+		<CONTACT_POINT _Type="Email" _Value="amy.a@fanniemae.com"/>
+	</BORROWER>
+</LOAN_APPLICATION>

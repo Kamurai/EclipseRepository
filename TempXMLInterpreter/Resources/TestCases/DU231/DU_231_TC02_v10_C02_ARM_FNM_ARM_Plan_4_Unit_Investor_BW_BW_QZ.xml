@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LOAN_APPLICATION>
+<_DATA_INFORMATION>
+<DATA_VERSION _Name="Date" _Number="20131126"/>
+<DATA_VERSION _Name="1003" _Number="3.20"/>
+</_DATA_INFORMATION>
+<ADDITIONAL_CASE_DATA>
+<TRANSMITTAL_DATA BuydownRatePercent="0.000" CurrentFirstMortgageHolderType="Unknown" PropertyEstimatedValueAmount="735000.00" InvestorLoanIdentifier="" InvestorInstitutionIdentifier="" LoanOriginatorID="123456789012" LoanOriginationCompanyID="123456789111"/>
+</ADDITIONAL_CASE_DATA>
+<ASSET _CashOrMarketValueAmount="20000.00" _Type="CheckingAccount" BorrowerID="Borr999601111"/>
+<ASSET _CashOrMarketValueAmount="100000.00" _Type="SavingsAccount" BorrowerID="Borr999601111"/>
+<ASSET _CashOrMarketValueAmount="200000.00" _Type="Bond" BorrowerID="Borr999601111"/>
+<ASSET _CashOrMarketValueAmount="75000.00" _Type="SavingsAccount" BorrowerID="Borr999405000"/>
+<ASSET _CashOrMarketValueAmount="82000.00" _Type="OtherLiquidAssets" BorrowerID="Borr500222000"/>
+<ASSET _CashOrMarketValueAmount="250000.00" _Type="PendingNetSaleProceedsFromRealEstateAssets" BorrowerID="Borr999405000"/>
+<DOWN_PAYMENT _Amount="250000.00" _SourceDescription="Sale of 546 Buford" _Type="EquityOnSoldProperty"/>
+<DOWN_PAYMENT _Amount="35000.00" _SourceDescription="Sale od Shares ABC Corp" _Type="StocksAndBonds"/>
+<DOWN_PAYMENT _Amount="230000.00" _SourceDescription="Life Insurance" _Type="LifeInsuranceCashValue"/>
+<GOVERNMENT_REPORTING HMDA_HOEPALoanStatusIndicator="N" HMDAPreapprovalType="PreapprovalWasRequested"/>
+<INTERVIEWER_INFORMATION InterviewersEmployerStreetAddress="412 H St, NW" InterviewersEmployerCity="Washington" InterviewersEmployerState="DC" InterviewersEmployerPostalCode="200121234" InterviewersTelephoneNumber="2023333333" ApplicationTakenMethodType="Mail" InterviewerApplicationSignedDate="20111011" InterviewersEmployerName="ABC Mortgage" InterviewersName="John Done"/>
+<LIABILITY _ID="Liab1" BorrowerID="Borr999601111" AlimonyOwedToName="Communications" _MonthlyPaymentAmount="225.00" _RemainingTermMonths="12" _Type="JobRelatedExpenses"/>
+<LIABILITY _ID="Liab2" BorrowerID="Borr999405000" AlimonyOwedToName="Someone" _MonthlyPaymentAmount="150.00" _RemainingTermMonths="12" _Type="OtherExpense"/>
+<LIABILITY _ID="Liab3" BorrowerID="Borr999601111" REO_ID="ReoP1" _AccountIdentifier="970058" _ExclusionIndicator="N" _HolderName="WESTAR LOAN SERV" _MonthlyPaymentAmount="892.00" _PayoffStatusIndicator="N" _RemainingTermMonths="104" _Type="MortgageLoan" _UnpaidBalanceAmount="92000.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab4" BorrowerID="Borr999405000" _AccountIdentifier="359002" _ExclusionIndicator="N" _HolderName="Taxes" _MonthlyPaymentAmount="493.00" _PayoffStatusIndicator="N" _RemainingTermMonths="4" _Type="Taxes" _UnpaidBalanceAmount="5916.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab5" BorrowerID="Borr999601111" _ExclusionIndicator="N" _HolderName="Taxes" _MonthlyPaymentAmount="364.00" _PayoffStatusIndicator="N" _Type="Taxes" _UnpaidBalanceAmount="4368.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab6" BorrowerID="Borr999405000" _AccountIdentifier="950254520" _ExclusionIndicator="Y" _HolderName="SALLIE MAE" _MonthlyPaymentAmount="0.00" _PayoffStatusIndicator="N" _RemainingTermMonths="0" _Type="Installment" _UnpaidBalanceAmount="5000.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab7" BorrowerID="Borr999405000" _AccountIdentifier="950752340" _ExclusionIndicator="N" _HolderName="SALLIE MAE" _MonthlyPaymentAmount="24.63" _PayoffStatusIndicator="N" _RemainingTermMonths="45" _Type="Installment" _UnpaidBalanceAmount="1100.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab8" BorrowerID="Borr999405000" _AccountIdentifier="58652333" _ExclusionIndicator="N" _HolderName="CHASE" _MonthlyPaymentAmount="257.44" _PayoffStatusIndicator="N" _RemainingTermMonths="20" _Type="Installment" _UnpaidBalanceAmount="5000.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab9" BorrowerID="Borr999405000" _AccountIdentifier="3210989098" _ExclusionIndicator="N" _HolderName="TOYOTA CREDIT" _MonthlyPaymentAmount="500.03" _PayoffStatusIndicator="N" _RemainingTermMonths="32" _Type="Installment" _UnpaidBalanceAmount="15838.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab10" BorrowerID="Borr999405000" _AccountIdentifier="6011785239" _ExclusionIndicator="N" _HolderName="UNIVERSAL VISA" _MonthlyPaymentAmount="25.00" _PayoffStatusIndicator="N" _RemainingTermMonths="38" _Type="Revolving" _UnpaidBalanceAmount="950.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab11" BorrowerID="Borr999601111" _AccountIdentifier="196009" _ExclusionIndicator="N" _HolderName="AMERICAN BANK" _MonthlyPaymentAmount="296.00" _PayoffStatusIndicator="N" _RemainingTermMonths="53" _Type="Installment" _UnpaidBalanceAmount="15443.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LIABILITY _ID="Liab12" BorrowerID="Borr999601111" _AccountIdentifier="102497" _ExclusionIndicator="N" _HolderName="NISSAN MOTOR" _MonthlyPaymentAmount="282.00" _PayoffStatusIndicator="N" _RemainingTermMonths="40" _Type="Installment" _UnpaidBalanceAmount="11025.00" SubjectLoanResubordinationIndicator="N" FNMSubjectPropertyIndicator="N" FNMRentalPropertyIndicator="N"/>
+<LOAN_PRODUCT_DATA>
+<ARM _IndexCurrentValuePercent="3.750" _IndexMarginPercent="1.000" _IndexType="WeeklyAverageConstantMaturingTreasury" _QualifyingRatePercent="3.750"/>
+<LOAN_FEATURES BalloonIndicator="N" EscrowWaiverIndicator="N" FNMProductPlanIdentifier="1437" GSEProjectClassificationType="GNotInaProjectOrDevelopment" GSEPropertyType="Detached" LienPriorityType="FirstLien" LoanRepaymentType="NoNegativeAmortization" PaymentFrequencyType="Monthly" ProductName="C30 FNM ARM"/>
+</LOAN_PRODUCT_DATA>
+<LOAN_PURPOSE _Type="Purchase" PropertyRightsType="FeeSimple" PropertyUsageType="Investor">
+<CONSTRUCTION_REFINANCE_DATA RefinanceImprovementsType="Unknown"/>
+</LOAN_PURPOSE>
+<LOAN_QUALIFICATION AdditionalBorrowerAssetsNotConsideredIndicator="N" AdditionalBorrowerAssetsConsideredIndicator="N"/>
+<MORTGAGE_TERMS BaseLoanAmount="450000.00" LenderCaseIdentifier="DI-C02 FNM ARM" LoanAmortizationTermMonths="360" LoanAmortizationType="AdjustableRate" MortgageType="Conventional" RequestedInterestRatePercent="5.250"/>
+<PROPERTY _StreetAddress="3700 Connecticut Ave, NW" _City="Washington" _State="DC" _PostalCode="20008" _FinancedNumberOfUnits="4" _StructureBuiltYear="1935">
+<_LEGAL_DESCRIPTION _Type="Other"/>
+<PARSED_STREET_ADDRESS _HouseNumber="3700" _StreetName="Connecticut Ave, NW"/>
+<_VALUATION _MethodType="FNM1004">
+<APPRAISER _Name="Sam Appraiser" _CompanyName="Appraisers Inc" _LicenseIdentifier="123456789111111" _LicenseState="DC" _SupervisoryAppraiserLicenseNumber="123456789abcdefghijkl"/>
+</_VALUATION>
+</PROPERTY>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="2484.92"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="360.00"/>
+<PROPOSED_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="500.00"/>
+<REO_PROPERTY REO_ID="ReoP1" BorrowerID="Borr999601111" LiabilityID="Liab3" _StreetAddress="4420 Douglas Ave. E." _City="Higley" _State="AZ" _PostalCode="852361234" _CurrentResidenceIndicator="Y" _DispositionStatusType="RetainForPrimaryOrSecondaryResidence" _GSEPropertyType="SingleFamily" _LienInstallmentAmount="892.00" _LienUPBAmount="92000.00" _MaintenanceExpenseAmount="364.00" _MarketValueAmount="475000.00" _SubjectIndicator="N"/>
+<REO_PROPERTY REO_ID="ReoP2" BorrowerID="Borr999405000" LiabilityID="" _StreetAddress="175 13th St" _City="Washington" _State="DC" _PostalCode="20013" _CurrentResidenceIndicator="Y" _DispositionStatusType="RetainForPrimaryOrSecondaryResidence" _GSEPropertyType="Townhouse" _MaintenanceExpenseAmount="493.00" _MarketValueAmount="800000.00" _SubjectIndicator="N"/>
+<REO_PROPERTY REO_ID="ReoP3" BorrowerID="Borr999601111" LiabilityID="" _StreetAddress="2939 Van Ness St" _City="Washington" _State="DC" _PostalCode="20008" _CurrentResidenceIndicator="N" _DispositionStatusType="Sold" _GSEPropertyType="Condominium" _MaintenanceExpenseAmount="650.00" _MarketValueAmount="450000.00" _SubjectIndicator="N"/>
+<TRANSACTION_DETAIL AlterationsImprovementsAndRepairsAmount="0.00" BorrowerPaidDiscountPointsTotalAmount="0.00" EstimatedClosingCostsAmount="22425.00" MIAndFundingFeeFinancedAmount="0.00" MIAndFundingFeeTotalAmount="0.00" PrepaidItemsEstimatedAmount="11000.00" PurchasePriceAmount="735000.00" RefinanceIncludingDebtsToBePaidOffAmount="0.00" SellerPaidClosingCostsAmount="0.00" SubordinateLienAmount="0.00" FNMCostOfLandAcquiredSeparatelyAmount="0.00">
+<PURCHASE_CREDIT _Amount="5500.00" _SourceType="Lender"/>
+<PURCHASE_CREDIT _Amount="720.00" _SourceType="BorrowerPaidOutsideClosing"/>
+</TRANSACTION_DETAIL>
+<BORROWER BorrowerID="Borr999601111" _FirstName="Homer" _LastName="Loanseeker" _AgeAtApplicationYears="65" _BirthDate="19490704" _HomeTelephoneNumber="4802222222" _PrintPositionType="Borrower" _SSN="999601111" DependentCount="0" JointAssetLiabilityReportingType="NotJointly" MaritalStatusType="Unmarried" SchoolingYears="18">
+<_MAIL_TO _StreetAddress="4420 Douglas Ave. E." _City="Higley" _State="AZ" _PostalCode="852361234" _Country="USA"/>
+<_RESIDENCE _StreetAddress="4420 Douglas Ave. E." _City="Higley" _State="AZ" _PostalCode="852361234" BorrowerResidencyBasisType="Own" BorrowerResidencyDurationMonths="2" BorrowerResidencyDurationYears="15" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="10000.00"/>
+<CURRENT_INCOME IncomeType="Bonus" _MonthlyTotalAmount="32000.00"/>
+<CURRENT_INCOME IncomeType="Commissions" _MonthlyTotalAmount="14000.00"/>
+<CURRENT_INCOME IncomeType="SubjectPropertyNetCashFlow" _MonthlyTotalAmount="2300.00"/>
+<CURRENT_INCOME IncomeType="Pension" _MonthlyTotalAmount="2200.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="No" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="Sole" PriorPropertyUsageType="PrimaryResidence" PropertyForeclosedPastSevenYearsIndicator="Y">
+<_EXPLANATION _Description="Confirmed CR PFS" _Type="DirectIndirectForeclosedPropertyPastSevenYears"/>
+</DECLARATION>
+<EMPLOYER _Name="Loan Seeker Mortgage" CurrentEmploymentMonthsOnJob="11" CurrentEmploymentTimeInLineOfWorkYears="18" CurrentEmploymentYearsOnJob="17" EmploymentBorrowerSelfEmployedIndicator="Y" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING GenderType="InformationNotProvidedUnknown" RaceNationalOriginRefusalIndicator="Y" HMDAEthnicityType="InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication">
+<HMDA_RACE _Type="InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication"/>
+</GOVERNMENT_MONITORING>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="FirstMortgagePrincipalAndInterest" _PaymentAmount="892.00"/>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="175.00"/>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="189.00"/>
+<CONTACT_POINT _Type="Email" _Value="Homer.L@fanniemae.com"/>
+</BORROWER>
+<BORROWER BorrowerID="Borr999405000" JointAssetBorrowerID="Borr500222000" _FirstName="John" _MiddleName="P" _LastName="Homeowner" _AgeAtApplicationYears="53" _BirthDate="19610315" _HomeTelephoneNumber="2022222222" _PrintPositionType="Borrower" _SSN="999405000" DependentCount="2" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="18">
+<_MAIL_TO _StreetAddress="175 13th St" _City="Washington" _State="DC" _PostalCode="20013" _Country="USA"/>
+<_RESIDENCE _StreetAddress="175 13th St" _City="Washington" _State="DC" _PostalCode="200131234" BorrowerResidencyBasisType="Own" BorrowerResidencyDurationMonths="6" BorrowerResidencyDurationYears="25" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="12500.00"/>
+<CURRENT_INCOME IncomeType="DividendsInterest" _MonthlyTotalAmount="500.00"/>
+<CURRENT_INCOME IncomeType="SocialSecurity" _MonthlyTotalAmount="600.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="No" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="PrimaryResidence" PropertyForeclosedPastSevenYearsIndicator="N"/>
+<EMPLOYER _Name="NIH" CurrentEmploymentMonthsOnJob="3" CurrentEmploymentTimeInLineOfWorkYears="25" CurrentEmploymentYearsOnJob="25" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING RaceNationalOriginRefusalIndicator="Y">
+<HMDA_RACE _Type="InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication"/>
+</GOVERNMENT_MONITORING>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="HazardInsurance" _PaymentAmount="225.00"/>
+<PRESENT_HOUSING_EXPENSE HousingExpenseType="RealEstateTax" _PaymentAmount="268.00"/>
+<CONTACT_POINT _Type="Email" _Value="john.h@fanniemae.com"/>
+</BORROWER>
+<BORROWER BorrowerID="Borr500222000" JointAssetBorrowerID="Borr999405000" _FirstName="Mary" _MiddleName="O" _LastName="Homeowner" _AgeAtApplicationYears="53" _BirthDate="19611217" _HomeTelephoneNumber="2022222222" _PrintPositionType="CoBorrower" _SSN="500222000" JointAssetLiabilityReportingType="Jointly" MaritalStatusType="Married" SchoolingYears="18">
+<_MAIL_TO _StreetAddress="175 13th St" _City="Washington" _State="DC" _PostalCode="20013" _Country="USA"/>
+<_RESIDENCE _StreetAddress="175 13th St" _City="Washington" _State="DC" _PostalCode="200131234" BorrowerResidencyBasisType="Own" BorrowerResidencyDurationMonths="6" BorrowerResidencyDurationYears="25" BorrowerResidencyType="Current"/>
+<CURRENT_INCOME IncomeType="Base" _MonthlyTotalAmount="13333.33"/>
+<CURRENT_INCOME IncomeType="Overtime" _MonthlyTotalAmount="1000.00"/>
+<DECLARATION AlimonyChildSupportObligationIndicator="N" BankruptcyIndicator="N" BorrowedDownPaymentIndicator="N" CitizenshipResidencyType="USCitizen" CoMakerEndorserOfNoteIndicator="N" HomeownerPastThreeYearsType="Yes" IntentToOccupyType="No" LoanForeclosureOrJudgementIndicator="N" OutstandingJudgementsIndicator="N" PartyToLawsuitIndicator="N" PresentlyDelinquentIndicator="N" PriorPropertyTitleType="JointWithSpouse" PriorPropertyUsageType="Investment" PropertyForeclosedPastSevenYearsIndicator="N"/>
+<EMPLOYER _Name="Children's Hospital" CurrentEmploymentMonthsOnJob="5" CurrentEmploymentTimeInLineOfWorkYears="22" CurrentEmploymentYearsOnJob="22" EmploymentBorrowerSelfEmployedIndicator="N" EmploymentCurrentIndicator="Y" EmploymentPrimaryIndicator="Y"/>
+<GOVERNMENT_MONITORING RaceNationalOriginRefusalIndicator="Y">
+<HMDA_RACE _Type="InformationNotProvidedByApplicantInMailInternetOrTelephoneApplication"/>
+</GOVERNMENT_MONITORING>
+<CONTACT_POINT _Type="Email" _Value="mary.h@fanniemae.com"/>
+</BORROWER>
+</LOAN_APPLICATION>

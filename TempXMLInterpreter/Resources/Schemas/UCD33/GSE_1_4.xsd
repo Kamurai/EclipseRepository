@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:gse="http://www.datamodelextension.org" targetNamespace="http://www.datamodelextension.org" elementFormDefault="qualified" attributeFormDefault="unqualified" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<xsd:import schemaLocation="file://FANNIEMAE.COM/Corp/DC/NetApp/Filer7/s5ur6r/Documents/Work%20Documents/MISMODataTypesB299.xsd"/>
+	<!-- GSE extensions to the MISMO namespace for UCD version 1.4-->
+	<!--complex types-->
+	<xsd:complexType name="CLOSING_ADJUSTMENT_ITEM_PAID_TO">
+		<xsd:sequence>
+			<xsd:element name="LEGAL_ENTITY" type="gse:LEGAL_ENTITY" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LEGAL_ENTITY">
+		<xsd:sequence>
+			<xsd:element name="LEGAL_ENTITY_DETAIL" type="gse:LEGAL_ENTITY_DETAIL" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LEGAL_ENTITY_DETAIL">
+		<xsd:sequence>
+			<xsd:element name="FullName">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="MISMOString">
+							<xsd:maxLength value="150"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="LATE_CHARGE_RULE">
+		<xsd:sequence>
+			<xsd:element name="LateChargeAmount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="MISMOAmount">
+							<xsd:fractionDigits value="2"/>
+							<xsd:totalDigits value="11"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LateChargeGracePeriodDaysCount" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="MISMOCount">
+							<xsd:fractionDigits value="0"/>
+							<xsd:totalDigits value="3"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LateChargeRatePercent" minOccurs="0">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:restriction base="MISMOPercent">
+							<xsd:fractionDigits value="4"/>
+							<xsd:maxInclusive value="100.0000"/>
+						</xsd:restriction>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="LateChargeType" type="gse:LateChargeType" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="LATE_CHARGE_RULES">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="LATE_CHARGE_RULE" type="gse:LATE_CHARGE_RULE" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<!--enumerations-->
+	<xsd:element name="IntegratedDisclosureSectionType">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:restriction base="IntegratedDisclosureSectionEnum">
+					<xsd:enumeration value="DueFromBorrowerAtClosing"/>
+					<xsd:enumeration value="DueFromSellerAtClosing"/>
+					<xsd:enumeration value="PaidAlreadyByOrOnBehalfOfBorrowerAtClosing"/>
+					<xsd:enumeration value="PayoffsAndPayments"/>
+				</xsd:restriction>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:simpleType name="LateChargeType">
+		<xsd:restriction base="MISMOEnum_Base">
+			<xsd:enumeration value="FlatDollarAmount"/>
+			<xsd:enumeration value="NoLateCharges"/>
+			<xsd:enumeration value="PercentageOfDelinquentInterest"/>
+			<xsd:enumeration value="PercentageOfNetPayment"/>
+			<xsd:enumeration value="PercentageOfPrincipalBalance"/>
+			<xsd:enumeration value="PercentageOfTotalPayment"/>
+			<xsd:enumeration value="PercentOfPrincipalAndInterest"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<!--attributes-->
+	<xsd:attribute name="DisplayLabelText">
+		<xsd:simpleType>
+			<xsd:restriction base="MISMOString_Base">
+				<xsd:maxLength value="150"/>
+			</xsd:restriction>
+		</xsd:simpleType>
+	</xsd:attribute>
+	<!--elements-->
+	<xsd:element name="DocumentSignatureRequiredIndicator" type="MISMOIndicator"/>
+	<xsd:element name="FullName" type="MISMOString"/>
+	<xsd:element name="LiabilitySecuredBySubjectPropertyIndicator" type="MISMOIndicator"/>
+	<xsd:element name="SubordinateFinancingIsNewIndicator" type="MISMOIndicator"/>
+	<xsd:element name="TotalOptionalPaymentCount">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:restriction base="MISMOCount">
+					<xsd:fractionDigits value="0"/>
+					<xsd:totalDigits value="3"/>
+				</xsd:restriction>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TotalStepPaymentCount">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:restriction base="MISMOCount">
+					<xsd:fractionDigits value="0"/>
+					<xsd:totalDigits value="3"/>
+				</xsd:restriction>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="TotalStepCount">
+		<xsd:complexType>
+			<xsd:simpleContent>
+				<xsd:restriction base="MISMOCount">
+					<xsd:fractionDigits value="0"/>
+					<xsd:totalDigits value="3"/>
+				</xsd:restriction>
+			</xsd:simpleContent>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
