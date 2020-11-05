@@ -16,7 +16,9 @@
             out.println(vUniversal.getHead(vLevel, vDivision));
         %>
     </head>
+    <body>
         <%
             out.println(vLayout.getBody(vPage, vLevel));
         %>
+    </body>
 </html>

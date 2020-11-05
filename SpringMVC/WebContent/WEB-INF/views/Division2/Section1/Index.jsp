@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@ page import="main.Universal" %>
-<%@ page import="division2.section1.Layout" %>
-<%@ page import="division2.section1.Custom" %>
+<%@ page import="division2.section1.*" %>
 <!DOCTYPE HTML>
 
 <html>

@@ -8,9 +8,28 @@ public class Layout extends main.Layout {
 	private String getNavigation(int vLevel) {
 		String vResult = "";
 
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division1/Section1/Index'>Databases</a><br/><br/>";
-
+		vResult += "<ul class=\"navigationUl\">";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Index\">Board Games</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project1\">The Way</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project2\">Sacred Offerings</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project3\">Conversion</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project4\">Conspiratorium</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project5\">Monster Office Workplace</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project6\">MacCreedy's Mansion</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project7\">Dundered Acre Wood</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project8\">Conquer</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project9\">Assault</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project10\">Battle Princesses</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project11\">Armor Up</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project12\">Gynowars: Battle Arena</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project13\">Land of the Orcish Empire: Age of Magic</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project14\">Coliseum Arena</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project15\">Nine Card</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project16\">Wars of Antarrea</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project17\">Antarrea RPG</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project18\">Super Dungeon Adventure</a></li>";
+		vResult += "</ul>";
+		    
 		return vResult;
 	}
 

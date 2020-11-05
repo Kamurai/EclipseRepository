@@ -8,16 +8,16 @@ public class Layout extends main.Layout {
 	private String getNavigation(int vLevel) {
 		String vResult = "";
 
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division3/Project1'>Online Experience Downloads</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division3/Project2'>Game Maker Downloads</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division3/Project3'>Java Downloads</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division3/Project4'>C# Downloads</a><br/><br/>";
-		vResult += "<a class=\"navlinkA\" href='" + vUniversal.getPath(vLevel)
-				+ "Division3/Project5'>C++ Downloads</a><br/><br/>";
+		vResult += "<ul class=\"navigationUl\">";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Index\">Video Games</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project1\">Truth</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project2\">The Wrong Ninja</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project3\">Gynowars</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project4\">Terminal World</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Project5\">Mars: Opposition</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Section1/Index\">Antarrea</a></li>";
+			vResult += "<li><a class=\"navlinkA\" href=\"./Section2/Index\">Renley</a></li>";
+		vResult += "</ul>";
 
 		return vResult;
 	}

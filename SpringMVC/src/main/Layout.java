@@ -3,28 +3,29 @@ package main;
 import main.Universal;
 import main.Custom;
 
-public class Layout
-{
+public class Layout{
     protected Universal vUniversal;
     protected Custom vCustom;
 
-    public Layout(Custom vCustom)
-    {
+    public Layout(Custom vCustom){
     	this.vUniversal = new Universal();
         this.vCustom = vCustom;
     }
     
-    private String getNavigation(int vLevel)
-    {
+    private String getNavigation(int vLevel){
         String vResult = "";
-        vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"AboutUs'>About Us</a><br/><br/>";
-        vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Media'>Media</a><br/><br/>";
-        vResult += "<a class=\"navlinkA\" href='"+vUniversal.getPath(vLevel)+"Minecraft'>Minecraft!</a><br/><br/>";
+        
+        vResult += "<ul class=\"navigationUl\">";
+	        vResult += "<li><a class=\"navlinkA\" href=\"./AboutUs\">About Us</a></li>";
+	        vResult += "<li><a class=\"navlinkA\" href=\"./Media\">Media</a></li>";
+	        vResult += "<li><a class=\"navlinkA\" href=\"./GitHubs\">GitHubs</a></li>";
+	        vResult += "<li><a class=\"navlinkA\" href=\"./WebApps\">WebApps</a></li>";
+        vResult += "</ul>";
+        
         return vResult;
     }
     
-	public String getBody(int vPage, int vLevel)
-    {
+	public String getBody(int vPage, int vLevel){
         String vResult = "";
         
         vResult += "<body>";
